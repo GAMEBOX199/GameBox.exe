@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -126,19 +127,16 @@ h1 {
     margin-top: 45px;
 }
 
+.screenshots h2 {
+    margin-bottom: 20px;
+}
+
 .screenshot-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
 }
-    
-.screenshot img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
-}
-    
+
 .screenshot {
     height: 180px;
     background: #292929;
@@ -154,6 +152,7 @@ h1 {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
 .back {
@@ -206,8 +205,8 @@ footer {
     }
 }
 </style>
-</head>
 
+</head>
 
 <body>
 
@@ -227,18 +226,15 @@ footer {
 
 </header>
 
-
 <main>
 
 <div id="gameContainer"></div>
 
 </main>
 
-
 <footer>
 GameBox.exe © 2026
 </footer>
-
 
 <script>
 
@@ -419,18 +415,18 @@ image: "images/getting-over-it-with-bennett-foddy.jpg"
 },
 
 "gta-1": {
-    name: "Grand Theft Auto",
-    genre: "Action",
-    platform: "Windows",
-    description: "The original top-down Grand Theft Auto lets players explore cities, steal vehicles and complete criminal missions.",
-    image: "images/grand-theft-auto.png",
-
-    screenshots: [
-        "images/images (53).jpg",
-        "images/images (54).jpg",
-        "images/images (55).jpg"
-    ]
+name: "Grand Theft Auto",
+genre: "Action",
+platform: "Windows",
+description: "The original top-down Grand Theft Auto lets players explore cities, steal vehicles and complete criminal missions.",
+image: "images/grand-theft-auto.png",
+screenshots: [
+"images/images (53).jpg",
+"images/images (54).jpg",
+"images/images (55).jpg"
+]
 },
+
 "gta-2": {
 name: "Grand Theft Auto 2",
 genre: "Action",
@@ -912,16 +908,13 @@ LOAD GAME
 ====================================================
 */
 
-const params = new URLSearchParams(
-    window.location.search
-);
+const params = new URLSearchParams(window.location.search);
 
 const gameID = params.get("game");
 
 const game = games[gameID];
 
-const container =
-    document.getElementById("gameContainer");
+const container = document.getElementById("gameContainer");
 
 
 if (!game) {
@@ -946,9 +939,49 @@ That game doesn't exist in the GameBox archive.
 
 } else {
 
-document.title =
-game.name + " - GameBox.exe";
+document.title = game.name + " - GameBox.exe";
 
+
+/*
+====================================================
+BUILD SCREENSHOTS
+====================================================
+*/
+
+let screenshotHTML = "";
+
+if (game.screenshots && game.screenshots.length > 0) {
+
+    screenshotHTML = game.screenshots.map(function(image, index) {
+
+        return `
+        <div class="screenshot">
+            <img
+                src="${image}"
+                alt="${game.name} screenshot ${index + 1}"
+                onerror="this.parentElement.innerHTML='<span>Screenshot unavailable</span>';"
+            >
+        </div>
+        `;
+
+    }).join("");
+
+} else {
+
+    screenshotHTML = `
+        <p style="color:#777;">
+            No screenshots available yet.
+        </p>
+    `;
+
+}
+
+
+/*
+====================================================
+BUILD GAME PAGE
+====================================================
+*/
 
 container.innerHTML = `
 
@@ -1022,17 +1055,7 @@ onclick="alert('Add your legally distributable game file here.'); return false;"
 
 <div class="screenshot-grid">
 
-<div class="screenshot">
-Screenshot 1
-</div>
-
-<div class="screenshot">
-Screenshot 2
-</div>
-
-<div class="screenshot">
-Screenshot 3
-</div>
+${screenshotHTML}
 
 </div>
 
