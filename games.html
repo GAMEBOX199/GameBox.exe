@@ -1,12 +1,16 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GameBox.exe</title>
+<title>Games - GameBox.exe</title>
 
 <style>
+
 * {
     box-sizing: border-box;
 }
@@ -17,6 +21,8 @@ body {
     background: #111;
     color: white;
 }
+
+/* HEADER */
 
 header {
     background: #1b1b1b;
@@ -48,16 +54,12 @@ header {
     color: white;
 }
 
+/* MAIN */
+
 main {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: auto;
     padding: 40px 20px;
-}
-
-.game-page {
-    background: #1b1b1b;
-    border-radius: 12px;
-    padding: 35px;
 }
 
 h1 {
@@ -65,101 +67,106 @@ h1 {
     margin-top: 0;
 }
 
-.game-layout {
-    display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 40px;
+.subtitle {
+    color: #999;
+    margin-bottom: 30px;
 }
 
-.cover {
-    width: 320px;
-    height: 430px;
-    background: #292929;
+/* SEARCH */
+
+.search {
+    width: 100%;
+    padding: 15px 18px;
+    margin-bottom: 30px;
+
+    background: #242424;
+    border: 1px solid #444;
+    border-radius: 8px;
+
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+.search:focus {
+    border-color: #2878ff;
+}
+
+.search::placeholder {
+    color: #777;
+}
+
+/* GAME GRID */
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* GAME CARD */
+
+.game-card {
+    background: #1b1b1b;
     border-radius: 10px;
     overflow: hidden;
-}
 
-.cover img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.description {
-    color: #bbb;
-    font-size: 17px;
-    line-height: 1.7;
-}
-
-.details {
-    background: #242424;
-    border-radius: 8px;
-    padding: 20px;
-    margin-top: 25px;
-}
-
-.details p {
-    margin: 10px 0;
-}
-
-.download {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 15px 28px;
-    background: #2878ff;
-    color: white;
     text-decoration: none;
-    border-radius: 7px;
-    font-weight: bold;
+    color: white;
+
+    transition:
+        transform 0.2s,
+        background 0.2s;
 }
 
-.download:hover {
-    background: #155dcc;
+.game-card:hover {
+    transform: translateY(-5px);
+    background: #242424;
 }
 
-.screenshots {
-    margin-top: 50px;
-}
+/* GAME IMAGE */
 
-.screenshot-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-}
-
-.screenshot {
-    height: 180px;
+.game-image {
+    width: 100%;
+    height: 260px;
     background: #292929;
-    border-radius: 8px;
     overflow: hidden;
 }
 
-.screenshot img {
+.game-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
 
-.no-screenshots {
+/* GAME INFO */
+
+.game-info {
+    padding: 18px;
+}
+
+.game-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.game-genre {
+    color: #888;
+    font-size: 14px;
+}
+
+/* NO RESULTS */
+
+.no-results {
+    display: none;
     color: #777;
-}
-
-.back {
-    display: inline-block;
-    margin-top: 35px;
-    color: #aaa;
-    text-decoration: none;
-}
-
-.back:hover {
-    color: white;
-}
-
-.not-found {
     text-align: center;
-    padding: 80px 20px;
+    padding: 50px;
 }
+
+/* FOOTER */
 
 footer {
     margin-top: 60px;
@@ -167,6 +174,16 @@ footer {
     text-align: center;
     color: #777;
     background: #1b1b1b;
+}
+
+/* MOBILE */
+
+@media(max-width: 900px) {
+
+    .game-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
 }
 
 @media(max-width: 700px) {
@@ -177,29 +194,34 @@ footer {
         align-items: flex-start;
     }
 
-    .game-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .cover {
-        width: 100%;
-        max-width: 320px;
-    }
-
-    .screenshot-grid {
-        grid-template-columns: 1fr;
+    .game-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     h1 {
         font-size: 32px;
     }
+
 }
+
+@media(max-width: 450px) {
+
+    .game-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <header>
+
 <div class="header">
 
 <a href="index.html" class="logo">
@@ -211,861 +233,1652 @@ footer {
 </a>
 
 </div>
+
 </header>
 
+
 <main>
-<div id="gameContainer"></div>
+
+
+<h1>Games</h1>
+
+<p class="subtitle">
+Browse the GameBox.exe archive.
+</p>
+
+
+<input
+    type="text"
+    id="search"
+    class="search"
+    placeholder="Search games..."
+    autocomplete="off"
+>
+
+
+<div class="game-grid" id="gameGrid">
+
+
+<!-- GTA -->
+
+<a class="game-card"
+   href="games/gta-1.html"
+   data-name="Grand Theft Auto">
+
+    <div class="game-image">
+        <img
+            src="images/images (54).jpg"
+            alt="Grand Theft Auto"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Grand Theft Auto
+        </div>
+
+        <div class="game-genre">
+            Action
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/gta-2.html"
+   data-name="Grand Theft Auto 2">
+
+    <div class="game-image">
+        <img
+            src="images/images (56).jpg"
+            alt="Grand Theft Auto 2"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Grand Theft Auto 2
+        </div>
+
+        <div class="game-genre">
+            Action
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/gta-3.html"
+   data-name="Grand Theft Auto III">
+
+    <div class="game-image">
+        <img
+            src="images/gta-3.jpg"
+            alt="Grand Theft Auto III"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Grand Theft Auto III
+        </div>
+
+        <div class="game-genre">
+            Action
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/gta-london.html"
+   data-name="Grand Theft Auto London">
+
+    <div class="game-image">
+        <img
+            src="images/gta-london.jpg"
+            alt="Grand Theft Auto London"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Grand Theft Auto: London
+        </div>
+
+        <div class="game-genre">
+            Action
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/gta-vice-city.html"
+   data-name="Grand Theft Auto Vice City">
+
+    <div class="game-image">
+        <img
+            src="images/gta-vice-city.jpg"
+            alt="Grand Theft Auto Vice City"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Grand Theft Auto: Vice City
+        </div>
+
+        <div class="game-genre">
+            Action
+        </div>
+
+    </div>
+
+</a>
+
+
+<!-- BENDY -->
+
+<a class="game-card"
+   href="games/bendy-lone-wolf.html"
+   data-name="Bendy Lone Wolf">
+
+    <div class="game-image">
+        <img
+            src="images/bendy-lone-wolf.jpg"
+            alt="Bendy Lone Wolf"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Bendy: Lone Wolf
+        </div>
+
+        <div class="game-genre">
+            Horror
+        </div>
+
+    </div>
+
+</a>
+
+
+<!-- CHOO CHOO CHARLES -->
+
+<a class="game-card"
+   href="games/choo-choo-charles.html"
+   data-name="Choo Choo Charles">
+
+    <div class="game-image">
+        <img
+            src="images/choo-choo-charles.jpg"
+            alt="Choo Choo Charles"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Choo-Choo Charles
+        </div>
+
+        <div class="game-genre">
+            Horror
+        </div>
+
+    </div>
+
+</a>
+
+
+<!-- OTHER GAMES -->
+
+<a class="game-card"
+   href="games/a-difficult-game-about-climbing.html"
+   data-name="A Difficult Game About Climbing">
+
+    <div class="game-image">
+        <img
+            src="images/a-difficult-game-about-climbing.jpg"
+            alt="A Difficult Game About Climbing"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            A Difficult Game About Climbing
+        </div>
+
+        <div class="game-genre">
+            Challenge
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/amanda-the-adventurer.html"
+   data-name="Amanda the Adventurer">
+
+    <div class="game-image">
+        <img
+            src="images/amanda-the-adventurer.jpg"
+            alt="Amanda the Adventurer"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Amanda the Adventurer
+        </div>
+
+        <div class="game-genre">
+            Horror
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/bad-parenting-1-mr-red-face.html"
+   data-name="Bad Parenting 1 Mr Red Face">
+
+    <div class="game-image">
+        <img
+            src="images/bad-parenting-1-mr-red-face.jpg"
+            alt="Bad Parenting 1 Mr Red Face"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Bad Parenting 1: Mr. Red Face
+        </div>
+
+        <div class="game-genre">
+            Horror
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/baldis-basics-plus.html"
+   data-name="Baldis Basics Plus">
+
+    <div class="game-image">
+        <img
+            src="images/baldis-basics-plus.jpg"
+            alt="Baldi's Basics Plus"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Baldi's Basics Plus
+        </div>
+
+        <div class="game-genre">
+            Horror
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/boris-and-the-dark-survival.html"
+   data-name="Boris and the Dark Survival">
+
+    <div class="game-image">
+        <img
+            src="images/boris-and-the-dark-survival.jpg"
+            alt="Boris and the Dark Survival"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Boris and the Dark Survival
+        </div>
+
+        <div class="game-genre">
+            Horror
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/family-guy-back-to-the-multiverse.html"
+   data-name="Family Guy Back to the Multiverse">
+
+    <div class="game-image">
+        <img
+            src="images/family-guy-back-to-the-multiverse.jpg"
+            alt="Family Guy Back to the Multiverse"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Family Guy: Back to the Multiverse
+        </div>
+
+        <div class="game-genre">
+            Action
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/fnaf-core-collection.html"
+   data-name="FNAF Core Collection">
+
+    <div class="game-image">
+        <img
+            src="images/fnaf-core-collection.jpg"
+            alt="FNAF Core Collection"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            FNAF Core Collection
+        </div>
+
+        <div class="game-genre">
+            Horror
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/fnaf-pizza-sim.html"
+   data-name="FNAF Pizza Sim">
+
+    <div class="game-image">
+        <img
+            src="images/fnaf-pizza-sim.jpg"
+            alt="FNAF Pizza Sim"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            FNAF Pizza Sim
+        </div>
+
+        <div class="game-genre">
+            Horror
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/fnaf-the-movie-the-game.html"
+   data-name="FNAF The Movie The Game">
+
+    <div class="game-image">
+        <img
+            src="images/fnaf-the-movie-the-game.jpg"
+            alt="FNAF The Movie The Game"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            FNAF: The Movie The Game
+        </div>
+
+        <div class="game-genre">
+            Horror
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/fnaf-ucn.html"
+   data-name="FNAF UCN">
+
+    <div class="game-image">
+        <img
+            src="images/fnaf-ucn.jpg"
+            alt="FNAF UCN"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            FNAF UCN
+        </div>
+
+        <div class="game-genre">
+            Horror
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/fnaf-world.html"
+   data-name="FNAF World">
+
+    <div class="game-image">
+        <img
+            src="images/fnaf-world.jpg"
+            alt="FNAF World"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            FNAF World
+        </div>
+
+        <div class="game-genre">
+            Adventure
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/five-nights-at-freddys-into-the-pit.html"
+   data-name="Five Nights at Freddys Into the Pit">
+
+    <div class="game-image">
+        <img
+            src="images/five-nights-at-freddys-into-the-pit.jpg"
+            alt="Five Nights at Freddy's Into the Pit"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Five Nights at Freddy's: Into the Pit
+        </div>
+
+        <div class="game-genre">
+            Horror
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/freddy-in-space-2.html"
+   data-name="Freddy in Space 2">
+
+    <div class="game-image">
+        <img
+            src="images/freddy-in-space-2.jpg"
+            alt="Freddy in Space 2"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Freddy in Space 2
+        </div>
+
+        <div class="game-genre">
+            Action
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/garten-of-banban.html"
+   data-name="Garten of Banban">
+
+    <div class="game-image">
+        <img
+            src="images/garten-of-banban.jpg"
+            alt="Garten of Banban"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Garten of Banban
+        </div>
+
+        <div class="game-genre">
+            Horror
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/getting-over-it-with-bennett-foddy.html"
+   data-name="Getting Over It with Bennett Foddy">
+
+    <div class="game-image">
+        <img
+            src="images/getting-over-it-with-bennett-foddy.jpg"
+            alt="Getting Over It with Bennett Foddy"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Getting Over It with Bennett Foddy
+        </div>
+
+        <div class="game-genre">
+            Challenge
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/hello-neighbor.html"
+   data-name="Hello Neighbor">
+
+    <div class="game-image">
+        <img
+            src="images/hello-neighbor.jpg"
+            alt="Hello Neighbor"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Hello Neighbor
+        </div>
+
+        <div class="game-genre">
+            Horror
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/hitman-contracts.html"
+   data-name="Hitman Contracts">
+
+    <div class="game-image">
+        <img
+            src="images/hitman-contracts.jpg"
+            alt="Hitman Contracts"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Hitman: Contracts
+        </div>
+
+        <div class="game-genre">
+            Action
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/iron-man-2008.html"
+   data-name="Iron Man">
+
+    <div class="game-image">
+        <img
+            src="images/iron-man-2008.jpg"
+            alt="Iron Man"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Iron Man
+        </div>
+
+        <div class="game-genre">
+            Action
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/kindergarten.html"
+   data-name="Kindergarten">
+
+    <div class="game-image">
+        <img
+            src="images/kindergarten.jpg"
+            alt="Kindergarten"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Kindergarten
+        </div>
+
+        <div class="game-genre">
+            Adventure
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/kindergarten-2.html"
+   data-name="Kindergarten 2">
+
+    <div class="game-image">
+        <img
+            src="images/kindergarten-2.jpg"
+            alt="Kindergarten 2"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Kindergarten 2
+        </div>
+
+        <div class="game-genre">
+            Adventure
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/manhunt-2.html"
+   data-name="Manhunt 2">
+
+    <div class="game-image">
+        <img
+            src="images/manhunt-2.jpg"
+            alt="Manhunt 2"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Manhunt 2
+        </div>
+
+        <div class="game-genre">
+            Action
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/marvel-ultimate-alliance.html"
+   data-name="Marvel Ultimate Alliance">
+
+    <div class="game-image">
+        <img
+            src="images/marvel-ultimate-alliance.jpg"
+            alt="Marvel Ultimate Alliance"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Marvel: Ultimate Alliance
+        </div>
+
+        <div class="game-genre">
+            Action
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/midnight-club-2.html"
+   data-name="Midnight Club II">
+
+    <div class="game-image">
+        <img
+            src="images/midnight-club-2.jpg"
+            alt="Midnight Club II"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Midnight Club II
+        </div>
+
+        <div class="game-genre">
+            Racing
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/outlast-demo.html"
+   data-name="Outlast Demo">
+
+    <div class="game-image">
+        <img
+            src="images/outlast-demo.jpg"
+            alt="Outlast Demo"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Outlast Demo
+        </div>
+
+        <div class="game-genre">
+            Horror
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/resident-evil-1.html"
+   data-name="Resident Evil">
+
+    <div class="game-image">
+        <img
+            src="images/resident-evil-1.jpg"
+            alt="Resident Evil"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Resident Evil
+        </div>
+
+        <div class="game-genre">
+            Horror
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/resident-evil-2.html"
+   data-name="Resident Evil 2">
+
+    <div class="game-image">
+        <img
+            src="images/resident-evil-2.jpg"
+            alt="Resident Evil 2"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Resident Evil 2
+        </div>
+
+        <div class="game-genre">
+            Horror
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/resident-evil-3-nemesis.html"
+   data-name="Resident Evil 3 Nemesis">
+
+    <div class="game-image">
+        <img
+            src="images/resident-evil-3-nemesis.jpg"
+            alt="Resident Evil 3 Nemesis"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Resident Evil 3: Nemesis
+        </div>
+
+        <div class="game-genre">
+            Horror
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/shrek-2-team-action.html"
+   data-name="Shrek 2 Team Action">
+
+    <div class="game-image">
+        <img
+            src="images/shrek-2-team-action.jpg"
+            alt="Shrek 2 Team Action"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Shrek 2: Team Action
+        </div>
+
+        <div class="game-genre">
+            Family
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/shrek-the-third.html"
+   data-name="Shrek the Third">
+
+    <div class="game-image">
+        <img
+            src="images/shrek-the-third.jpg"
+            alt="Shrek the Third"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Shrek the Third
+        </div>
+
+        <div class="game-genre">
+            Family
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/shrek-forever-after.html"
+   data-name="Shrek Forever After">
+
+    <div class="game-image">
+        <img
+            src="images/shrek-forever-after.jpg"
+            alt="Shrek Forever After"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Shrek Forever After
+        </div>
+
+        <div class="game-genre">
+            Family
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/silent-hill-2.html"
+   data-name="Silent Hill 2">
+
+    <div class="game-image">
+        <img
+            src="images/silent-hill-2.jpg"
+            alt="Silent Hill 2"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Silent Hill 2
+        </div>
+
+        <div class="game-genre">
+            Horror
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/silent-hill-3.html"
+   data-name="Silent Hill 3">
+
+    <div class="game-image">
+        <img
+            src="images/silent-hill-3.jpg"
+            alt="Silent Hill 3"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Silent Hill 3
+        </div>
+
+        <div class="game-genre">
+            Horror
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/simpsons-hit-and-run.html"
+   data-name="The Simpsons Hit and Run">
+
+    <div class="game-image">
+        <img
+            src="images/simpsons-hit-and-run.jpg"
+            alt="The Simpsons Hit and Run"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            The Simpsons: Hit & Run
+        </div>
+
+        <div class="game-genre">
+            Action
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/slendrina.html"
+   data-name="Slendrina">
+
+    <div class="game-image">
+        <img
+            src="images/slendrina.jpg"
+            alt="Slendrina"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Slendrina
+        </div>
+
+        <div class="game-genre">
+            Horror
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/slendrina-the-cellar.html"
+   data-name="Slendrina The Cellar">
+
+    <div class="game-image">
+        <img
+            src="images/slendrina-the-cellar.jpg"
+            alt="Slendrina The Cellar"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Slendrina: The Cellar
+        </div>
+
+        <div class="game-genre">
+            Horror
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/spider-man-2000.html"
+   data-name="Spider Man">
+
+    <div class="game-image">
+        <img
+            src="images/spider-man-2000.jpg"
+            alt="Spider-Man"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Spider-Man
+        </div>
+
+        <div class="game-genre">
+            Action
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/spider-man-3.html"
+   data-name="Spider Man 3">
+
+    <div class="game-image">
+        <img
+            src="images/spider-man-3.jpg"
+            alt="Spider-Man 3"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Spider-Man 3
+        </div>
+
+        <div class="game-genre">
+            Action
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/spider-man-web-of-shadows.html"
+   data-name="Spider Man Web of Shadows">
+
+    <div class="game-image">
+        <img
+            src="images/spider-man-web-of-shadows.jpg"
+            alt="Spider-Man Web of Shadows"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Spider-Man: Web of Shadows
+        </div>
+
+        <div class="game-genre">
+            Action
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/state-of-emergency.html"
+   data-name="State of Emergency">
+
+    <div class="game-image">
+        <img
+            src="images/state-of-emergency.jpg"
+            alt="State of Emergency"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            State of Emergency
+        </div>
+
+        <div class="game-genre">
+            Action
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/tattletail.html"
+   data-name="Tattletail">
+
+    <div class="game-image">
+        <img
+            src="images/tattletail.jpg"
+            alt="Tattletail"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Tattletail
+        </div>
+
+        <div class="game-genre">
+            Horror
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/the-hulk-2003.html"
+   data-name="The Hulk">
+
+    <div class="game-image">
+        <img
+            src="images/the-hulk-2003.jpg"
+            alt="The Hulk"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            The Hulk
+        </div>
+
+        <div class="game-genre">
+            Action
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/the-incredible-hulk.html"
+   data-name="The Incredible Hulk">
+
+    <div class="game-image">
+        <img
+            src="images/the-incredible-hulk.jpg"
+            alt="The Incredible Hulk"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            The Incredible Hulk
+        </div>
+
+        <div class="game-genre">
+            Action
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/the-italian-job-2001.html"
+   data-name="The Italian Job">
+
+    <div class="game-image">
+        <img
+            src="images/the-italian-job-2001.jpg"
+            alt="The Italian Job"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            The Italian Job
+        </div>
+
+        <div class="game-genre">
+            Racing
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/the-punisher.html"
+   data-name="The Punisher">
+
+    <div class="game-image">
+        <img
+            src="images/the-punisher.jpg"
+            alt="The Punisher"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            The Punisher
+        </div>
+
+        <div class="game-genre">
+            Action
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/toy-story-2.html"
+   data-name="Toy Story 2">
+
+    <div class="game-image">
+        <img
+            src="images/toy-story-2.jpg"
+            alt="Toy Story 2"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Toy Story 2
+        </div>
+
+        <div class="game-genre">
+            Family
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/tomb-raider-2.html"
+   data-name="Tomb Raider 2">
+
+    <div class="game-image">
+        <img
+            src="images/tomb-raider-2.jpg"
+            alt="Tomb Raider 2"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Tomb Raider 2
+        </div>
+
+        <div class="game-genre">
+            Adventure
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/tomb-raider-3.html"
+   data-name="Tomb Raider 3">
+
+    <div class="game-image">
+        <img
+            src="images/tomb-raider-3.jpg"
+            alt="Tomb Raider 3"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Tomb Raider 3
+        </div>
+
+        <div class="game-genre">
+            Adventure
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/tomb-raider-4.html"
+   data-name="Tomb Raider 4">
+
+    <div class="game-image">
+        <img
+            src="images/tomb-raider-4.jpg"
+            alt="Tomb Raider 4"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Tomb Raider 4
+        </div>
+
+        <div class="game-genre">
+            Adventure
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/tomb-raider-5.html"
+   data-name="Tomb Raider 5">
+
+    <div class="game-image">
+        <img
+            src="images/tomb-raider-5.jpg"
+            alt="Tomb Raider 5"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Tomb Raider 5
+        </div>
+
+        <div class="game-genre">
+            Adventure
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/ultimate-spider-man.html"
+   data-name="Ultimate Spider Man">
+
+    <div class="game-image">
+        <img
+            src="images/ultimate-spider-man.jpg"
+            alt="Ultimate Spider-Man"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Ultimate Spider-Man
+        </div>
+
+        <div class="game-genre">
+            Action
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/wild-metal-country.html"
+   data-name="Wild Metal Country">
+
+    <div class="game-image">
+        <img
+            src="images/wild-metal-country.jpg"
+            alt="Wild Metal Country"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            Wild Metal Country
+        </div>
+
+        <div class="game-genre">
+            Action
+        </div>
+
+    </div>
+
+</a>
+
+
+<a class="game-card"
+   href="games/wwf-raw-2002.html"
+   data-name="WWF Raw 2002">
+
+    <div class="game-image">
+        <img
+            src="images/wwf-raw-2002.jpg"
+            alt="WWF Raw 2002"
+        >
+    </div>
+
+    <div class="game-info">
+
+        <div class="game-name">
+            WWF Raw 2002
+        </div>
+
+        <div class="game-genre">
+            Sports
+        </div>
+
+    </div>
+
+</a>
+
+
+</div>
+
+
+<div
+    id="noResults"
+    class="no-results"
+>
+    No games found.
+</div>
+
+
 </main>
 
+
 <footer>
+
 GameBox.exe © 2026
+
 </footer>
+
 
 <script>
 
-const games = {
+/*
+====================================================
+SEARCH
+====================================================
+*/
 
-"a-difficult-game-about-climbing": {
-name: "A Difficult Game About Climbing",
-genre: "Challenge",
-platform: "Windows",
-description: "A difficult climbing game where careful movement and patience are essential to reaching the top.",
-image: "images/a-difficult-game-about-climbing.jpg"
-},
+const search = document.getElementById("search");
+const cards = document.querySelectorAll(".game-card");
+const noResults = document.getElementById("noResults");
 
-"amanda-the-adventurer": {
-name: "Amanda the Adventurer",
-genre: "Horror",
-platform: "Windows",
-description: "Explore a mysterious collection of old children's television tapes while uncovering the strange secrets surrounding Amanda.",
-image: "images/amanda-the-adventurer.jpg"
-},
+search.addEventListener("input", function() {
 
-"bad-parenting-1-mr-red-face": {
-name: "Bad Parenting 1: Mr. Red Face",
-genre: "Horror",
-platform: "Windows",
-description: "A short horror experience centered around a disturbing nighttime visitor known as Mr. Red Face.",
-image: "images/bad-parenting-1-mr-red-face.jpg"
-},
+    const query = search.value
+        .toLowerCase()
+        .trim();
 
-"baldis-basics-plus": {
-name: "Baldi's Basics Plus",
-genre: "Horror",
-platform: "Windows",
-description: "A strange school adventure combining educational parody, exploration, procedurally generated levels and survival horror.",
-image: "images/baldis-basics-plus.jpg"
-},
+    let visibleGames = 0;
 
-"boris-and-the-dark-survival": {
-name: "Boris and the Dark Survival",
-genre: "Horror",
-platform: "Windows",
-description: "Play as Boris the Wolf while exploring an abandoned animation studio and trying to survive its dangerous inhabitants.",
-image: "images/boris-and-the-dark-survival.jpg"
-},
+    cards.forEach(function(card) {
 
-"bendy-lone-wolf": {
-name: "Bendy: Lone Wolf",
-genre: "Horror",
-platform: "Windows",
-description: "Play as Boris the Wolf and survive the dangerous world of the Bendy universe.",
-image: "images/bendy-lone-wolf.jpg"
-},
+        const name = card
+            .getAttribute("data-name")
+            .toLowerCase();
 
-"choo-choo-charles": {
-name: "Choo-Choo Charles",
-genre: "Horror",
-platform: "Windows",
-description: "Explore an open-world island, upgrade your train and survive the terrifying spider-train Charles.",
-image: "images/choo-choo-charles.jpg"
-},
+        if (name.includes(query)) {
 
-"family-guy-back-to-the-multiverse": {
-name: "Family Guy: Back to the Multiverse",
-genre: "Action",
-platform: "Windows",
-description: "Join the characters from Family Guy in a chaotic adventure involving alternate universes, combat and plenty of comedy.",
-image: "images/family-guy-back-to-the-multiverse.jpg"
-},
+            card.style.display = "";
 
-"fnaf-core-collection": {
-name: "FNAF Core Collection",
-genre: "Horror",
-platform: "Windows",
-description: "A collection featuring several classic Five Nights at Freddy's games.",
-image: "images/fnaf-core-collection.jpg"
-},
+            visibleGames++;
 
-"fnaf-pizza-sim": {
-name: "FNAF Pizza Sim",
-genre: "Horror",
-platform: "Windows",
-description: "Run your own pizzeria by day while dealing with a much darker situation after hours.",
-image: "images/fnaf-pizza-sim.jpg"
-},
+        } else {
 
-"fnaf-the-movie-the-game": {
-name: "FNAF: The Movie The Game",
-genre: "Horror",
-platform: "Windows",
-description: "A fan-made Five Nights at Freddy's experience inspired by the movie.",
-image: "images/fnaf-the-movie-the-game.jpg"
-},
+            card.style.display = "none";
 
-"fnaf-ucn": {
-name: "FNAF UCN",
-genre: "Horror",
-platform: "Windows",
-description: "Customize your nightmare by choosing from a huge roster of animatronics.",
-image: "images/fnaf-ucn.jpg"
-},
+        }
 
-"fnaf-world": {
-name: "FNAF World",
-genre: "Adventure",
-platform: "Windows",
-description: "A colorful RPG spin-off featuring characters from Five Nights at Freddy's.",
-image: "images/fnaf-world.jpg"
-},
+    });
 
-"five-nights-at-freddys-into-the-pit": {
-name: "Five Nights at Freddy's: Into the Pit",
-genre: "Horror",
-platform: "Windows",
-description: "A story-driven adventure inspired by the Fazbear Frights universe.",
-image: "images/five-nights-at-freddys-into-the-pit.jpg"
-},
+    if (visibleGames === 0) {
 
-"freddy-in-space-2": {
-name: "Freddy in Space 2",
-genre: "Action",
-platform: "Windows",
-description: "A fast-paced side-scrolling action game starring characters from Five Nights at Freddy's.",
-image: "images/freddy-in-space-2.jpg"
-},
+        noResults.style.display = "block";
 
-"garten-of-banban": {
-name: "Garten of Banban",
-genre: "Horror",
-platform: "Windows",
-description: "Explore the mysterious Banban's Kindergarten.",
-image: "images/garten-of-banban.jpg"
-},
+    } else {
 
-"garten-of-banban-0": {
-name: "Garten of Banban 0",
-genre: "Horror",
-platform: "Windows",
-description: "Travel back to the origins of the strange events surrounding Banban's Kindergarten.",
-image: "images/garten-of-banban-0.jpg"
-},
+        noResults.style.display = "none";
 
-"garten-of-banban-2": {
-name: "Garten of Banban 2",
-genre: "Horror",
-platform: "Windows",
-description: "Continue exploring the underground areas beneath Banban's Kindergarten.",
-image: "images/garten-of-banban-2.jpg"
-},
+    }
 
-"garten-of-banban-3": {
-name: "Garten of Banban 3",
-genre: "Horror",
-platform: "Windows",
-description: "Descend deeper into the mysterious facility.",
-image: "images/garten-of-banban-3.jpg"
-},
-
-"garten-of-banban-4": {
-name: "Garten of Banban 4",
-genre: "Horror",
-platform: "Windows",
-description: "Continue the journey through the strange underground world.",
-image: "images/garten-of-banban-4.jpg"
-},
-
-"garten-of-banban-6": {
-name: "Garten of Banban 6",
-genre: "Horror",
-platform: "Windows",
-description: "Explore another dangerous section of the Banban universe.",
-image: "images/garten-of-banban-6.jpg"
-},
-
-"garten-of-banban-7": {
-name: "Garten of Banban 7",
-genre: "Horror",
-platform: "Windows",
-description: "Continue the mysterious Banban story.",
-image: "images/garten-of-banban-7.jpg"
-},
-
-"getting-over-it-with-bennett-foddy": {
-name: "Getting Over It with Bennett Foddy",
-genre: "Challenge",
-platform: "Windows",
-description: "Use a hammer to climb an increasingly ridiculous mountain.",
-image: "images/getting-over-it-with-bennett-foddy.jpg"
-},
-
-"gta-1": {
-name: "Grand Theft Auto",
-genre: "Action",
-platform: "Windows",
-description: "The original top-down Grand Theft Auto lets players explore cities, steal vehicles and complete criminal missions.",
-image: "images/images (54).jpg",
-
-screenshots: [
-"images/images (53).jpg",
-"images/images (55).jpg"
-],
-
-download: "https://drive.google.com/uc?export=download&id=1DwCVMnMwqyShrWXLq5OnRUh9rpqFo9Cj"
-},
-
-"gta-2": {
-name: "Grand Theft Auto 2",
-genre: "Action",
-platform: "Windows",
-description: "Return to the top-down world of GTA with rival gangs, missions, vehicles and a futuristic city.",
-image: "images/gta-2.jpg"
-},
-
-"gta-3": {
-name: "Grand Theft Auto III",
-genre: "Action",
-platform: "Windows",
-description: "Grand Theft Auto III transformed the series into a fully 3D open-world crime adventure set in Liberty City.",
-image: "images/gta-3.jpg"
-},
-
-"gta-london": {
-name: "Grand Theft Auto: London",
-genre: "Action",
-platform: "Windows",
-description: "A London-based expansion to the original Grand Theft Auto.",
-image: "images/gta-london.jpg"
-},
-
-"gta-vice-city": {
-name: "Grand Theft Auto: Vice City",
-genre: "Action",
-platform: "Windows",
-description: "Enter the neon-soaked world of 1980s Vice City.",
-image: "images/gta-vice-city.jpg"
-},
-
-"hello-neighbor": {
-name: "Hello Neighbor",
-genre: "Horror",
-platform: "Windows",
-description: "Sneak into your mysterious neighbor's house and discover what secrets he is hiding.",
-image: "images/hello-neighbor.jpg"
-},
-
-"hello-neighbor-alpha-1": {
-name: "Hello Neighbor: Alpha 1",
-genre: "Horror",
-platform: "Windows",
-description: "An early version of Hello Neighbor.",
-image: "images/hello-neighbor-alpha-1.jpg"
-},
-
-"hello-neighbor-alpha-2": {
-name: "Hello Neighbor: Alpha 2",
-genre: "Horror",
-platform: "Windows",
-description: "An early Hello Neighbor build featuring a larger house.",
-image: "images/hello-neighbor-alpha-2.jpg"
-},
-
-"hello-neighbor-alpha-3": {
-name: "Hello Neighbor: Alpha 3",
-genre: "Horror",
-platform: "Windows",
-description: "Explore another early version of the Neighbor's house.",
-image: "images/hello-neighbor-alpha-3.jpg"
-},
-
-"hello-neighbor-alpha-4": {
-name: "Hello Neighbor: Alpha 4",
-genre: "Horror",
-platform: "Windows",
-description: "The final major alpha build before the full release.",
-image: "images/hello-neighbor-alpha-4.jpg"
-},
-
-"hello-neighbor-hide-and-seek": {
-name: "Hello Neighbor: Hide and Seek",
-genre: "Horror",
-platform: "Windows",
-description: "Play through a prequel story to Hello Neighbor.",
-image: "images/hello-neighbor-hide-and-seek.jpg"
-},
-
-"hello-neighbor-pre-alpha": {
-name: "Hello Neighbor: Pre-Alpha",
-genre: "Horror",
-platform: "Windows",
-description: "An early prototype version of Hello Neighbor.",
-image: "images/hello-neighbor-pre-alpha.jpg"
-},
-
-"hitman-contracts": {
-name: "Hitman: Contracts",
-genre: "Action",
-platform: "Windows",
-description: "Agent 47 returns in a darker collection of assassination missions.",
-image: "images/hitman-contracts.jpg"
-},
-
-"house-of-slendrina": {
-name: "House of Slendrina",
-genre: "Horror",
-platform: "Windows",
-description: "Explore a haunted house while trying to survive Slendrina.",
-image: "images/house-of-slendrina.jpg"
-},
-
-"iron-man-2008": {
-name: "Iron Man",
-genre: "Action",
-platform: "Windows",
-description: "Become Iron Man and use his armor, weapons and abilities.",
-image: "images/iron-man-2008.jpg"
-},
-
-"king-of-the-hill": {
-name: "King of the Hill",
-genre: "Family",
-platform: "Windows",
-description: "A game based on the animated series King of the Hill.",
-image: "images/king-of-the-hill.jpg"
-},
-
-"kindergarten": {
-name: "Kindergarten",
-genre: "Adventure",
-platform: "Windows",
-description: "Explore a bizarre kindergarten and uncover its secrets.",
-image: "images/kindergarten.jpg"
-},
-
-"kindergarten-2": {
-name: "Kindergarten 2",
-genre: "Adventure",
-platform: "Windows",
-description: "Return to the bizarre school with new characters and mysteries.",
-image: "images/kindergarten-2.jpg"
-},
-
-"manhunt-2": {
-name: "Manhunt 2",
-genre: "Action",
-platform: "Windows",
-description: "A dark stealth-action game following Daniel Lamb.",
-image: "images/manhunt-2.jpg"
-},
-
-"marvel-ultimate-alliance": {
-name: "Marvel: Ultimate Alliance",
-genre: "Action",
-platform: "Windows",
-description: "Build a team of Marvel heroes and fight through a large-scale adventure.",
-image: "images/marvel-ultimate-alliance.jpg"
-},
-
-"midnight-club-2": {
-name: "Midnight Club II",
-genre: "Racing",
-platform: "Windows",
-description: "Race through cities around the world.",
-image: "images/midnight-club-2.jpg"
-},
-
-"outlast-demo": {
-name: "Outlast Demo",
-genre: "Horror",
-platform: "Windows",
-description: "Experience the terrifying asylum setting of Outlast.",
-image: "images/outlast-demo.jpg"
-},
-
-"outlast-2-demo": {
-name: "Outlast 2 Demo",
-genre: "Horror",
-platform: "Windows",
-description: "Enter the disturbing world of Outlast 2.",
-image: "images/outlast-2-demo.jpg"
-},
-
-"psychopath-hunt-chapter-2": {
-name: "Psychopath Hunt: Chapter 2",
-genre: "Horror",
-platform: "Windows",
-description: "A horror adventure involving exploration, puzzles and a dangerous psychopath.",
-image: "images/psychopath-hunt-chapter-2.jpg"
-},
-
-"resident-evil-1": {
-name: "Resident Evil",
-genre: "Horror",
-platform: "Windows",
-description: "Investigate the mysterious Spencer Mansion.",
-image: "images/resident-evil-1.jpg"
-},
-
-"resident-evil-2": {
-name: "Resident Evil 2",
-genre: "Horror",
-platform: "Windows",
-description: "Survive the Raccoon City outbreak.",
-image: "images/resident-evil-2.jpg"
-},
-
-"resident-evil-3-nemesis": {
-name: "Resident Evil 3: Nemesis",
-genre: "Horror",
-platform: "Windows",
-description: "Jill Valentine attempts to escape Raccoon City.",
-image: "images/resident-evil-3-nemesis.jpg"
-},
-
-"shrek-2-team-action": {
-name: "Shrek 2: Team Action",
-genre: "Family",
-platform: "Windows",
-description: "Join Shrek and his friends in a cooperative adventure.",
-image: "images/shrek-2-team-action.jpg"
-},
-
-"shrek-the-third": {
-name: "Shrek the Third",
-genre: "Family",
-platform: "Windows",
-description: "Play through an adventure based on Shrek the Third.",
-image: "images/shrek-the-third.jpg"
-},
-
-"shrek-forever-after": {
-name: "Shrek Forever After",
-genre: "Family",
-platform: "Windows",
-description: "Join Shrek on an adventure inspired by the final Shrek movie.",
-image: "images/shrek-forever-after.jpg"
-},
-
-"silent-hill-2": {
-name: "Silent Hill 2",
-genre: "Horror",
-platform: "Windows",
-description: "James Sunderland travels to Silent Hill after receiving a mysterious letter.",
-image: "images/silent-hill-2.jpg"
-},
-
-"silent-hill-3": {
-name: "Silent Hill 3",
-genre: "Horror",
-platform: "Windows",
-description: "Heather Mason becomes involved in a terrifying mystery.",
-image: "images/silent-hill-3.jpg"
-},
-
-"simpsons-hit-and-run": {
-name: "The Simpsons: Hit & Run",
-genre: "Action",
-platform: "Windows",
-description: "Explore Springfield and complete missions as characters from The Simpsons.",
-image: "images/simpsons-hit-and-run.jpg"
-},
-
-"simpsons-virtual-springfield": {
-name: "The Simpsons: Virtual Springfield",
-genre: "Family",
-platform: "Windows",
-description: "Explore Springfield and interact with characters from the series.",
-image: "images/simpsons-virtual-springfield.jpg"
-},
-
-"slendrina": {
-name: "Slendrina",
-genre: "Horror",
-platform: "Windows",
-description: "Explore a dark environment while trying to avoid Slendrina.",
-image: "images/slendrina.jpg"
-},
-
-"slendrina-the-cellar": {
-name: "Slendrina: The Cellar",
-genre: "Horror",
-platform: "Windows",
-description: "Search through a frightening cellar while trying to escape.",
-image: "images/slendrina-the-cellar.jpg"
-},
-
-"slendrina-the-cellar-2": {
-name: "Slendrina: The Cellar 2",
-genre: "Horror",
-platform: "Windows",
-description: "Return to the cellar for another horror experience.",
-image: "images/slendrina-the-cellar-2.jpg"
-},
-
-"slendrina-the-child-of-slendrina": {
-name: "The Child of Slendrina",
-genre: "Horror",
-platform: "Windows",
-description: "Encounter Slendrina's terrifying child.",
-image: "images/the-child-of-slendrina.jpg"
-},
-
-"slendrina-the-forest": {
-name: "Slendrina: The Forest",
-genre: "Horror",
-platform: "Windows",
-description: "Explore a dark forest while attempting to survive Slendrina.",
-image: "images/slendrina-the-forest.jpg"
-},
-
-"slendrina-x": {
-name: "Slendrina X",
-genre: "Horror",
-platform: "Windows",
-description: "A Slendrina horror adventure featuring exploration and puzzles.",
-image: "images/slendrina-x.jpg"
-},
-
-"spider-man-2000": {
-name: "Spider-Man",
-genre: "Action",
-platform: "Windows",
-description: "Swing through New York and fight villains.",
-image: "images/spider-man-2000.jpg"
-},
-
-"spider-man-2-enter-electro": {
-name: "Spider-Man 2: Enter Electro",
-genre: "Action",
-platform: "Windows",
-description: "Spider-Man battles Electro and other villains.",
-image: "images/spider-man-2-enter-electro.jpg"
-},
-
-"spider-man-3": {
-name: "Spider-Man 3",
-genre: "Action",
-platform: "Windows",
-description: "Swing through New York as Spider-Man.",
-image: "images/spider-man-3.jpg"
-},
-
-"spider-man-friend-or-foe": {
-name: "Spider-Man: Friend or Foe",
-genre: "Action",
-platform: "Windows",
-description: "Team up with heroes and former villains.",
-image: "images/spider-man-friend-or-foe.jpg"
-},
-
-"spider-man-the-movie-game": {
-name: "Spider-Man: The Movie Game",
-genre: "Action",
-platform: "Windows",
-description: "Play as Spider-Man in the game based on the movie.",
-image: "images/spider-man-the-movie-game.jpg"
-},
-
-"spider-man-web-of-shadows": {
-name: "Spider-Man: Web of Shadows",
-genre: "Action",
-platform: "Windows",
-description: "Battle a massive symbiote invasion across New York.",
-image: "images/spider-man-web-of-shadows.jpg"
-},
-
-"state-of-emergency": {
-name: "State of Emergency",
-genre: "Action",
-platform: "Windows",
-description: "Fight through chaotic urban environments.",
-image: "images/state-of-emergency.jpg"
-},
-
-"tattletail": {
-name: "Tattletail",
-genre: "Horror",
-platform: "Windows",
-description: "Take care of a mysterious talking toy.",
-image: "images/tattletail.jpg"
-},
-
-"the-hulk-2003": {
-name: "The Hulk",
-genre: "Action",
-platform: "Windows",
-description: "Play as Bruce Banner and the Hulk.",
-image: "images/the-hulk-2003.jpg"
-},
-
-"the-incredible-hulk": {
-name: "The Incredible Hulk",
-genre: "Action",
-platform: "Windows",
-description: "Become the Hulk and smash your way through an open-world city.",
-image: "images/the-incredible-hulk.jpg"
-},
-
-"the-italian-job-2001": {
-name: "The Italian Job",
-genre: "Racing",
-platform: "Windows",
-description: "Drive through races and missions inspired by The Italian Job.",
-image: "images/the-italian-job-2001.jpg"
-},
-
-"the-punisher": {
-name: "The Punisher",
-genre: "Action",
-platform: "Windows",
-description: "Play as Frank Castle in a dark third-person action game.",
-image: "images/the-punisher.jpg"
-},
-
-"toy-story-2": {
-name: "Toy Story 2: Buzz Lightyear to the Rescue",
-genre: "Family",
-platform: "Windows",
-description: "Play as Buzz Lightyear and rescue Woody.",
-image: "images/toy-story-2.jpg"
-},
-
-"tomb-raider-2": {
-name: "Tomb Raider 2",
-genre: "Adventure",
-platform: "Windows",
-description: "Join Lara Croft in search of the legendary Dagger of Xian.",
-image: "images/tomb-raider-2.jpg"
-},
-
-"tomb-raider-3": {
-name: "Tomb Raider 3",
-genre: "Adventure",
-platform: "Windows",
-description: "Explore locations around the world as Lara Croft.",
-image: "images/tomb-raider-3.jpg"
-},
-
-"tomb-raider-4": {
-name: "Tomb Raider 4",
-genre: "Adventure",
-platform: "Windows",
-description: "Lara Croft travels through Egypt.",
-image: "images/tomb-raider-4.jpg"
-},
-
-"tomb-raider-5": {
-name: "Tomb Raider 5",
-genre: "Adventure",
-platform: "Windows",
-description: "Experience several adventures from Lara Croft's past.",
-image: "images/tomb-raider-5.jpg"
-},
-
-"ultimate-spider-man": {
-name: "Ultimate Spider-Man",
-genre: "Action",
-platform: "Windows",
-description: "Play as Spider-Man and Venom across New York City.",
-image: "images/ultimate-spider-man.jpg"
-},
-
-"wild-metal-country": {
-name: "Wild Metal Country",
-genre: "Action",
-platform: "Windows",
-description: "Control heavily armed vehicles across alien environments.",
-image: "images/wild-metal-country.jpg"
-},
-
-"wwf-raw-2002": {
-name: "WWF Raw 2002",
-genre: "Sports",
-platform: "Windows",
-description: "Enter the ring with classic WWF wrestlers.",
-image: "images/wwf-raw-2002.jpg"
-}
-
-};
-
-
-/* GET GAME */
-
-const params = new URLSearchParams(window.location.search);
-const gameID = params.get("game");
-const game = games[gameID];
-const container = document.getElementById("gameContainer");
-
-
-if (!game) {
-
-container.innerHTML = `
-<div class="game-page not-found">
-
-<h1>Game Not Found</h1>
-
-<p>That game doesn't exist in the GameBox archive.</p>
-
-<a class="back" href="index.html">
-← Return to GameBox
-</a>
-
-</div>
-`;
-
-} else {
-
-document.title = game.name + " - GameBox.exe";
-
-
-/* SCREENSHOTS */
-
-let screenshotHTML = "";
-
-if (game.screenshots && game.screenshots.length) {
-
-screenshotHTML = game.screenshots.map(function(image, index) {
-
-return `
-<div class="screenshot">
-<img
-src="${image}"
-alt="${game.name} screenshot ${index + 1}"
-onerror="this.parentElement.innerHTML='<span style=&quot;color:#777;padding:20px;&quot;>Screenshot unavailable</span>';"
->
-</div>
-`;
-
-}).join("");
-
-} else {
-
-screenshotHTML = `
-<p class="no-screenshots">
-No screenshots available yet.
-</p>
-`;
-
-}
-
-
-/* DOWNLOAD BUTTON */
-
-let downloadHTML = "";
-
-if (game.download) {
-
-downloadHTML = `
-<a
-class="download"
-href="${game.download}"
-download
->
-⬇ Download
-</a>
-`;
-
-} else {
-
-downloadHTML = `
-<a
-class="download"
-href="#"
-onclick="alert('Download coming soon.'); return false;"
->
-⬇ Download
-</a>
-`;
-
-}
-
-
-/* PAGE */
-
-container.innerHTML = `
-
-<div class="game-page">
-
-<h1>${game.name}</h1>
-
-<div class="game-layout">
-
-<div class="cover">
-
-<img
-src="${game.image}"
-alt="${game.name}"
-onerror="this.style.display='none';"
->
-
-</div>
-
-<div>
-
-<p class="description">
-${game.description}
-</p>
-
-<div class="details">
-
-<p>
-<strong>Genre:</strong>
-${game.genre}
-</p>
-
-<p>
-<strong>Platform:</strong>
-${game.platform}
-</p>
-
-<p>
-<strong>Game:</strong>
-${game.name}
-</p>
-
-</div>
-
-${downloadHTML}
-
-</div>
-
-</div>
-
-
-<div class="screenshots">
-
-<h2>📸 Screenshots</h2>
-
-<div class="screenshot-grid">
-
-${screenshotHTML}
-
-</div>
-
-</div>
-
-
-<a class="back" href="index.html">
-← Back to GameBox.exe
-</a>
-
-</div>
-
-`;
-
-}
+});
 
 </script>
 
+
 </body>
+
 </html>
+```
+
