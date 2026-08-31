@@ -8,6 +8,7 @@
 <title>GameBox.exe</title>
 
 <style>
+
 * {
     box-sizing: border-box;
 }
@@ -124,7 +125,7 @@ h1 {
 }
 
 .screenshots {
-    margin-top: 45px;
+    margin-top: 50px;
 }
 
 .screenshots h2 {
@@ -141,10 +142,6 @@ h1 {
     height: 180px;
     background: #292929;
     border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #777;
     overflow: hidden;
 }
 
@@ -153,6 +150,17 @@ h1 {
     height: 100%;
     object-fit: cover;
     display: block;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.screenshot img:hover {
+    transform: scale(1.03);
+}
+
+.no-screenshots {
+    color: #777;
+    padding: 20px 0;
 }
 
 .back {
@@ -204,6 +212,7 @@ footer {
         font-size: 32px;
     }
 }
+
 </style>
 
 </head>
@@ -414,15 +423,24 @@ description: "Use a hammer to climb an increasingly ridiculous mountain in one o
 image: "images/getting-over-it-with-bennett-foddy.jpg"
 },
 
+/*
+====================================================
+GTA
+====================================================
+*/
+
 "gta-1": {
 name: "Grand Theft Auto",
 genre: "Action",
 platform: "Windows",
 description: "The original top-down Grand Theft Auto lets players explore cities, steal vehicles and complete criminal missions.",
-image: "images/grand-theft-auto.png",
+
+/* GTA 1 POSTER */
+image: "images/images (54).jpg",
+
+/* GTA 1 SCREENSHOTS */
 screenshots: [
 "images/images (53).jpg",
-"images/images (54).jpg",
 "images/images (55).jpg"
 ]
 },
@@ -458,6 +476,12 @@ platform: "Windows",
 description: "Enter the neon-soaked world of 1980s Vice City in one of Rockstar's most iconic open-world adventures.",
 image: "images/gta-vice-city.jpg"
 },
+
+/*
+====================================================
+HELLO NEIGHBOR
+====================================================
+*/
 
 "hello-neighbor": {
 name: "Hello Neighbor",
@@ -514,6 +538,12 @@ platform: "Windows",
 description: "An early prototype version of Hello Neighbor showing the game's original concept and mechanics.",
 image: "images/hello-neighbor-pre-alpha.jpg"
 },
+
+/*
+====================================================
+OTHER GAMES
+====================================================
+*/
 
 "hitman-contracts": {
 name: "Hitman: Contracts",
@@ -919,157 +949,167 @@ const container = document.getElementById("gameContainer");
 
 if (!game) {
 
-container.innerHTML = `
+    container.innerHTML = `
 
-<div class="game-page not-found">
+    <div class="game-page not-found">
 
-<h1>Game Not Found</h1>
+        <h1>Game Not Found</h1>
 
-<p>
-That game doesn't exist in the GameBox archive.
-</p>
-
-<a class="back" href="index.html">
-← Return to GameBox
-</a>
-
-</div>
-
-`;
-
-} else {
-
-document.title = game.name + " - GameBox.exe";
-
-
-/*
-====================================================
-BUILD SCREENSHOTS
-====================================================
-*/
-
-let screenshotHTML = "";
-
-if (game.screenshots && game.screenshots.length > 0) {
-
-    screenshotHTML = game.screenshots.map(function(image, index) {
-
-        return `
-        <div class="screenshot">
-            <img
-                src="${image}"
-                alt="${game.name} screenshot ${index + 1}"
-                onerror="this.parentElement.innerHTML='<span>Screenshot unavailable</span>';"
-            >
-        </div>
-        `;
-
-    }).join("");
-
-} else {
-
-    screenshotHTML = `
-        <p style="color:#777;">
-            No screenshots available yet.
+        <p>
+        That game doesn't exist in the GameBox archive.
         </p>
+
+        <a class="back" href="index.html">
+        ← Return to GameBox
+        </a>
+
+    </div>
+
     `;
 
-}
+} else {
+
+    document.title = game.name + " - GameBox.exe";
 
 
-/*
-====================================================
-BUILD GAME PAGE
-====================================================
-*/
+    /*
+    ================================================
+    BUILD SCREENSHOTS
+    ================================================
+    */
 
-container.innerHTML = `
+    let screenshotHTML = "";
 
-<div class="game-page">
+    if (game.screenshots && game.screenshots.length > 0) {
 
-<h1>${game.name}</h1>
+        screenshotHTML = game.screenshots.map(function(image, index) {
 
+            return `
+            
+            <div class="screenshot">
 
-<div class="game-layout">
+                <img
+                    src="${image}"
+                    alt="${game.name} screenshot ${index + 1}"
+                    onerror="this.parentElement.innerHTML='<span style=&quot;color:#777;&quot;>Screenshot unavailable</span>';"
+                >
 
+            </div>
 
-<div class="cover">
+            `;
 
-<img
-src="${game.image}"
-alt="${game.name}"
-onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
->
+        }).join("");
 
-<span style="display:none;">
-${game.name}
-</span>
+    } else {
 
-</div>
+        screenshotHTML = `
+        
+        <p class="no-screenshots">
+            No screenshots available yet.
+        </p>
 
+        `;
 
-<div>
-
-<p class="description">
-${game.description}
-</p>
-
-
-<div class="details">
-
-<p>
-<strong>Genre:</strong>
-${game.genre}
-</p>
-
-<p>
-<strong>Platform:</strong>
-${game.platform}
-</p>
-
-<p>
-<strong>Game:</strong>
-${game.name}
-</p>
-
-</div>
+    }
 
 
-<a
-class="download"
-href="#"
-onclick="alert('Add your legally distributable game file here.'); return false;"
->
-⬇ Download
-</a>
+    /*
+    ================================================
+    BUILD GAME PAGE
+    ================================================
+    */
+
+    container.innerHTML = `
+
+    <div class="game-page">
+
+        <h1>
+            ${game.name}
+        </h1>
 
 
-</div>
-
-</div>
+        <div class="game-layout">
 
 
-<div class="screenshots">
+            <div class="cover">
 
-<h2>📸 Screenshots</h2>
+                <img
+                    src="${game.image}"
+                    alt="${game.name}"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+                >
 
-<div class="screenshot-grid">
+                <span style="display:none;">
+                    ${game.name}
+                </span>
 
-${screenshotHTML}
-
-</div>
-
-</div>
-
-
-<a class="back" href="index.html">
-← Back to GameBox.exe
-</a>
+            </div>
 
 
-</div>
+            <div>
 
-`;
+                <p class="description">
+                    ${game.description}
+                </p>
+
+
+                <div class="details">
+
+                    <p>
+                        <strong>Genre:</strong>
+                        ${game.genre}
+                    </p>
+
+                    <p>
+                        <strong>Platform:</strong>
+                        ${game.platform}
+                    </p>
+
+                    <p>
+                        <strong>Game:</strong>
+                        ${game.name}
+                    </p>
+
+                </div>
+
+
+                <a
+                    class="download"
+                    href="#"
+                    onclick="alert('Add your legally distributable game file here.'); return false;"
+                >
+                    ⬇ Download
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+        <div class="screenshots">
+
+            <h2>
+                📸 Screenshots
+            </h2>
+
+            <div class="screenshot-grid">
+
+                ${screenshotHTML}
+
+            </div>
+
+        </div>
+
+
+        <a class="back" href="index.html">
+            ← Back to GameBox.exe
+        </a>
+
+
+    </div>
+
+    `;
 
 }
 
