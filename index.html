@@ -1,336 +1,16 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>GameBox.exe</title>
+<meta charset="UTF-8">
 
-    <style>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-        * {
-            box-sizing: border-box;
-        }
+<title>GameBox.exe - Game Archive</title>
 
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #101010;
-            color: white;
-        }
-
-
-        /* =========================
-           HEADER
-        ========================= */
-
-        header {
-            background: #181818;
-            border-bottom: 1px solid #333;
-            padding: 15px 30px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .header-container {
-            max-width: 1300px;
-            margin: auto;
-
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
-
-
-        /* LOGO */
-
-        .logo {
-            height: 70px;
-            width: auto;
-            max-width: 300px;
-            object-fit: contain;
-        }
-
-
-        /* SEARCH */
-
-        .search-container {
-            flex: 1;
-            position: relative;
-        }
-
-        #search {
-            width: 100%;
-            padding: 15px 20px;
-
-            border-radius: 8px;
-            border: 1px solid #444;
-
-            background: #242424;
-            color: white;
-
-            font-size: 16px;
-            outline: none;
-        }
-
-        #search:focus {
-            border-color: #777;
-        }
-
-
-        /* =========================
-           MAIN
-        ========================= */
-
-        main {
-            max-width: 1300px;
-            margin: auto;
-            padding: 40px 25px;
-        }
-
-
-        /* HERO */
-
-        .hero {
-            background: #1a1a1a;
-            border-radius: 12px;
-
-            padding: 45px;
-
-            margin-bottom: 40px;
-
-            border: 1px solid #292929;
-        }
-
-        .hero h1 {
-            margin: 0 0 10px 0;
-            font-size: 40px;
-        }
-
-        .hero p {
-            margin: 0;
-            color: #aaa;
-            font-size: 18px;
-        }
-
-
-        /* =========================
-           CATEGORIES
-        ========================= */
-
-        .categories {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-
-            margin-top: 30px;
-        }
-
-        .category {
-            background: #292929;
-
-            color: white;
-
-            padding: 11px 18px;
-
-            border-radius: 7px;
-
-            text-decoration: none;
-
-            cursor: pointer;
-
-            border: none;
-
-            font-size: 14px;
-        }
-
-        .category:hover {
-            background: #3a3a3a;
-        }
-
-
-        /* =========================
-           GAME SECTION
-        ========================= */
-
-        .section-title {
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-
-
-        /* GAME GRID */
-
-        .games {
-            display: grid;
-
-            grid-template-columns:
-                repeat(auto-fill, minmax(200px, 1fr));
-
-            gap: 22px;
-        }
-
-
-        /* GAME CARD */
-
-        .game {
-            background: #1a1a1a;
-
-            border-radius: 10px;
-
-            overflow: hidden;
-
-            text-decoration: none;
-
-            color: white;
-
-            border: 1px solid #292929;
-
-            transition:
-                transform 0.2s,
-                border-color 0.2s,
-                background 0.2s;
-        }
-
-        .game:hover {
-            transform: translateY(-6px);
-
-            background: #202020;
-
-            border-color: #555;
-        }
-
-
-        /* GAME IMAGE */
-
-        .game-cover {
-            width: 100%;
-
-            height: 280px;
-
-            background: #292929;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            text-align: center;
-
-            color: #777;
-
-            font-size: 15px;
-
-            padding: 20px;
-        }
-
-
-        /* GAME INFO */
-
-        .game-info {
-            padding: 17px;
-        }
-
-        .game-info h3 {
-            margin: 0 0 8px 0;
-
-            font-size: 18px;
-        }
-
-        .game-info p {
-            margin: 0;
-
-            color: #999;
-
-            font-size: 14px;
-        }
-
-
-        /* NO RESULTS */
-
-        #noResults {
-            display: none;
-
-            text-align: center;
-
-            padding: 60px 20px;
-
-            color: #888;
-
-            font-size: 18px;
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            margin-top: 70px;
-
-            background: #181818;
-
-            border-top: 1px solid #333;
-
-            padding: 30px;
-
-            text-align: center;
-
-            color: #777;
-        }
-
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 700px) {
-
-            header {
-                padding: 15px;
-            }
-
-            .header-container {
-                flex-direction: column;
-
-                align-items: stretch;
-
-                gap: 15px;
-            }
-
-            .logo {
-                width: 100%;
-
-                height: 70px;
-
-                object-fit: contain;
-            }
-
-            .hero {
-                padding: 30px 25px;
-            }
-
-            .hero h1 {
-                font-size: 30px;
-            }
-
-            .games {
-                grid-template-columns:
-                    repeat(2, 1fr);
-
-                gap: 12px;
-            }
-
-            .game-cover {
-                height: 220px;
-            }
-
-        }
-
-    </style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -338,37 +18,27 @@
 <body>
 
 
-<!-- =========================
-     HEADER
-========================= -->
-
 <header>
 
-    <div class="header-container">
+    <div class="header">
 
+        <a href="index.html" class="logo-link">
 
-        <!-- GAMEBOX IMAGE -->
-
-        <img
-            src="Drawing-68.sketchpad.jpeg"
-            class="logo"
-            alt="GameBox"
-        >
-
-
-        <!-- SEARCH BAR -->
-
-        <div class="search-container">
-
-            <input
-                type="text"
-                id="search"
-                placeholder="🔎 Search games..."
-                autocomplete="off"
+            <img
+                src="Drawing-68.sketchpad.jpeg"
+                class="logo"
+                alt="GameBox.exe"
             >
 
-        </div>
+        </a>
 
+
+        <input
+            type="text"
+            id="search"
+            class="search"
+            placeholder="🔎 Search games..."
+        >
 
     </div>
 
@@ -376,316 +46,635 @@
 
 
 
-<!-- =========================
-     MAIN PAGE
-========================= -->
-
 <main>
 
 
-    <!-- HERO -->
+<section class="hero">
 
-    <section class="hero">
+    <h1>GameBox.exe</h1>
 
-        <h1>GameBox.exe</h1>
-
-        <p>
-            Browse the GameBox game archive.
-        </p>
+    <p>
+        Browse the GameBox game archive.
+    </p>
 
 
-        <!-- CATEGORIES -->
+    <div class="categories">
 
-        <div class="categories">
+        <button onclick="filterGames('all')">
+            All Games
+        </button>
 
-            <button
-                class="category"
-                onclick="filterCategory('all')"
-            >
-                All Games
-            </button>
+        <button onclick="filterGames('gta')">
+            GTA
+        </button>
 
-            <button
-                class="category"
-                onclick="filterCategory('action')"
-            >
-                Action
-            </button>
+        <button onclick="filterGames('spiderman')">
+            Spider-Man
+        </button>
 
-            <button
-                class="category"
-                onclick="filterCategory('horror')"
-            >
-                Horror
-            </button>
+        <button onclick="filterGames('fnaf')">
+            FNAF
+        </button>
 
-            <button
-                class="category"
-                onclick="filterCategory('adventure')"
-            >
-                Adventure
-            </button>
+        <button onclick="filterGames('horror')">
+            Horror
+        </button>
 
-            <button
-                class="category"
-                onclick="filterCategory('racing')"
-            >
-                Racing
-            </button>
+        <button onclick="filterGames('tombraider')">
+            Tomb Raider
+        </button>
 
-            <button
-                class="category"
-                onclick="filterCategory('calm')"
-            >
-                Calm
-            </button>
+        <button onclick="filterGames('marvel')">
+            Marvel
+        </button>
 
-        </div>
+        <button onclick="filterGames('shrek')">
+            Shrek
+        </button>
 
-    </section>
-
-
-
-    <!-- GAME LIST -->
-
-    <h2 class="section-title">
-        🎮 Games
-    </h2>
-
-
-    <div
-        class="games"
-        id="gameList"
-    >
-
-
-        <!-- GTA -->
-
-        <a
-            class="game"
-            href="#"
-            data-name="GTA"
-            data-category="action"
-        >
-
-            <div class="game-cover">
-                GTA
-            </div>
-
-            <div class="game-info">
-
-                <h3>GTA</h3>
-
-                <p>
-                    Action • Windows
-                </p>
-
-            </div>
-
-        </a>
-
-
-
-        <!-- BORIS -->
-
-        <a
-            class="game"
-            href="boris-and-the-dark-survival.html"
-            data-name="Boris and the Dark Survival"
-            data-category="horror"
-        >
-
-            <div class="game-cover">
-                Boris and the Dark Survival
-            </div>
-
-            <div class="game-info">
-
-                <h3>
-                    Boris and the Dark Survival
-                </h3>
-
-                <p>
-                    Horror • Windows
-                </p>
-
-            </div>
-
-        </a>
-
-
-
-        <!-- SPIDER-MAN -->
-
-        <a
-            class="game"
-            href="#"
-            data-name="Spider-Man Web of Shadows"
-            data-category="action"
-        >
-
-            <div class="game-cover">
-                Spider-Man: Web of Shadows
-            </div>
-
-            <div class="game-info">
-
-                <h3>
-                    Spider-Man: Web of Shadows
-                </h3>
-
-                <p>
-                    Action • Windows
-                </p>
-
-            </div>
-
-        </a>
-
+        <button onclick="filterGames('hello')">
+            Hello Neighbor
+        </button>
 
     </div>
 
+</section>
 
 
-    <!-- NO SEARCH RESULTS -->
 
-    <div id="noResults">
+<h2>🎮 Games</h2>
 
-        No games found.
 
+<div id="gameGrid" class="game-grid">
+
+
+<!-- GTA -->
+
+<div class="game-card"
+data-name="GTA 1"
+data-category="gta"
+onclick="openGame('gta-1')">
+
+    <div class="game-image">
+        GTA 1
     </div>
+
+    <h3>GTA 1</h3>
+
+    <p>Action • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="GTA 2"
+data-category="gta"
+onclick="openGame('gta-2')">
+
+    <div class="game-image">
+        GTA 2
+    </div>
+
+    <h3>GTA 2</h3>
+
+    <p>Action • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="GTA 3"
+data-category="gta"
+onclick="openGame('gta-3')">
+
+    <div class="game-image">
+        GTA 3
+    </div>
+
+    <h3>GTA 3</h3>
+
+    <p>Action • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="GTA Vice City"
+data-category="gta"
+onclick="openGame('gta-vice-city')">
+
+    <div class="game-image">
+        GTA Vice City
+    </div>
+
+    <h3>GTA Vice City</h3>
+
+    <p>Action • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="GTA London"
+data-category="gta"
+onclick="openGame('gta-london')">
+
+    <div class="game-image">
+        GTA London
+    </div>
+
+    <h3>GTA London</h3>
+
+    <p>Action • Windows</p>
+
+</div>
+
+
+
+<!-- SPIDER-MAN -->
+
+<div class="game-card"
+data-name="Spider-Man 2000"
+data-category="spiderman"
+onclick="openGame('spider-man-2000')">
+
+    <div class="game-image">
+        Spider-Man 2000
+    </div>
+
+    <h3>Spider-Man 2000</h3>
+
+    <p>Action • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Spider-Man The Movie Game"
+data-category="spiderman"
+onclick="openGame('spider-man-movie')">
+
+    <div class="game-image">
+        Spider-Man: The Movie Game
+    </div>
+
+    <h3>Spider-Man: The Movie Game</h3>
+
+    <p>Action • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Spider-Man 2 Enter Electro"
+data-category="spiderman"
+onclick="openGame('spider-man-enter-electro')">
+
+    <div class="game-image">
+        Spider-Man 2
+    </div>
+
+    <h3>Spider-Man 2: Enter Electro</h3>
+
+    <p>Action • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Spider-Man 3"
+data-category="spiderman"
+onclick="openGame('spider-man-3')">
+
+    <div class="game-image">
+        Spider-Man 3
+    </div>
+
+    <h3>Spider-Man 3</h3>
+
+    <p>Action • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Ultimate Spider-Man"
+data-category="spiderman"
+onclick="openGame('ultimate-spider-man')">
+
+    <div class="game-image">
+        Ultimate Spider-Man
+    </div>
+
+    <h3>Ultimate Spider-Man</h3>
+
+    <p>Action • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Spider-Man Friend or Foe"
+data-category="spiderman"
+onclick="openGame('spider-man-friend-or-foe')">
+
+    <div class="game-image">
+        Spider-Man Friend or Foe
+    </div>
+
+    <h3>Spider-Man: Friend or Foe</h3>
+
+    <p>Action • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Spider-Man Web of Shadows"
+data-category="spiderman"
+onclick="openGame('spider-man-web-of-shadows')">
+
+    <div class="game-image">
+        Spider-Man Web of Shadows
+    </div>
+
+    <h3>Spider-Man: Web of Shadows</h3>
+
+    <p>Action • Windows</p>
+
+</div>
+
+
+
+<!-- FNAF -->
+
+<div class="game-card"
+data-name="FNAF UCN"
+data-category="fnaf"
+onclick="openGame('fnaf-ucn')">
+
+    <div class="game-image">
+        FNAF UCN
+    </div>
+
+    <h3>FNAF: Ultimate Custom Night</h3>
+
+    <p>Horror • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="FNAF Pizza Sim"
+data-category="fnaf"
+onclick="openGame('fnaf-pizza-sim')">
+
+    <div class="game-image">
+        FNAF Pizza Sim
+    </div>
+
+    <h3>FNAF: Pizza Simulator</h3>
+
+    <p>Horror • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="FNAF World"
+data-category="fnaf"
+onclick="openGame('fnaf-world')">
+
+    <div class="game-image">
+        FNAF World
+    </div>
+
+    <h3>FNAF World</h3>
+
+    <p>Adventure • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Freddy in Space 2"
+data-category="fnaf"
+onclick="openGame('freddy-in-space-2')">
+
+    <div class="game-image">
+        Freddy in Space 2
+    </div>
+
+    <h3>Freddy in Space 2</h3>
+
+    <p>Action • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Boris and the Dark Survival"
+data-category="horror"
+onclick="openGame('boris-and-the-dark-survival')">
+
+    <div class="game-image">
+        Boris
+    </div>
+
+    <h3>Boris and the Dark Survival</h3>
+
+    <p>Horror • Windows</p>
+
+</div>
+
+
+
+<!-- TOMB RAIDER -->
+
+<div class="game-card"
+data-name="Tomb Raider 2"
+data-category="tombraider"
+onclick="openGame('tomb-raider-2')">
+
+    <div class="game-image">
+        Tomb Raider 2
+    </div>
+
+    <h3>Tomb Raider 2</h3>
+
+    <p>Adventure • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Tomb Raider 3"
+data-category="tombraider"
+onclick="openGame('tomb-raider-3')">
+
+    <div class="game-image">
+        Tomb Raider 3
+    </div>
+
+    <h3>Tomb Raider 3</h3>
+
+    <p>Adventure • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Tomb Raider 4"
+data-category="tombraider"
+onclick="openGame('tomb-raider-4')">
+
+    <div class="game-image">
+        Tomb Raider 4
+    </div>
+
+    <h3>Tomb Raider 4</h3>
+
+    <p>Adventure • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Tomb Raider 5"
+data-category="tombraider"
+onclick="openGame('tomb-raider-5')">
+
+    <div class="game-image">
+        Tomb Raider 5
+    </div>
+
+    <h3>Tomb Raider 5</h3>
+
+    <p>Adventure • Windows</p>
+
+</div>
+
+
+
+<!-- HORROR -->
+
+<div class="game-card"
+data-name="Resident Evil 1"
+data-category="horror"
+onclick="openGame('resident-evil-1')">
+
+    <div class="game-image">
+        Resident Evil
+    </div>
+
+    <h3>Resident Evil 1</h3>
+
+    <p>Horror • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Resident Evil 2"
+data-category="horror"
+onclick="openGame('resident-evil-2')">
+
+    <div class="game-image">
+        Resident Evil 2
+    </div>
+
+    <h3>Resident Evil 2</h3>
+
+    <p>Horror • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Resident Evil 3 Nemesis"
+data-category="horror"
+onclick="openGame('resident-evil-3')">
+
+    <div class="game-image">
+        Resident Evil 3
+    </div>
+
+    <h3>Resident Evil 3: Nemesis</h3>
+
+    <p>Horror • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Silent Hill 2"
+data-category="horror"
+onclick="openGame('silent-hill-2')">
+
+    <div class="game-image">
+        Silent Hill 2
+    </div>
+
+    <h3>Silent Hill 2</h3>
+
+    <p>Horror • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Silent Hill 3"
+data-category="horror"
+onclick="openGame('silent-hill-3')">
+
+    <div class="game-image">
+        Silent Hill 3
+    </div>
+
+    <h3>Silent Hill 3</h3>
+
+    <p>Horror • Windows</p>
+
+</div>
+
+
+
+</div>
+
+
+<div id="noResults">
+
+    No games found.
+
+</div>
 
 
 </main>
 
 
 
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer>
 
-    GameBox.exe © 2026
+GameBox.exe © 2026
 
 </footer>
 
 
 
-<!-- =========================
-     SEARCH + FILTER
-========================= -->
-
 <script>
 
-const searchBox =
-    document.getElementById("search");
 
-const games =
-    document.querySelectorAll(".game");
-
-const noResults =
-    document.getElementById("noResults");
+const search =
+document.getElementById("search");
 
 
-
-/* SEARCH */
-
-searchBox.addEventListener("input", function() {
-
-    const search =
-        searchBox.value
-        .toLowerCase()
-        .trim();
-
-    let visibleGames = 0;
+const cards =
+document.querySelectorAll(".game-card");
 
 
-    games.forEach(function(game) {
+search.addEventListener("input", function() {
+
+    const text =
+    search.value.toLowerCase();
+
+
+    let found = false;
+
+
+    cards.forEach(function(card) {
 
         const name =
-            game
-            .getAttribute("data-name")
-            .toLowerCase();
+        card.dataset.name.toLowerCase();
 
 
-        if (name.includes(search)) {
+        if(name.includes(text)) {
 
-            game.style.display = "block";
+            card.style.display = "block";
 
-            visibleGames++;
+            found = true;
 
         } else {
 
-            game.style.display = "none";
+            card.style.display = "none";
 
         }
 
     });
 
 
-    if (visibleGames === 0) {
-
-        noResults.style.display = "block";
-
-    } else {
-
-        noResults.style.display = "none";
-
-    }
+    document.getElementById("noResults").style.display =
+    found ? "none" : "block";
 
 });
 
 
 
-/* CATEGORY FILTER */
+function filterGames(category) {
 
-function filterCategory(category) {
+    search.value = "";
 
-    searchBox.value = "";
-
-    let visibleGames = 0;
+    let found = false;
 
 
-    games.forEach(function(game) {
+    cards.forEach(function(card) {
 
-        const gameCategory =
-            game.getAttribute("data-category");
-
-
-        if (
+        if(
             category === "all" ||
-            gameCategory === category
+            card.dataset.category === category
         ) {
 
-            game.style.display = "block";
+            card.style.display = "block";
 
-            visibleGames++;
+            found = true;
 
         } else {
 
-            game.style.display = "none";
+            card.style.display = "none";
 
         }
 
     });
 
 
-    if (visibleGames === 0) {
-
-        noResults.style.display = "block";
-
-    } else {
-
-        noResults.style.display = "none";
-
-    }
+    document.getElementById("noResults").style.display =
+    found ? "none" : "block";
 
 }
+
+
+
+function openGame(game) {
+
+    window.location.href =
+    "games.html?game=" + game;
+
+}
+
 
 </script>
 
 
 </body>
+
 </html>
-```
