@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Grand Theft Auto - GameBox</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #111;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* HEADER */
+        header {
+            background: #1b1b1b;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #333;
+        }
+
+        header h1 {
+            font-size: 28px;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            background: #2b2b2b;
+            padding: 10px 18px;
+            border-radius: 7px;
+        }
+
+        header a:hover {
+            background: #3b3b3b;
+        }
+
+        /* MAIN GAME CONTAINER */
+        .game-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 25px;
+        }
+
+        /* GAME TOP SECTION */
+        .game-top {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            background: #1b1b1b;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        /* POSTER */
+        .poster {
+            width: 300px;
+            height: 450px;
+            object-fit: contain;
+            border-radius: 10px;
+            background: #0b0b0b;
+        }
+
+        /* GAME INFORMATION */
+        .game-info {
+            flex: 1;
+        }
+
+        .game-info h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .game-info p {
+            color: #ccc;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .info-list {
+            margin-top: 20px;
+            line-height: 2;
+        }
+
+        .info-list strong {
+            color: white;
+        }
+
+        /* DOWNLOAD BUTTON */
+        .download-button {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 15px 30px;
+            background: #ffffff;
+            color: #111;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .download-button:hover {
+            transform: scale(1.05);
+            background: #ddd;
+        }
+
+        /* SECTIONS */
+        .section {
+            margin-top: 40px;
+            background: #1b1b1b;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            color: #ccc;
+            line-height: 1.8;
+        }
+
+        /* SCREENSHOTS */
+        .screenshots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .screenshots img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            border-radius: 10px;
+            background: #0b0b0b;
+            transition: 0.2s;
+        }
+
+        .screenshots img:hover {
+            transform: scale(1.02);
+        }
+
+        /* SYSTEM REQUIREMENTS */
+        .requirements {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .requirements div {
+            background: #111;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .requirements h3 {
+            margin-bottom: 15px;
+        }
+
+        .requirements p {
+            line-height: 1.8;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #777;
+        }
+
+        /* MOBILE */
+        @media (max-width: 750px) {
+
+            header {
+                padding: 20px;
+            }
+
+            .game-top {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .poster {
+                width: 250px;
+                height: 375px;
+            }
+
+            .game-info {
+                width: 100%;
+            }
+
+            .game-info h2 {
+                font-size: 30px;
+            }
+
+            .requirements {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <h1>GameBox</h1>
+
+        <a href="games.html">
+            ← Back to Games
+        </a>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main class="game-container">
+
+
+        <!-- GAME INFORMATION -->
+        <section class="game-top">
+
+            <!-- POSTER -->
+            <img
+                src="images/images (54).jpg"
+                alt="Grand Theft Auto poster"
+                class="poster"
+            >
+
+
+            <!-- DETAILS -->
+            <div class="game-info">
+
+                <h2>Grand Theft Auto</h2>
+
+                <p>
+                    Grand Theft Auto is an open-world action game
+                    developed by DMA Design and released in 1997.
+                </p>
+
+                <div class="info-list">
+
+                    <p>
+                        <strong>Release Date:</strong>
+                        1997
+                    </p>
+
+                    <p>
+                        <strong>Developer:</strong>
+                        DMA Design
+                    </p>
+
+                    <p>
+                        <strong>Publisher:</strong>
+                        Rockstar Games
+                    </p>
+
+                    <p>
+                        <strong>Platform:</strong>
+                        PC
+                    </p>
+
+                    <p>
+                        <strong>Genre:</strong>
+                        Action / Open World
+                    </p>
+
+                </div>
+
+
+                <!-- DOWNLOAD -->
+                <a
+                    href="downloads/gta-1.zip"
+                    class="download-button"
+                    download
+                >
+                    Download
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- DESCRIPTION -->
+        <section class="section">
+
+            <h2>About This Game</h2>
+
+            <p>
+                Grand Theft Auto is the first game in the Grand Theft Auto
+                series. Players explore cities, complete missions, steal
+                vehicles and earn money while trying to build their criminal
+                reputation.
+            </p>
+
+            <br>
+
+            <p>
+                This page contains information about the PC version of
+                Grand Theft Auto.
+            </p>
+
+        </section>
+
+
+
+        <!-- SCREENSHOTS -->
+        <section class="section">
+
+            <h2>Screenshots</h2>
+
+            <div class="screenshots">
+
+                <img
+                    src="images/grand-theft-auto.png"
+                    alt="Grand Theft Auto screenshot 1"
+                >
+
+                <img
+                    src="images/images (53).jpg"
+                    alt="Grand Theft Auto screenshot 2"
+                >
+
+                <img
+                    src="images/images (55).jpg"
+                    alt="Grand Theft Auto screenshot 3"
+                >
+
+                <img
+                    src="images/gta-1-screenshot-4.jpg"
+                    alt="Grand Theft Auto screenshot 4"
+                >
+
+            </div>
+
+        </section>
+
+
+
+        <!-- SYSTEM REQUIREMENTS -->
+        <section class="section">
+
+            <h2>System Requirements</h2>
+
+            <div class="requirements">
+
+                <div>
+
+                    <h3>Minimum</h3>
+
+                    <p>
+                        <strong>OS:</strong> Windows<br>
+                        <strong>Processor:</strong> Pentium-class CPU<br>
+                        <strong>Memory:</strong> 16 MB RAM<br>
+                        <strong>Storage:</strong> 100 MB<br>
+                        <strong>Graphics:</strong> Compatible graphics card
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h3>Recommended</h3>
+
+                    <p>
+                        <strong>OS:</strong> Windows<br>
+                        <strong>Processor:</strong> Pentium II or better<br>
+                        <strong>Memory:</strong> 32 MB RAM<br>
+                        <strong>Storage:</strong> 200 MB<br>
+                        <strong>Graphics:</strong> Compatible graphics card
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- GAME DETAILS -->
+        <section class="section">
+
+            <h2>Game Details</h2>
+
+            <p>
+                <strong>Title:</strong> Grand Theft Auto
+            </p>
+
+            <p>
+                <strong>Series:</strong> Grand Theft Auto
+            </p>
+
+            <p>
+                <strong>Year:</strong> 1997
+            </p>
+
+            <p>
+                <strong>Platform:</strong> PC
+            </p>
+
+            <p>
+                <strong>Genre:</strong> Action
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>GameBox.exe</p>
+
+        <p>© 2026 GameBox</p>
+
+    </footer>
+
+</body>
+</html>
