@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Five Nights At Freddy's: Core Collection - GameBox</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #111;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header {
+            background: #1b1b1b;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #333;
+        }
+
+        header h1 {
+            font-size: 28px;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            background: #2b2b2b;
+            padding: 10px 18px;
+            border-radius: 7px;
+        }
+
+        header a:hover {
+            background: #3b3b3b;
+        }
+
+        .game-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 25px;
+        }
+
+        .game-top {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            background: #1b1b1b;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .poster {
+            width: 300px;
+            height: 450px;
+            object-fit: contain;
+            border-radius: 10px;
+            background: #0b0b0b;
+        }
+
+        .game-info {
+            flex: 1;
+        }
+
+        .game-info h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .game-info p {
+            color: #ccc;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .info-list {
+            margin-top: 20px;
+            line-height: 2;
+        }
+
+        .info-list strong {
+            color: white;
+        }
+
+        .download-button {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 15px 30px;
+            background: #ffffff;
+            color: #111;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .download-button:hover {
+            transform: scale(1.05);
+            background: #ddd;
+        }
+
+        .section {
+            margin-top: 40px;
+            background: #1b1b1b;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            color: #ccc;
+            line-height: 1.8;
+        }
+
+        .screenshots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .screenshots img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            border-radius: 10px;
+            background: #0b0b0b;
+            transition: 0.2s;
+        }
+
+        .screenshots img:hover {
+            transform: scale(1.02);
+        }
+
+        .requirements {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .requirements div {
+            background: #111;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .requirements h3 {
+            margin-bottom: 15px;
+        }
+
+        .requirements p {
+            line-height: 1.8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #777;
+        }
+
+        @media (max-width: 750px) {
+
+            header {
+                padding: 20px;
+            }
+
+            .game-top {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .poster {
+                width: 250px;
+                height: 375px;
+            }
+
+            .game-info {
+                width: 100%;
+            }
+
+            .game-info h2 {
+                font-size: 30px;
+            }
+
+            .requirements {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <h1>GameBox</h1>
+
+        <!-- ../ goes back out of the games folder -->
+        <a href="../games.html">
+            ← Back to Games
+        </a>
+
+    </header>
+
+
+    <main class="game-container">
+
+
+        <!-- GAME INFORMATION -->
+        <section class="game-top">
+
+            <!-- POSTER -->
+            <img
+                src="../images/simpsons hit and run.jpg"
+                alt="Family Guy: Back to the Multiverse"
+                class="poster"
+            >
+
+
+            <div class="game-info">
+
+                <h2> Family Guy: Back to the Multiverse</h2>
+
+                <p>
+                    Family Guy: Back to the Multiverse is a game made in 2012. It Follows
+                    the story of The Griffins.
+                </p>
+
+                <div class="info-list">
+
+                    <p>
+                        <strong>Release Date:</strong>
+                        2012
+                    </p>
+
+                    <p>
+                        <strong>Developer:</strong>
+                        Radical Entertainment
+                    </p>
+
+                    <p>
+                        <strong>Publisher:</strong>
+                        Activision
+                    </p>
+
+                    <p>
+                        <strong>Platform:</strong>
+                        PC
+                    </p>
+
+                    <p>
+                        <strong>Genre:</strong>
+                        Action
+                    </p>
+
+                </div>
+
+
+                <!-- DOWNLOAD -->
+                <a
+                    href="https://drive.google.com/file/d/1URntVJ75SZ-wWeruPZ00z4QHW0UEKVhC/view?usp=sharing"
+                    class="download-button"
+                >
+                    Download
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- DESCRIPTION -->
+        <section class="section">
+
+            <h2>About This Game</h2>
+
+            <p>
+                The Simpsons: Hit & Run is an open-world action-adventure game based on the popular animated series The Simpsons. 
+                Play as Homer, Bart, Lisa, Marge, and Apu as you explore Springfield, complete missions, drive various vehicles,
+                and uncover a mysterious conspiracy involving surveillance, strange black sedans, and a new cola drink.
+
+                Featuring driving, exploration, combat, and plenty of classic Simpsons humor, Hit & Run lets you experience 
+                Springfield like never before.
+
+
+
+            </p>
+
+            <br>
+
+            <p>
+                This page contains information about the PC version of
+                Family Guy: Back to the Multiverse
+            </p>
+
+        </section>
+
+
+
+        <!-- SCREENSHOTS -->
+        <section class="section">
+
+            <h2>Screenshots</h2>
+
+            <div class="screenshots">
+
+                <img
+                    src="../images/simpsons hit screen1.jpg"
+                    alt="Family Guy: Back to the Multiverse screenshot 1"
+                >
+
+                <img
+                    src="../images/simpsons hit screen2.jpg"
+                    alt="Family Guy: Back to the Multiverse screenshot 2"
+                >
+
+                <img
+                    src="../images/simpsons hit screen3.jpg"
+                    alt="Family Guy: Back to the Multiverse screenshot 3"
+                >
+
+                <img
+                    src="../images/simpsons hit screen4.jpg"
+                    alt="Family Guy: Back to the Multiverse screenshot 4"
+                >
+
+            </div>
+
+        </section>
+
+
+
+<!-- SYSTEM REQUIREMENTS -->
+<section class="section">
+
+    <h2>System Requirements</h2>
+
+    <div class="requirements">
+
+        <div>
+            <h3>Minimum</h3>
+
+            <p>
+                <strong>OS:</strong> Windows 98 / ME / 2000 / XP<br>
+                <strong>Processor:</strong> Pentium III 700 MHz<br>
+                <strong>Memory:</strong> 192 MB RAM<br>
+                <strong>Storage:</strong> 2.2 GB available space<br>
+                <strong>Graphics:</strong> 32 MB DirectX 8.1 compatible graphics card<br>
+                <strong>DirectX:</strong> Version 8.1<br>
+                <strong>Sound:</strong> DirectX compatible sound card
+            </p>
+        </div>
+
+        <div>
+            <h3>Recommended</h3>
+
+            <p>
+                <strong>OS:</strong> Windows XP<br>
+                <strong>Processor:</strong> Pentium 4 1.4 GHz or better<br>
+                <strong>Memory:</strong> 256 MB RAM<br>
+                <strong>Storage:</strong> 2.2 GB available space<br>
+                <strong>Graphics:</strong> 64 MB DirectX 8.1 compatible graphics card<br>
+                <strong>DirectX:</strong> Version 9.0<br>
+                <strong>Sound:</strong> DirectX compatible sound card
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+        <!-- GAME DETAILS -->
+        <section class="section">
+
+            <h2>Game Details</h2>
+
+            <p>
+                <strong>Title:</strong> Family Guy: Back to the Multiverse
+            </p>
+
+            <p>
+                <strong>Series:</strong> Family Guy: Back to the Multiverse
+            </p>
+
+            <p>
+                <strong>Year:</strong> 2012
+            </p>
+
+            <p>
+                <strong>Platform:</strong> PC
+            </p>
+
+            <p>
+                <strong>Genre:</strong> Action
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+
+    <footer>
+
+        <p>GameBox.exe</p>
+
+        <p>© 2026 GameBox</p>
+
+    </footer>
+
+</body>
+</html>
