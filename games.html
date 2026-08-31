@@ -33,6 +33,7 @@ header {
 .header {
     max-width: 1200px;
     margin: auto;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,6 +55,7 @@ header {
     color: white;
 }
 
+
 /* MAIN */
 
 main {
@@ -67,147 +69,170 @@ h1 {
     margin-top: 0;
 }
 
-.subtitle {
-    color: #999;
-    margin-bottom: 30px;
-}
 
 /* SEARCH */
 
 .search {
     width: 100%;
-    padding: 15px 18px;
+    padding: 15px;
+
     margin-bottom: 30px;
 
-    background: #242424;
-    border: 1px solid #444;
+    background: #1b1b1b;
+    border: 1px solid #333;
     border-radius: 8px;
 
     color: white;
+
     font-size: 16px;
+
     outline: none;
 }
 
 .search:focus {
-    border-color: #2878ff;
+    border-color: #666;
 }
 
-.search::placeholder {
-    color: #777;
-}
 
 /* GAME GRID */
 
-.game-grid {
+.games-grid {
+
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(180px, 1fr));
+
+    gap: 25px;
 }
+
 
 /* GAME CARD */
 
-.game-card {
+.game {
+
     background: #1b1b1b;
+
     border-radius: 10px;
+
     overflow: hidden;
 
     text-decoration: none;
+
     color: white;
 
     transition:
         transform 0.2s,
         background 0.2s;
+
 }
 
-.game-card:hover {
-    transform: translateY(-5px);
+.game:hover {
+
+    transform: translateY(-6px);
+
     background: #242424;
+
 }
 
-/* GAME IMAGE */
 
-.game-image {
+/* POSTER */
+
+.poster {
+
     width: 100%;
-    height: 260px;
+
+    aspect-ratio: 3 / 4;
+
     background: #292929;
+
     overflow: hidden;
+
 }
 
-.game-image img {
+.poster img {
+
     width: 100%;
+
     height: 100%;
+
     object-fit: cover;
+
     display: block;
+
 }
 
-/* GAME INFO */
 
-.game-info {
-    padding: 18px;
-}
+/* GAME NAME */
 
 .game-name {
-    font-size: 18px;
+
+    padding: 15px;
+
     font-weight: bold;
-    margin-bottom: 8px;
+
+    font-size: 16px;
+
 }
 
-.game-genre {
-    color: #888;
-    font-size: 14px;
-}
 
 /* NO RESULTS */
 
 .no-results {
+
     display: none;
+
     color: #777;
-    text-align: center;
-    padding: 50px;
+
+    padding: 30px 0;
+
 }
+
 
 /* FOOTER */
 
 footer {
+
     margin-top: 60px;
+
     padding: 30px;
+
     text-align: center;
+
     color: #777;
+
     background: #1b1b1b;
+
 }
+
 
 /* MOBILE */
-
-@media(max-width: 900px) {
-
-    .game-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-}
 
 @media(max-width: 700px) {
 
     .header {
+
         flex-direction: column;
-        gap: 15px;
+
         align-items: flex-start;
+
+        gap: 15px;
+
     }
 
-    .game-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .games-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 15px;
+
     }
 
     h1 {
+
         font-size: 32px;
-    }
 
-}
-
-@media(max-width: 450px) {
-
-    .game-grid {
-        grid-template-columns: 1fr;
     }
 
 }
@@ -219,6 +244,8 @@ footer {
 
 <body>
 
+
+<!-- HEADER -->
 
 <header>
 
@@ -237,1583 +264,1769 @@ footer {
 </header>
 
 
-<main>
+<!-- MAIN -->
 
+<main>
 
 <h1>Games</h1>
 
-<p class="subtitle">
-Browse the GameBox.exe archive.
-</p>
 
+<!-- SEARCH -->
 
 <input
     type="text"
     id="search"
     class="search"
     placeholder="Search games..."
-    autocomplete="off"
 >
 
 
-<div class="game-grid" id="gameGrid">
+<!-- GAME LIST -->
+
+<div class="games-grid" id="gamesGrid">
 
 
-<!-- GTA -->
+<!-- A DIFFICULT GAME ABOUT CLIMBING -->
 
-<a class="game-card"
-   href="games/gta-1.html"
-   data-name="Grand Theft Auto">
+<a
+    class="game"
+    href="games/a-difficult-game-about-climbing.html"
+    data-name="A Difficult Game About Climbing"
+>
 
-    <div class="game-image">
-        <img
-            src="images/images (54).jpg"
-            alt="Grand Theft Auto"
-        >
-    </div>
+<div class="poster">
 
-    <div class="game-info">
+<img
+    src="images/adgac.jpg"
+    alt="A Difficult Game About Climbing"
+>
 
-        <div class="game-name">
-            Grand Theft Auto
-        </div>
+</div>
 
-        <div class="game-genre">
-            Action
-        </div>
-
-    </div>
+<div class="game-name">
+A Difficult Game About Climbing
+</div>
 
 </a>
 
 
-<a class="game-card"
-   href="games/gta-2.html"
-   data-name="Grand Theft Auto 2">
+<!-- AMANDA THE ADVENTURER -->
 
-    <div class="game-image">
-        <img
-            src="images/images (56).jpg"
-            alt="Grand Theft Auto 2"
-        >
-    </div>
+<a
+    class="game"
+    href="games/amanda-the-adventurer.html"
+    data-name="Amanda the Adventurer"
+>
 
-    <div class="game-info">
+<div class="poster">
 
-        <div class="game-name">
-            Grand Theft Auto 2
-        </div>
+<img
+    src="images/amanda.jpg"
+    alt="Amanda the Adventurer"
+>
 
-        <div class="game-genre">
-            Action
-        </div>
+</div>
 
-    </div>
+<div class="game-name">
+Amanda the Adventurer
+</div>
 
 </a>
 
 
-<a class="game-card"
-   href="games/gta-3.html"
-   data-name="Grand Theft Auto III">
+<!-- BAD PARENTING -->
 
-    <div class="game-image">
-        <img
-            src="images/gta-3.jpg"
-            alt="Grand Theft Auto III"
-        >
-    </div>
+<a
+    class="game"
+    href="games/bad-parenting-1-mr-red-face.html"
+    data-name="Bad Parenting 1 Mr Red Face"
+>
 
-    <div class="game-info">
+<div class="poster">
 
-        <div class="game-name">
-            Grand Theft Auto III
-        </div>
+<img
+    src="images/bad parenting.jpg"
+    alt="Bad Parenting 1 Mr Red Face"
+>
 
-        <div class="game-genre">
-            Action
-        </div>
+</div>
 
-    </div>
+<div class="game-name">
+Bad Parenting 1: Mr. Red Face
+</div>
 
 </a>
 
 
-<a class="game-card"
-   href="games/gta-london.html"
-   data-name="Grand Theft Auto London">
+<!-- BALDI -->
 
-    <div class="game-image">
-        <img
-            src="images/gta-london.jpg"
-            alt="Grand Theft Auto London"
-        >
-    </div>
+<a
+    class="game"
+    href="games/baldis-basics-plus.html"
+    data-name="Baldis Basics Plus"
+>
 
-    <div class="game-info">
+<div class="poster">
 
-        <div class="game-name">
-            Grand Theft Auto: London
-        </div>
+<img
+    src="images/baldi plus.jpg"
+    alt="Baldi's Basics Plus"
+>
 
-        <div class="game-genre">
-            Action
-        </div>
+</div>
 
-    </div>
+<div class="game-name">
+Baldi's Basics Plus
+</div>
 
 </a>
 
 
-<a class="game-card"
-   href="games/gta-vice-city.html"
-   data-name="Grand Theft Auto Vice City">
+<!-- BENDY LONE WOLF -->
 
-    <div class="game-image">
-        <img
-            src="images/gta-vice-city.jpg"
-            alt="Grand Theft Auto Vice City"
-        >
-    </div>
+<a
+    class="game"
+    href="games/bendy-lone-wolf.html"
+    data-name="Bendy Lone Wolf"
+>
 
-    <div class="game-info">
+<div class="poster">
 
-        <div class="game-name">
-            Grand Theft Auto: Vice City
-        </div>
+<img
+    src="images/lone wolf.jpg"
+    alt="Bendy Lone Wolf"
+>
 
-        <div class="game-genre">
-            Action
-        </div>
+</div>
 
-    </div>
+<div class="game-name">
+Bendy: Lone Wolf
+</div>
 
 </a>
 
 
-<!-- BENDY -->
+<!-- BORIS -->
 
-<a class="game-card"
-   href="games/bendy-lone-wolf.html"
-   data-name="Bendy Lone Wolf">
+<a
+    class="game"
+    href="games/boris-and-the-dark-survival.html"
+    data-name="Boris and the Dark Survival"
+>
 
-    <div class="game-image">
-        <img
-            src="images/bendy-lone-wolf.jpg"
-            alt="Bendy Lone Wolf"
-        >
-    </div>
+<div class="poster">
 
-    <div class="game-info">
+<img
+    src="images/boris.jpg"
+    alt="Boris and the Dark Survival"
+>
 
-        <div class="game-name">
-            Bendy: Lone Wolf
-        </div>
+</div>
 
-        <div class="game-genre">
-            Horror
-        </div>
-
-    </div>
+<div class="game-name">
+Boris and the Dark Survival
+</div>
 
 </a>
 
 
 <!-- CHOO CHOO CHARLES -->
 
-<a class="game-card"
-   href="games/choo-choo-charles.html"
-   data-name="Choo Choo Charles">
-
-    <div class="game-image">
-        <img
-            src="images/choo-choo-charles.jpg"
-            alt="Choo Choo Charles"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Choo-Choo Charles
-        </div>
-
-        <div class="game-genre">
-            Horror
-        </div>
-
-    </div>
-
-</a>
-
-
-<!-- OTHER GAMES -->
-
-<a class="game-card"
-   href="games/a-difficult-game-about-climbing.html"
-   data-name="A Difficult Game About Climbing">
-
-    <div class="game-image">
-        <img
-            src="images/a-difficult-game-about-climbing.jpg"
-            alt="A Difficult Game About Climbing"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            A Difficult Game About Climbing
-        </div>
-
-        <div class="game-genre">
-            Challenge
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/amanda-the-adventurer.html"
-   data-name="Amanda the Adventurer">
-
-    <div class="game-image">
-        <img
-            src="images/amanda-the-adventurer.jpg"
-            alt="Amanda the Adventurer"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Amanda the Adventurer
-        </div>
-
-        <div class="game-genre">
-            Horror
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/bad-parenting-1-mr-red-face.html"
-   data-name="Bad Parenting 1 Mr Red Face">
-
-    <div class="game-image">
-        <img
-            src="images/bad-parenting-1-mr-red-face.jpg"
-            alt="Bad Parenting 1 Mr Red Face"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Bad Parenting 1: Mr. Red Face
-        </div>
-
-        <div class="game-genre">
-            Horror
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/baldis-basics-plus.html"
-   data-name="Baldis Basics Plus">
-
-    <div class="game-image">
-        <img
-            src="images/baldis-basics-plus.jpg"
-            alt="Baldi's Basics Plus"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Baldi's Basics Plus
-        </div>
-
-        <div class="game-genre">
-            Horror
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/boris-and-the-dark-survival.html"
-   data-name="Boris and the Dark Survival">
-
-    <div class="game-image">
-        <img
-            src="images/boris-and-the-dark-survival.jpg"
-            alt="Boris and the Dark Survival"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Boris and the Dark Survival
-        </div>
-
-        <div class="game-genre">
-            Horror
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/family-guy-back-to-the-multiverse.html"
-   data-name="Family Guy Back to the Multiverse">
-
-    <div class="game-image">
-        <img
-            src="images/family-guy-back-to-the-multiverse.jpg"
-            alt="Family Guy Back to the Multiverse"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Family Guy: Back to the Multiverse
-        </div>
-
-        <div class="game-genre">
-            Action
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/fnaf-core-collection.html"
-   data-name="FNAF Core Collection">
-
-    <div class="game-image">
-        <img
-            src="images/fnaf-core-collection.jpg"
-            alt="FNAF Core Collection"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            FNAF Core Collection
-        </div>
-
-        <div class="game-genre">
-            Horror
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/fnaf-pizza-sim.html"
-   data-name="FNAF Pizza Sim">
-
-    <div class="game-image">
-        <img
-            src="images/fnaf-pizza-sim.jpg"
-            alt="FNAF Pizza Sim"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            FNAF Pizza Sim
-        </div>
-
-        <div class="game-genre">
-            Horror
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/fnaf-the-movie-the-game.html"
-   data-name="FNAF The Movie The Game">
-
-    <div class="game-image">
-        <img
-            src="images/fnaf-the-movie-the-game.jpg"
-            alt="FNAF The Movie The Game"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            FNAF: The Movie The Game
-        </div>
-
-        <div class="game-genre">
-            Horror
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/fnaf-ucn.html"
-   data-name="FNAF UCN">
-
-    <div class="game-image">
-        <img
-            src="images/fnaf-ucn.jpg"
-            alt="FNAF UCN"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            FNAF UCN
-        </div>
-
-        <div class="game-genre">
-            Horror
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/fnaf-world.html"
-   data-name="FNAF World">
-
-    <div class="game-image">
-        <img
-            src="images/fnaf-world.jpg"
-            alt="FNAF World"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            FNAF World
-        </div>
-
-        <div class="game-genre">
-            Adventure
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/five-nights-at-freddys-into-the-pit.html"
-   data-name="Five Nights at Freddys Into the Pit">
-
-    <div class="game-image">
-        <img
-            src="images/five-nights-at-freddys-into-the-pit.jpg"
-            alt="Five Nights at Freddy's Into the Pit"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Five Nights at Freddy's: Into the Pit
-        </div>
-
-        <div class="game-genre">
-            Horror
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/freddy-in-space-2.html"
-   data-name="Freddy in Space 2">
-
-    <div class="game-image">
-        <img
-            src="images/freddy-in-space-2.jpg"
-            alt="Freddy in Space 2"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Freddy in Space 2
-        </div>
-
-        <div class="game-genre">
-            Action
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/garten-of-banban.html"
-   data-name="Garten of Banban">
-
-    <div class="game-image">
-        <img
-            src="images/garten-of-banban.jpg"
-            alt="Garten of Banban"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Garten of Banban
-        </div>
-
-        <div class="game-genre">
-            Horror
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/getting-over-it-with-bennett-foddy.html"
-   data-name="Getting Over It with Bennett Foddy">
-
-    <div class="game-image">
-        <img
-            src="images/getting-over-it-with-bennett-foddy.jpg"
-            alt="Getting Over It with Bennett Foddy"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Getting Over It with Bennett Foddy
-        </div>
-
-        <div class="game-genre">
-            Challenge
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/hello-neighbor.html"
-   data-name="Hello Neighbor">
-
-    <div class="game-image">
-        <img
-            src="images/hello-neighbor.jpg"
-            alt="Hello Neighbor"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Hello Neighbor
-        </div>
-
-        <div class="game-genre">
-            Horror
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/hitman-contracts.html"
-   data-name="Hitman Contracts">
-
-    <div class="game-image">
-        <img
-            src="images/hitman-contracts.jpg"
-            alt="Hitman Contracts"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Hitman: Contracts
-        </div>
-
-        <div class="game-genre">
-            Action
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/iron-man-2008.html"
-   data-name="Iron Man">
-
-    <div class="game-image">
-        <img
-            src="images/iron-man-2008.jpg"
-            alt="Iron Man"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Iron Man
-        </div>
-
-        <div class="game-genre">
-            Action
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/kindergarten.html"
-   data-name="Kindergarten">
-
-    <div class="game-image">
-        <img
-            src="images/kindergarten.jpg"
-            alt="Kindergarten"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Kindergarten
-        </div>
-
-        <div class="game-genre">
-            Adventure
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/kindergarten-2.html"
-   data-name="Kindergarten 2">
-
-    <div class="game-image">
-        <img
-            src="images/kindergarten-2.jpg"
-            alt="Kindergarten 2"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Kindergarten 2
-        </div>
-
-        <div class="game-genre">
-            Adventure
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/manhunt-2.html"
-   data-name="Manhunt 2">
-
-    <div class="game-image">
-        <img
-            src="images/manhunt-2.jpg"
-            alt="Manhunt 2"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Manhunt 2
-        </div>
-
-        <div class="game-genre">
-            Action
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/marvel-ultimate-alliance.html"
-   data-name="Marvel Ultimate Alliance">
-
-    <div class="game-image">
-        <img
-            src="images/marvel-ultimate-alliance.jpg"
-            alt="Marvel Ultimate Alliance"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Marvel: Ultimate Alliance
-        </div>
-
-        <div class="game-genre">
-            Action
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/midnight-club-2.html"
-   data-name="Midnight Club II">
-
-    <div class="game-image">
-        <img
-            src="images/midnight-club-2.jpg"
-            alt="Midnight Club II"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Midnight Club II
-        </div>
-
-        <div class="game-genre">
-            Racing
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/outlast-demo.html"
-   data-name="Outlast Demo">
-
-    <div class="game-image">
-        <img
-            src="images/outlast-demo.jpg"
-            alt="Outlast Demo"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Outlast Demo
-        </div>
-
-        <div class="game-genre">
-            Horror
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/resident-evil-1.html"
-   data-name="Resident Evil">
-
-    <div class="game-image">
-        <img
-            src="images/resident-evil-1.jpg"
-            alt="Resident Evil"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Resident Evil
-        </div>
-
-        <div class="game-genre">
-            Horror
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/resident-evil-2.html"
-   data-name="Resident Evil 2">
-
-    <div class="game-image">
-        <img
-            src="images/resident-evil-2.jpg"
-            alt="Resident Evil 2"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Resident Evil 2
-        </div>
-
-        <div class="game-genre">
-            Horror
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/resident-evil-3-nemesis.html"
-   data-name="Resident Evil 3 Nemesis">
-
-    <div class="game-image">
-        <img
-            src="images/resident-evil-3-nemesis.jpg"
-            alt="Resident Evil 3 Nemesis"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Resident Evil 3: Nemesis
-        </div>
-
-        <div class="game-genre">
-            Horror
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/shrek-2-team-action.html"
-   data-name="Shrek 2 Team Action">
-
-    <div class="game-image">
-        <img
-            src="images/shrek-2-team-action.jpg"
-            alt="Shrek 2 Team Action"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Shrek 2: Team Action
-        </div>
-
-        <div class="game-genre">
-            Family
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/shrek-the-third.html"
-   data-name="Shrek the Third">
-
-    <div class="game-image">
-        <img
-            src="images/shrek-the-third.jpg"
-            alt="Shrek the Third"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Shrek the Third
-        </div>
-
-        <div class="game-genre">
-            Family
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/shrek-forever-after.html"
-   data-name="Shrek Forever After">
-
-    <div class="game-image">
-        <img
-            src="images/shrek-forever-after.jpg"
-            alt="Shrek Forever After"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Shrek Forever After
-        </div>
-
-        <div class="game-genre">
-            Family
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/silent-hill-2.html"
-   data-name="Silent Hill 2">
-
-    <div class="game-image">
-        <img
-            src="images/silent-hill-2.jpg"
-            alt="Silent Hill 2"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Silent Hill 2
-        </div>
-
-        <div class="game-genre">
-            Horror
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/silent-hill-3.html"
-   data-name="Silent Hill 3">
-
-    <div class="game-image">
-        <img
-            src="images/silent-hill-3.jpg"
-            alt="Silent Hill 3"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Silent Hill 3
-        </div>
-
-        <div class="game-genre">
-            Horror
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/simpsons-hit-and-run.html"
-   data-name="The Simpsons Hit and Run">
-
-    <div class="game-image">
-        <img
-            src="images/simpsons-hit-and-run.jpg"
-            alt="The Simpsons Hit and Run"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            The Simpsons: Hit & Run
-        </div>
-
-        <div class="game-genre">
-            Action
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/slendrina.html"
-   data-name="Slendrina">
-
-    <div class="game-image">
-        <img
-            src="images/slendrina.jpg"
-            alt="Slendrina"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Slendrina
-        </div>
-
-        <div class="game-genre">
-            Horror
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/slendrina-the-cellar.html"
-   data-name="Slendrina The Cellar">
-
-    <div class="game-image">
-        <img
-            src="images/slendrina-the-cellar.jpg"
-            alt="Slendrina The Cellar"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Slendrina: The Cellar
-        </div>
-
-        <div class="game-genre">
-            Horror
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/spider-man-2000.html"
-   data-name="Spider Man">
-
-    <div class="game-image">
-        <img
-            src="images/spider-man-2000.jpg"
-            alt="Spider-Man"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Spider-Man
-        </div>
-
-        <div class="game-genre">
-            Action
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/spider-man-3.html"
-   data-name="Spider Man 3">
-
-    <div class="game-image">
-        <img
-            src="images/spider-man-3.jpg"
-            alt="Spider-Man 3"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Spider-Man 3
-        </div>
-
-        <div class="game-genre">
-            Action
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/spider-man-web-of-shadows.html"
-   data-name="Spider Man Web of Shadows">
-
-    <div class="game-image">
-        <img
-            src="images/spider-man-web-of-shadows.jpg"
-            alt="Spider-Man Web of Shadows"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Spider-Man: Web of Shadows
-        </div>
-
-        <div class="game-genre">
-            Action
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/state-of-emergency.html"
-   data-name="State of Emergency">
-
-    <div class="game-image">
-        <img
-            src="images/state-of-emergency.jpg"
-            alt="State of Emergency"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            State of Emergency
-        </div>
-
-        <div class="game-genre">
-            Action
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/tattletail.html"
-   data-name="Tattletail">
-
-    <div class="game-image">
-        <img
-            src="images/tattletail.jpg"
-            alt="Tattletail"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Tattletail
-        </div>
-
-        <div class="game-genre">
-            Horror
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/the-hulk-2003.html"
-   data-name="The Hulk">
-
-    <div class="game-image">
-        <img
-            src="images/the-hulk-2003.jpg"
-            alt="The Hulk"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            The Hulk
-        </div>
-
-        <div class="game-genre">
-            Action
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/the-incredible-hulk.html"
-   data-name="The Incredible Hulk">
-
-    <div class="game-image">
-        <img
-            src="images/the-incredible-hulk.jpg"
-            alt="The Incredible Hulk"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            The Incredible Hulk
-        </div>
-
-        <div class="game-genre">
-            Action
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/the-italian-job-2001.html"
-   data-name="The Italian Job">
-
-    <div class="game-image">
-        <img
-            src="images/the-italian-job-2001.jpg"
-            alt="The Italian Job"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            The Italian Job
-        </div>
-
-        <div class="game-genre">
-            Racing
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/the-punisher.html"
-   data-name="The Punisher">
-
-    <div class="game-image">
-        <img
-            src="images/the-punisher.jpg"
-            alt="The Punisher"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            The Punisher
-        </div>
-
-        <div class="game-genre">
-            Action
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/toy-story-2.html"
-   data-name="Toy Story 2">
-
-    <div class="game-image">
-        <img
-            src="images/toy-story-2.jpg"
-            alt="Toy Story 2"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Toy Story 2
-        </div>
-
-        <div class="game-genre">
-            Family
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/tomb-raider-2.html"
-   data-name="Tomb Raider 2">
-
-    <div class="game-image">
-        <img
-            src="images/tomb-raider-2.jpg"
-            alt="Tomb Raider 2"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Tomb Raider 2
-        </div>
-
-        <div class="game-genre">
-            Adventure
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/tomb-raider-3.html"
-   data-name="Tomb Raider 3">
-
-    <div class="game-image">
-        <img
-            src="images/tomb-raider-3.jpg"
-            alt="Tomb Raider 3"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Tomb Raider 3
-        </div>
-
-        <div class="game-genre">
-            Adventure
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/tomb-raider-4.html"
-   data-name="Tomb Raider 4">
-
-    <div class="game-image">
-        <img
-            src="images/tomb-raider-4.jpg"
-            alt="Tomb Raider 4"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Tomb Raider 4
-        </div>
-
-        <div class="game-genre">
-            Adventure
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/tomb-raider-5.html"
-   data-name="Tomb Raider 5">
-
-    <div class="game-image">
-        <img
-            src="images/tomb-raider-5.jpg"
-            alt="Tomb Raider 5"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Tomb Raider 5
-        </div>
-
-        <div class="game-genre">
-            Adventure
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/ultimate-spider-man.html"
-   data-name="Ultimate Spider Man">
-
-    <div class="game-image">
-        <img
-            src="images/ultimate-spider-man.jpg"
-            alt="Ultimate Spider-Man"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Ultimate Spider-Man
-        </div>
-
-        <div class="game-genre">
-            Action
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/wild-metal-country.html"
-   data-name="Wild Metal Country">
-
-    <div class="game-image">
-        <img
-            src="images/wild-metal-country.jpg"
-            alt="Wild Metal Country"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            Wild Metal Country
-        </div>
-
-        <div class="game-genre">
-            Action
-        </div>
-
-    </div>
-
-</a>
-
-
-<a class="game-card"
-   href="games/wwf-raw-2002.html"
-   data-name="WWF Raw 2002">
-
-    <div class="game-image">
-        <img
-            src="images/wwf-raw-2002.jpg"
-            alt="WWF Raw 2002"
-        >
-    </div>
-
-    <div class="game-info">
-
-        <div class="game-name">
-            WWF Raw 2002
-        </div>
-
-        <div class="game-genre">
-            Sports
-        </div>
-
-    </div>
-
-</a>
-
-
-</div>
-
-
-<div
-    id="noResults"
-    class="no-results"
+<a
+    class="game"
+    href="games/choo-choo-charles.html"
+    data-name="Choo Choo Charles"
 >
-    No games found.
+
+<div class="poster">
+
+<img
+    src="images/choo choo charles.png"
+    alt="Choo-Choo Charles"
+>
+
 </div>
 
+<div class="game-name">
+Choo-Choo Charles
+</div>
+
+</a>
+
+
+<!-- FNAF CORE COLLECTION -->
+
+<a
+    class="game"
+    href="games/fnaf-core-collection.html"
+    data-name="FNAF Core Collection"
+>
+
+<div class="poster">
+
+<img
+    src="images/core.jpg"
+    alt="FNAF Core Collection"
+>
+
+</div>
+
+<div class="game-name">
+FNAF Core Collection
+</div>
+
+</a>
+
+
+<!-- FNAF INTO THE PIT -->
+
+<a
+    class="game"
+    href="games/five-nights-at-freddys-into-the-pit.html"
+    data-name="Five Nights at Freddys Into the Pit"
+>
+
+<div class="poster">
+
+<img
+    src="images/the pit.jpg"
+    alt="FNAF Into the Pit"
+>
+
+</div>
+
+<div class="game-name">
+Five Nights at Freddy's: Into the Pit
+</div>
+
+</a>
+
+
+<!-- FNAF THE MOVIE THE GAME -->
+
+<a
+    class="game"
+    href="games/fnaf-the-movie-the-game.html"
+    data-name="FNAF The Movie The Game"
+>
+
+<div class="poster">
+
+<img
+    src="images/movie the game.png"
+    alt="FNAF The Movie The Game"
+>
+
+</div>
+
+<div class="game-name">
+FNAF: The Movie The Game
+</div>
+
+</a>
+
+
+<!-- FNAF UCN -->
+
+<a
+    class="game"
+    href="games/fnaf-ucn.html"
+    data-name="FNAF UCN"
+>
+
+<div class="poster">
+
+<img
+    src="images/ucn.jpg"
+    alt="FNAF UCN"
+>
+
+</div>
+
+<div class="game-name">
+FNAF UCN
+</div>
+
+</a>
+
+
+<!-- FREDDY IN SPACE 2 -->
+
+<a
+    class="game"
+    href="games/freddy-in-space-2.html"
+    data-name="Freddy in Space 2"
+>
+
+<div class="poster">
+
+<img
+    src="images/fredy in space.jpg"
+    alt="Freddy in Space 2"
+>
+
+</div>
+
+<div class="game-name">
+Freddy in Space 2
+</div>
+
+</a>
+
+
+<!-- GARTEN OF BANBAN -->
+
+<a
+    class="game"
+    href="games/garten-of-banban.html"
+    data-name="Garten of Banban"
+>
+
+<div class="poster">
+
+<img
+    src="images/banban.jpg"
+    alt="Garten of Banban"
+>
+
+</div>
+
+<div class="game-name">
+Garten of Banban
+</div>
+
+</a>
+
+
+<!-- GARTEN 0 -->
+
+<a
+    class="game"
+    href="games/garten-of-banban-0.html"
+    data-name="Garten of Banban 0"
+>
+
+<div class="poster">
+
+<img
+    src="images/banban0.jpg"
+    alt="Garten of Banban 0"
+>
+
+</div>
+
+<div class="game-name">
+Garten of Banban 0
+</div>
+
+</a>
+
+
+<!-- GARTEN 2 -->
+
+<a
+    class="game"
+    href="games/garten-of-banban-2.html"
+    data-name="Garten of Banban 2"
+>
+
+<div class="poster">
+
+<img
+    src="images/banban2.jpg"
+    alt="Garten of Banban 2"
+>
+
+</div>
+
+<div class="game-name">
+Garten of Banban 2
+</div>
+
+</a>
+
+
+<!-- GARTEN 3 -->
+
+<a
+    class="game"
+    href="games/garten-of-banban-3.html"
+    data-name="Garten of Banban 3"
+>
+
+<div class="poster">
+
+<img
+    src="images/banban3.jpg"
+    alt="Garten of Banban 3"
+>
+
+</div>
+
+<div class="game-name">
+Garten of Banban 3
+</div>
+
+</a>
+
+
+<!-- GARTEN 4 -->
+
+<a
+    class="game"
+    href="games/garten-of-banban-4.html"
+    data-name="Garten of Banban 4"
+>
+
+<div class="poster">
+
+<img
+    src="images/banban4.jpg"
+    alt="Garten of Banban 4"
+>
+
+</div>
+
+<div class="game-name">
+Garten of Banban 4
+</div>
+
+</a>
+
+
+<!-- GARTEN 6 -->
+
+<a
+    class="game"
+    href="games/garten-of-banban-6.html"
+    data-name="Garten of Banban 6"
+>
+
+<div class="poster">
+
+<img
+    src="images/banban 6.jpg"
+    alt="Garten of Banban 6"
+>
+
+</div>
+
+<div class="game-name">
+Garten of Banban 6
+</div>
+
+</a>
+
+
+<!-- GARTEN 7 -->
+
+<a
+    class="game"
+    href="games/garten-of-banban-7.html"
+    data-name="Garten of Banban 7"
+>
+
+<div class="poster">
+
+<img
+    src="images/banban7.jpg"
+    alt="Garten of Banban 7"
+>
+
+</div>
+
+<div class="game-name">
+Garten of Banban 7
+</div>
+
+</a>
+
+
+<!-- GTA 1 -->
+
+<a
+    class="game"
+    href="games/gta-1.html"
+    data-name="Grand Theft Auto"
+>
+
+<div class="poster">
+
+<img
+    src="images/images (54).jpg"
+    alt="Grand Theft Auto"
+>
+
+</div>
+
+<div class="game-name">
+Grand Theft Auto
+</div>
+
+</a>
+
+
+<!-- GTA 2 -->
+
+<a
+    class="game"
+    href="games/gta-2.html"
+    data-name="Grand Theft Auto 2"
+>
+
+<div class="poster">
+
+<img
+    src="images/images (56).jpg"
+    alt="Grand Theft Auto 2"
+>
+
+</div>
+
+<div class="game-name">
+Grand Theft Auto 2
+</div>
+
+</a>
+
+
+<!-- GTA 3 -->
+
+<a
+    class="game"
+    href="games/gta-3.html"
+    data-name="Grand Theft Auto III"
+>
+
+<div class="poster">
+
+<img
+    src="images/iii.jpg"
+    alt="Grand Theft Auto III"
+>
+
+</div>
+
+<div class="game-name">
+Grand Theft Auto III
+</div>
+
+</a>
+
+
+<!-- GTA LONDON -->
+
+<a
+    class="game"
+    href="games/gta-london.html"
+    data-name="Grand Theft Auto London"
+>
+
+<div class="poster">
+
+<img
+    src="images/gta london.jpg"
+    alt="Grand Theft Auto London"
+>
+
+</div>
+
+<div class="game-name">
+Grand Theft Auto: London
+</div>
+
+</a>
+
+
+<!-- GTA VICE CITY -->
+
+<a
+    class="game"
+    href="games/gta-vice-city.html"
+    data-name="Grand Theft Auto Vice City"
+>
+
+<div class="poster">
+
+<img
+    src="images/vice city.png"
+    alt="Grand Theft Auto Vice City"
+>
+
+</div>
+
+<div class="game-name">
+Grand Theft Auto: Vice City
+</div>
+
+</a>
+
+
+<!-- HELLO NEIGHBOR -->
+
+<a
+    class="game"
+    href="games/hello-neighbor.html"
+    data-name="Hello Neighbor"
+>
+
+<div class="poster">
+
+<img
+    src="images/hello neighbor.jpg"
+    alt="Hello Neighbor"
+>
+
+</div>
+
+<div class="game-name">
+Hello Neighbor
+</div>
+
+</a>
+
+
+<!-- HELLO NEIGHBOR ALPHA 1 -->
+
+<a
+    class="game"
+    href="games/hello-neighbor-alpha-1.html"
+    data-name="Hello Neighbor Alpha 1"
+>
+
+<div class="poster">
+
+<img
+    src="images/alpha 1.jpg"
+    alt="Hello Neighbor Alpha 1"
+>
+
+</div>
+
+<div class="game-name">
+Hello Neighbor: Alpha 1
+</div>
+
+</a>
+
+
+<!-- HELLO NEIGHBOR ALPHA 2 -->
+
+<a
+    class="game"
+    href="games/hello-neighbor-alpha-2.html"
+    data-name="Hello Neighbor Alpha 2"
+>
+
+<div class="poster">
+
+<img
+    src="images/alpha 2.jpg"
+    alt="Hello Neighbor Alpha 2"
+>
+
+</div>
+
+<div class="game-name">
+Hello Neighbor: Alpha 2
+</div>
+
+</a>
+
+
+<!-- HELLO NEIGHBOR ALPHA 3 -->
+
+<a
+    class="game"
+    href="games/hello-neighbor-alpha-3.html"
+    data-name="Hello Neighbor Alpha 3"
+>
+
+<div class="poster">
+
+<img
+    src="images/alpha 3.jpg"
+    alt="Hello Neighbor Alpha 3"
+>
+
+</div>
+
+<div class="game-name">
+Hello Neighbor: Alpha 3
+</div>
+
+</a>
+
+
+<!-- HELLO NEIGHBOR ALPHA 4 -->
+
+<a
+    class="game"
+    href="games/hello-neighbor-alpha-4.html"
+    data-name="Hello Neighbor Alpha 4"
+>
+
+<div class="poster">
+
+<img
+    src="images/alpha 4.jpg"
+    alt="Hello Neighbor Alpha 4"
+>
+
+</div>
+
+<div class="game-name">
+Hello Neighbor: Alpha 4
+</div>
+
+</a>
+
+
+<!-- HIDE AND SEEK -->
+
+<a
+    class="game"
+    href="games/hello-neighbor-hide-and-seek.html"
+    data-name="Hello Neighbor Hide and Seek"
+>
+
+<div class="poster">
+
+<img
+    src="images/hide and seek.jpg"
+    alt="Hello Neighbor Hide and Seek"
+>
+
+</div>
+
+<div class="game-name">
+Hello Neighbor: Hide and Seek
+</div>
+
+</a>
+
+
+<!-- PRE ALPHA -->
+
+<a
+    class="game"
+    href="games/hello-neighbor-pre-alpha.html"
+    data-name="Hello Neighbor Pre Alpha"
+>
+
+<div class="poster">
+
+<img
+    src="images/pre alpha.jpg"
+    alt="Hello Neighbor Pre Alpha"
+>
+
+</div>
+
+<div class="game-name">
+Hello Neighbor: Pre-Alpha
+</div>
+
+</a>
+
+
+<!-- HOUSE OF SLENDRINA -->
+
+<a
+    class="game"
+    href="games/house-of-slendrina.html"
+    data-name="House of Slendrina"
+>
+
+<div class="poster">
+
+<img
+    src="images/house.jpg"
+    alt="House of Slendrina"
+>
+
+</div>
+
+<div class="game-name">
+House of Slendrina
+</div>
+
+</a>
+
+
+<!-- HULK -->
+
+<a
+    class="game"
+    href="games/the-hulk-2003.html"
+    data-name="The Hulk"
+>
+
+<div class="poster">
+
+<img
+    src="images/hulk 2003.jpg"
+    alt="The Hulk"
+>
+
+</div>
+
+<div class="game-name">
+The Hulk
+</div>
+
+</a>
+
+
+<!-- INCREDIBLE HULK -->
+
+<a
+    class="game"
+    href="games/the-incredible-hulk.html"
+    data-name="The Incredible Hulk"
+>
+
+<div class="poster">
+
+<img
+    src="images/hulk incredle.jpg"
+    alt="The Incredible Hulk"
+>
+
+</div>
+
+<div class="game-name">
+The Incredible Hulk
+</div>
+
+</a>
+
+
+<!-- IRON MAN -->
+
+<a
+    class="game"
+    href="games/iron-man-2008.html"
+    data-name="Iron Man"
+>
+
+<div class="poster">
+
+<img
+    src="images/iron man.png"
+    alt="Iron Man"
+>
+
+</div>
+
+<div class="game-name">
+Iron Man
+</div>
+
+</a>
+
+
+<!-- KINDERGARTEN -->
+
+<a
+    class="game"
+    href="games/kindergarten.html"
+    data-name="Kindergarten"
+>
+
+<div class="poster">
+
+<img
+    src="images/kindergarten.jpg"
+    alt="Kindergarten"
+>
+
+</div>
+
+<div class="game-name">
+Kindergarten
+</div>
+
+</a>
+
+
+<!-- KINDERGARTEN 2 -->
+
+<a
+    class="game"
+    href="games/kindergarten-2.html"
+    data-name="Kindergarten 2"
+>
+
+<div class="poster">
+
+<img
+    src="images/kinergarten 2.jpg"
+    alt="Kindergarten 2"
+>
+
+</div>
+
+<div class="game-name">
+Kindergarten 2
+</div>
+
+</a>
+
+
+<!-- KING OF THE HILL -->
+
+<a
+    class="game"
+    href="games/king-of-the-hill.html"
+    data-name="King of the Hill"
+>
+
+<div class="poster">
+
+<img
+    src="images/king of the hill.jpg"
+    alt="King of the Hill"
+>
+
+</div>
+
+<div class="game-name">
+King of the Hill
+</div>
+
+</a>
+
+
+<!-- MANHUNT 2 -->
+
+<a
+    class="game"
+    href="games/manhunt-2.html"
+    data-name="Manhunt 2"
+>
+
+<div class="poster">
+
+<img
+    src="images/manhunt 2.jpg"
+    alt="Manhunt 2"
+>
+
+</div>
+
+<div class="game-name">
+Manhunt 2
+</div>
+
+</a>
+
+
+<!-- MIDNIGHT CLUB II -->
+
+<a
+    class="game"
+    href="games/midnight-club-2.html"
+    data-name="Midnight Club II"
+>
+
+<div class="poster">
+
+<img
+    src="images/club ii.jpg"
+    alt="Midnight Club II"
+>
+
+</div>
+
+<div class="game-name">
+Midnight Club II
+</div>
+
+</a>
+
+
+<!-- OUTLAST DEMO -->
+
+<a
+    class="game"
+    href="games/outlast-demo.html"
+    data-name="Outlast Demo"
+>
+
+<div class="poster">
+
+<img
+    src="images/outlast demo.jpg"
+    alt="Outlast Demo"
+>
+
+</div>
+
+<div class="game-name">
+Outlast Demo
+</div>
+
+</a>
+
+
+<!-- OUTLAST 2 DEMO -->
+
+<a
+    class="game"
+    href="games/outlast-2-demo.html"
+    data-name="Outlast 2 Demo"
+>
+
+<div class="poster">
+
+<img
+    src="images/outlast 2 demo.jpg"
+    alt="Outlast 2 Demo"
+>
+
+</div>
+
+<div class="game-name">
+Outlast 2 Demo
+</div>
+
+</a>
+
+
+<!-- PSYCHOPATH HUNT -->
+
+<a
+    class="game"
+    href="games/psychopath-hunt-chapter-2.html"
+    data-name="Psychopath Hunt Chapter 2"
+>
+
+<div class="poster">
+
+<img
+    src="images/psychopath 2.jpg"
+    alt="Psychopath Hunt Chapter 2"
+>
+
+</div>
+
+<div class="game-name">
+Psychopath Hunt: Chapter 2
+</div>
+
+</a>
+
+
+<!-- PUNISHER -->
+
+<a
+    class="game"
+    href="games/the-punisher.html"
+    data-name="The Punisher"
+>
+
+<div class="poster">
+
+<img
+    src="images/punsiher.jpg"
+    alt="The Punisher"
+>
+
+</div>
+
+<div class="game-name">
+The Punisher
+</div>
+
+</a>
+
+
+<!-- RESIDENT EVIL -->
+
+<a
+    class="game"
+    href="games/resident-evil-1.html"
+    data-name="Resident Evil"
+>
+
+<div class="poster">
+
+<img
+    src="images/re1.jpg"
+    alt="Resident Evil"
+>
+
+</div>
+
+<div class="game-name">
+Resident Evil
+</div>
+
+</a>
+
+
+<!-- RESIDENT EVIL 2 -->
+
+<a
+    class="game"
+    href="games/resident-evil-2.html"
+    data-name="Resident Evil 2"
+>
+
+<div class="poster">
+
+<img
+    src="images/re2.png"
+    alt="Resident Evil 2"
+>
+
+</div>
+
+<div class="game-name">
+Resident Evil 2
+</div>
+
+</a>
+
+
+<!-- SHREK 2 -->
+
+<a
+    class="game"
+    href="games/shrek-2-team-action.html"
+    data-name="Shrek 2 Team Action"
+>
+
+<div class="poster">
+
+<img
+    src="images/hrek 2.jpg"
+    alt="Shrek 2 Team Action"
+>
+
+</div>
+
+<div class="game-name">
+Shrek 2: Team Action
+</div>
+
+</a>
+
+
+<!-- SHREK 3 -->
+
+<a
+    class="game"
+    href="games/shrek-the-third.html"
+    data-name="Shrek the Third"
+>
+
+<div class="poster">
+
+<img
+    src="images/shrek third.jpg"
+    alt="Shrek the Third"
+>
+
+</div>
+
+<div class="game-name">
+Shrek the Third
+</div>
+
+</a>
+
+
+<!-- SHREK FOREVER AFTER -->
+
+<a
+    class="game"
+    href="games/shrek-forever-after.html"
+    data-name="Shrek Forever After"
+>
+
+<div class="poster">
+
+<img
+    src="images/shrek 4.jpg"
+    alt="Shrek Forever After"
+>
+
+</div>
+
+<div class="game-name">
+Shrek Forever After
+</div>
+
+</a>
+
+
+<!-- SILENT HILL 2 -->
+
+<a
+    class="game"
+    href="games/silent-hill-2.html"
+    data-name="Silent Hill 2"
+>
+
+<div class="poster">
+
+<img
+    src="images/slenthill 2.jpg"
+    alt="Silent Hill 2"
+>
+
+</div>
+
+<div class="game-name">
+Silent Hill 2
+</div>
+
+</a>
+
+
+<!-- SILENT HILL 4 -->
+
+<a
+    class="game"
+    href="games/silent-hill-4.html"
+    data-name="Silent Hill 4"
+>
+
+<div class="poster">
+
+<img
+    src="images/silent hill 4.jpg"
+    alt="Silent Hill 4"
+>
+
+</div>
+
+<div class="game-name">
+Silent Hill 4
+</div>
+
+</a>
+
+
+<!-- SIMPSONS HIT AND RUN -->
+
+<a
+    class="game"
+    href="games/simpsons-hit-and-run.html"
+    data-name="The Simpsons Hit and Run"
+>
+
+<div class="poster">
+
+<img
+    src="images/simpsons hit and run.jpg"
+    alt="The Simpsons Hit and Run"
+>
+
+</div>
+
+<div class="game-name">
+The Simpsons: Hit &amp; Run
+</div>
+
+</a>
+
+
+<!-- SLENDRINA -->
+
+<a
+    class="game"
+    href="games/slendrina.html"
+    data-name="Slendrina"
+>
+
+<div class="poster">
+
+<img
+    src="images/slendrina.jpg"
+    alt="Slendrina"
+>
+
+</div>
+
+<div class="game-name">
+Slendrina
+</div>
+
+</a>
+
+
+<!-- SPIDER-MAN 2000 -->
+
+<a
+    class="game"
+    href="games/spider-man-2000.html"
+    data-name="Spider-Man"
+>
+
+<div class="poster">
+
+<img
+    src="images/spider man 2000.jpg"
+    alt="Spider-Man"
+>
+
+</div>
+
+<div class="game-name">
+Spider-Man
+</div>
+
+</a>
+
+
+<!-- SPIDER-MAN 2 ENTER ELECTRO -->
+
+<a
+    class="game"
+    href="games/spider-man-2-enter-electro.html"
+    data-name="Spider-Man 2 Enter Electro"
+>
+
+<div class="poster">
+
+<img
+    src="images/enter.jpg"
+    alt="Spider-Man 2 Enter Electro"
+>
+
+</div>
+
+<div class="game-name">
+Spider-Man 2: Enter Electro
+</div>
+
+</a>
+
+
+<!-- SPIDER-MAN 3 -->
+
+<a
+    class="game"
+    href="games/spider-man-3.html"
+    data-name="Spider-Man 3"
+>
+
+<div class="poster">
+
+<img
+    src="images/man 3.jpg"
+    alt="Spider-Man 3"
+>
+
+</div>
+
+<div class="game-name">
+Spider-Man 3
+</div>
+
+</a>
+
+
+<!-- SPIDER-MAN FRIEND OR FOE -->
+
+<a
+    class="game"
+    href="games/spider-man-friend-or-foe.html"
+    data-name="Spider-Man Friend or Foe"
+>
+
+<div class="poster">
+
+<img
+    src="images/foe.jpg"
+    alt="Spider-Man Friend or Foe"
+>
+
+</div>
+
+<div class="game-name">
+Spider-Man: Friend or Foe
+</div>
+
+</a>
+
+
+<!-- SPIDER-MAN MOVIE GAME -->
+
+<a
+    class="game"
+    href="games/spider-man-the-movie-game.html"
+    data-name="Spider-Man The Movie Game"
+>
+
+<div class="poster">
+
+<img
+    src="images/spider man movie game.jpg"
+    alt="Spider-Man The Movie Game"
+>
+
+</div>
+
+<div class="game-name">
+Spider-Man: The Movie Game
+</div>
+
+</a>
+
+
+<!-- SPIDER-MAN WEB OF SHADOWS -->
+
+<a
+    class="game"
+    href="games/spider-man-web-of-shadows.html"
+    data-name="Spider-Man Web of Shadows"
+>
+
+<div class="poster">
+
+<img
+    src="images/web of shadow.jpg"
+    alt="Spider-Man Web of Shadows"
+>
+
+</div>
+
+<div class="game-name">
+Spider-Man: Web of Shadows
+</div>
+
+</a>
+
+
+<!-- TATTLETAIL -->
+
+<a
+    class="game"
+    href="games/tattletail.html"
+    data-name="Tattletail"
+>
+
+<div class="poster">
+
+<img
+    src="images/tattletial.jpg"
+    alt="Tattletail"
+>
+
+</div>
+
+<div class="game-name">
+Tattletail
+</div>
+
+</a>
+
+
+<!-- THE ITALIAN JOB -->
+
+<a
+    class="game"
+    href="games/the-italian-job-2001.html"
+    data-name="The Italian Job"
+>
+
+<div class="poster">
+
+<img
+    src="images/very italian.jpg"
+    alt="The Italian Job"
+>
+
+</div>
+
+<div class="game-name">
+The Italian Job
+</div>
+
+</a>
+
+
+<!-- TOY STORY 2 -->
+
+<a
+    class="game"
+    href="games/toy-story-2.html"
+    data-name="Toy Story 2"
+>
+
+<div class="poster">
+
+<img
+    src="images/toy 2.jpg"
+    alt="Toy Story 2"
+>
+
+</div>
+
+<div class="game-name">
+Toy Story 2: Buzz Lightyear to the Rescue
+</div>
+
+</a>
+
+
+<!-- TOMB RAIDER CHRONICLES -->
+
+<a
+    class="game"
+    href="games/tomb-raider-5.html"
+    data-name="Tomb Raider Chronicles"
+>
+
+<div class="poster">
+
+<img
+    src="images/tr chronicles.jpg"
+    alt="Tomb Raider Chronicles"
+>
+
+</div>
+
+<div class="game-name">
+Tomb Raider Chronicles
+</div>
+
+</a>
+
+
+<!-- TOMB RAIDER 2 -->
+
+<a
+    class="game"
+    href="games/tomb-raider-2.html"
+    data-name="Tomb Raider 2"
+>
+
+<div class="poster">
+
+<img
+    src="images/tr2.jpg"
+    alt="Tomb Raider 2"
+>
+
+</div>
+
+<div class="game-name">
+Tomb Raider 2
+</div>
+
+</a>
+
+
+<!-- TOMB RAIDER 3 -->
+
+<a
+    class="game"
+    href="games/tomb-raider-3.html"
+    data-name="Tomb Raider 3"
+>
+
+<div class="poster">
+
+<img
+    src="images/tr3.jpg"
+    alt="Tomb Raider 3"
+>
+
+</div>
+
+<div class="game-name">
+Tomb Raider 3
+</div>
+
+</a>
+
+
+<!-- TOMB RAIDER 4 -->
+
+<a
+    class="game"
+    href="games/tomb-raider-4.html"
+    data-name="Tomb Raider 4"
+>
+
+<div class="poster">
+
+<img
+    src="images/tr4.jpg"
+    alt="Tomb Raider 4"
+>
+
+</div>
+
+<div class="game-name">
+Tomb Raider 4
+</div>
+
+</a>
+
+
+<!-- ULTIMATE ALLIANCE -->
+
+<a
+    class="game"
+    href="games/marvel-ultimate-alliance.html"
+    data-name="Marvel Ultimate Alliance"
+>
+
+<div class="poster">
+
+<img
+    src="images/ultimate alliance.jpg"
+    alt="Marvel Ultimate Alliance"
+>
+
+</div>
+
+<div class="game-name">
+Marvel: Ultimate Alliance
+</div>
+
+</a>
+
+
+<!-- ULTIMATE SPIDER-MAN -->
+
+<a
+    class="game"
+    href="games/ultimate-spider-man.html"
+    data-name="Ultimate Spider-Man"
+>
+
+<div class="poster">
+
+<img
+    src="images/ultimate spider.jpg"
+    alt="Ultimate Spider-Man"
+>
+
+</div>
+
+<div class="game-name">
+Ultimate Spider-Man
+</div>
+
+</a>
+
+
+<!-- WWF RAW -->
+
+<a
+    class="game"
+    href="games/wwf-raw-2002.html"
+    data-name="WWF Raw 2002"
+>
+
+<div class="poster">
+
+<img
+    src="images/raw.jpg"
+    alt="WWF Raw 2002"
+>
+
+</div>
+
+<div class="game-name">
+WWF Raw 2002
+</div>
+
+</a>
+
+
+<!-- WILD METAL -->
+
+<a
+    class="game"
+    href="games/wild-metal-country.html"
+    data-name="Wild Metal Country"
+>
+
+<div class="poster">
+
+<img
+    src="images/wild metal.jpg"
+    alt="Wild Metal Country"
+>
+
+</div>
+
+<div class="game-name">
+Wild Metal Country
+</div>
+
+</a>
+
+
+<!-- SLENDRINA X -->
+
+<a
+    class="game"
+    href="games/slendrina-x.html"
+    data-name="Slendrina X"
+>
+
+<div class="poster">
+
+<img
+    src="images/xc.jpg"
+    alt="Slendrina X"
+>
+
+</div>
+
+<div class="game-name">
+Slendrina X
+</div>
+
+</a>
+
+
+<!-- VIRTUAL SPRINGFIELD -->
+
+<a
+    class="game"
+    href="games/simpsons-virtual-springfield.html"
+    data-name="The Simpsons Virtual Springfield"
+>
+
+<div class="poster">
+
+<img
+    src="images/virtual sporng.jpg"
+    alt="The Simpsons Virtual Springfield"
+>
+
+</div>
+
+<div class="game-name">
+The Simpsons: Virtual Springfield
+</div>
+
+</a>
+
+
+</div>
+
+
+<div class="no-results" id="noResults">
+
+No games found.
+
+</div>
 
 </main>
 
+
+<!-- FOOTER -->
 
 <footer>
 
@@ -1822,45 +2035,51 @@ GameBox.exe © 2026
 </footer>
 
 
+<!-- SEARCH -->
+
 <script>
 
-/*
-====================================================
-SEARCH
-====================================================
-*/
+const search =
+    document.getElementById("search");
 
-const search = document.getElementById("search");
-const cards = document.querySelectorAll(".game-card");
-const noResults = document.getElementById("noResults");
+const games =
+    document.querySelectorAll(".game");
+
+const noResults =
+    document.getElementById("noResults");
+
 
 search.addEventListener("input", function() {
 
-    const query = search.value
+    const query =
+        search.value
         .toLowerCase()
         .trim();
 
     let visibleGames = 0;
 
-    cards.forEach(function(card) {
 
-        const name = card
-            .getAttribute("data-name")
+    games.forEach(function(game) {
+
+        const name =
+            game.dataset.name
             .toLowerCase();
+
 
         if (name.includes(query)) {
 
-            card.style.display = "";
+            game.style.display = "";
 
             visibleGames++;
 
         } else {
 
-            card.style.display = "none";
+            game.style.display = "none";
 
         }
 
     });
+
 
     if (visibleGames === 0) {
 
@@ -1881,4 +2100,3 @@ search.addEventListener("input", function() {
 
 </html>
 ```
-
