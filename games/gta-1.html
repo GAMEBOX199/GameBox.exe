@@ -19,7 +19,6 @@
             font-family: Arial, Helvetica, sans-serif;
         }
 
-        /* HEADER */
         header {
             background: #1b1b1b;
             padding: 20px 40px;
@@ -45,14 +44,12 @@
             background: #3b3b3b;
         }
 
-        /* MAIN GAME CONTAINER */
         .game-container {
             max-width: 1200px;
             margin: 40px auto;
             padding: 0 25px;
         }
 
-        /* GAME TOP SECTION */
         .game-top {
             display: flex;
             gap: 40px;
@@ -62,7 +59,6 @@
             border-radius: 15px;
         }
 
-        /* POSTER */
         .poster {
             width: 300px;
             height: 450px;
@@ -71,7 +67,6 @@
             background: #0b0b0b;
         }
 
-        /* GAME INFORMATION */
         .game-info {
             flex: 1;
         }
@@ -96,7 +91,6 @@
             color: white;
         }
 
-        /* DOWNLOAD BUTTON */
         .download-button {
             display: inline-block;
             margin-top: 25px;
@@ -115,7 +109,6 @@
             background: #ddd;
         }
 
-        /* SECTIONS */
         .section {
             margin-top: 40px;
             background: #1b1b1b;
@@ -133,7 +126,6 @@
             line-height: 1.8;
         }
 
-        /* SCREENSHOTS */
         .screenshots {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -153,7 +145,6 @@
             transform: scale(1.02);
         }
 
-        /* SYSTEM REQUIREMENTS */
         .requirements {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -174,14 +165,12 @@
             line-height: 1.8;
         }
 
-        /* FOOTER */
         footer {
             text-align: center;
             padding: 40px;
             color: #777;
         }
 
-        /* MOBILE */
         @media (max-width: 750px) {
 
             header {
@@ -220,14 +209,14 @@
 
         <h1>GameBox</h1>
 
-        <a href="games.html">
+        <!-- ../ goes back out of the games folder -->
+        <a href="../games.html">
             ← Back to Games
         </a>
 
     </header>
 
 
-    <!-- MAIN -->
     <main class="game-container">
 
 
@@ -236,13 +225,12 @@
 
             <!-- POSTER -->
             <img
-                src="images/images (54).jpg"
+                src="../images/images (54).jpg"
                 alt="Grand Theft Auto poster"
                 class="poster"
             >
 
 
-            <!-- DETAILS -->
             <div class="game-info">
 
                 <h2>Grand Theft Auto</h2>
@@ -286,7 +274,6 @@
                 <a
                     href="https://drive.google.com/file/d/1DwCVMnMwqyShrWXLq5OnRUh9rpqFo9Cj/view?usp=sharing"
                     class="download-button"
-                    download
                 >
                     Download
                 </a>
@@ -328,22 +315,22 @@
             <div class="screenshots">
 
                 <img
-                    src="images/grand-theft-auto.png"
+                    src="../images/grand-theft-auto.png"
                     alt="Grand Theft Auto screenshot 1"
                 >
 
                 <img
-                    src="images/images (53).jpg"
+                    src="../images/images (53).jpg"
                     alt="Grand Theft Auto screenshot 2"
                 >
 
                 <img
-                    src="images/images (55).jpg"
+                    src="../images/images (55).jpg"
                     alt="Grand Theft Auto screenshot 3"
                 >
 
                 <img
-                    src="images/gta-1-screenshot-4.jpg"
+                    src="../images/gta-1-screenshot-4.jpg"
                     alt="Grand Theft Auto screenshot 4"
                 >
 
@@ -427,7 +414,6 @@
 
 
 
-    <!-- FOOTER -->
     <footer>
 
         <p>GameBox.exe</p>
