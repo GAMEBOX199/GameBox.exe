@@ -8,7 +8,6 @@
 <title>GameBox.exe</title>
 
 <style>
-
 * {
     box-sizing: border-box;
 }
@@ -150,12 +149,6 @@ h1 {
     height: 100%;
     object-fit: cover;
     display: block;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.screenshot img:hover {
-    transform: scale(1.03);
 }
 
 .no-screenshots {
@@ -212,7 +205,6 @@ footer {
         font-size: 32px;
     }
 }
-
 </style>
 
 </head>
@@ -220,7 +212,6 @@ footer {
 <body>
 
 <header>
-
 <div class="header">
 
 <a href="index.html" class="logo">
@@ -232,13 +223,10 @@ footer {
 </a>
 
 </div>
-
 </header>
 
 <main>
-
 <div id="gameContainer"></div>
-
 </main>
 
 <footer>
@@ -246,12 +234,6 @@ GameBox.exe © 2026
 </footer>
 
 <script>
-
-/*
-====================================================
-GAME DATABASE
-====================================================
-*/
 
 const games = {
 
@@ -299,7 +281,7 @@ image: "images/boris-and-the-dark-survival.jpg"
 name: "Family Guy: Back to the Multiverse",
 genre: "Action",
 platform: "Windows",
-description: "Join the characters from Family Guy in a chaotic adventure involving alternate universes, combat and plenty of comedy.",
+description: "Join the characters from Family Guy in a chaotic adventure involving alternate universes, combat and comedy.",
 image: "images/family-guy-back-to-the-multiverse.jpg"
 },
 
@@ -307,7 +289,7 @@ image: "images/family-guy-back-to-the-multiverse.jpg"
 name: "FNAF Core Collection",
 genre: "Horror",
 platform: "Windows",
-description: "A collection featuring several classic Five Nights at Freddy's games and their signature animatronic survival gameplay.",
+description: "A collection featuring several classic Five Nights at Freddy's games.",
 image: "images/fnaf-core-collection.jpg"
 },
 
@@ -323,7 +305,7 @@ image: "images/fnaf-pizza-sim.jpg"
 name: "FNAF: The Movie The Game",
 genre: "Horror",
 platform: "Windows",
-description: "A fan-made Five Nights at Freddy's experience inspired by the world and characters of the movie.",
+description: "A fan-made Five Nights at Freddy's experience inspired by the movie.",
 image: "images/fnaf-the-movie-the-game.jpg"
 },
 
@@ -331,7 +313,7 @@ image: "images/fnaf-the-movie-the-game.jpg"
 name: "FNAF UCN",
 genre: "Horror",
 platform: "Windows",
-description: "Customize your nightmare by choosing from a huge roster of animatronics and attempting to survive the night.",
+description: "Customize your nightmare by choosing from a huge roster of animatronics.",
 image: "images/fnaf-ucn.jpg"
 },
 
@@ -339,7 +321,7 @@ image: "images/fnaf-ucn.jpg"
 name: "FNAF World",
 genre: "Adventure",
 platform: "Windows",
-description: "A colorful RPG spin-off featuring characters from the Five Nights at Freddy's universe.",
+description: "A colorful RPG spin-off featuring characters from Five Nights at Freddy's.",
 image: "images/fnaf-world.jpg"
 },
 
@@ -347,7 +329,7 @@ image: "images/fnaf-world.jpg"
 name: "Five Nights at Freddy's: Into the Pit",
 genre: "Horror",
 platform: "Windows",
-description: "A story-driven adventure inspired by the Fazbear Frights universe, featuring time travel, exploration and terrifying encounters.",
+description: "A story-driven adventure inspired by the Fazbear Frights universe.",
 image: "images/five-nights-at-freddys-into-the-pit.jpg"
 },
 
@@ -363,7 +345,7 @@ image: "images/freddy-in-space-2.jpg"
 name: "Garten of Banban",
 genre: "Horror",
 platform: "Windows",
-description: "Explore the mysterious Banban's Kindergarten and investigate what happened to the people who disappeared there.",
+description: "Explore the mysterious Banban's Kindergarten.",
 image: "images/garten-of-banban.jpg"
 },
 
@@ -379,7 +361,7 @@ image: "images/garten-of-banban-0.jpg"
 name: "Garten of Banban 2",
 genre: "Horror",
 platform: "Windows",
-description: "Continue exploring the underground areas beneath Banban's Kindergarten and uncover more of its mysteries.",
+description: "Continue exploring the underground areas beneath Banban's Kindergarten.",
 image: "images/garten-of-banban-2.jpg"
 },
 
@@ -387,7 +369,7 @@ image: "images/garten-of-banban-2.jpg"
 name: "Garten of Banban 3",
 genre: "Horror",
 platform: "Windows",
-description: "Descend deeper into the mysterious facility and encounter new characters and dangers.",
+description: "Descend deeper into the mysterious facility.",
 image: "images/garten-of-banban-3.jpg"
 },
 
@@ -395,7 +377,7 @@ image: "images/garten-of-banban-3.jpg"
 name: "Garten of Banban 4",
 genre: "Horror",
 platform: "Windows",
-description: "Continue the journey through the strange underground world hidden beneath the kindergarten.",
+description: "Continue the journey through the strange underground world.",
 image: "images/garten-of-banban-4.jpg"
 },
 
@@ -403,7 +385,7 @@ image: "images/garten-of-banban-4.jpg"
 name: "Garten of Banban 6",
 genre: "Horror",
 platform: "Windows",
-description: "Explore another dangerous section of the Banban universe while searching for answers.",
+description: "Explore another dangerous section of the Banban universe.",
 image: "images/garten-of-banban-6.jpg"
 },
 
@@ -411,7 +393,7 @@ image: "images/garten-of-banban-6.jpg"
 name: "Garten of Banban 7",
 genre: "Horror",
 platform: "Windows",
-description: "Continue the mysterious Banban story with new locations, puzzles and creatures.",
+description: "Continue the mysterious Banban story.",
 image: "images/garten-of-banban-7.jpg"
 },
 
@@ -419,30 +401,26 @@ image: "images/garten-of-banban-7.jpg"
 name: "Getting Over It with Bennett Foddy",
 genre: "Challenge",
 platform: "Windows",
-description: "Use a hammer to climb an increasingly ridiculous mountain in one of gaming's most notorious challenge games.",
+description: "Use a hammer to climb an increasingly ridiculous mountain.",
 image: "images/getting-over-it-with-bennett-foddy.jpg"
 },
 
-/*
-====================================================
-GTA
-====================================================
-*/
+/* GTA 1 */
 
 "gta-1": {
 name: "Grand Theft Auto",
 genre: "Action",
 platform: "Windows",
 description: "The original top-down Grand Theft Auto lets players explore cities, steal vehicles and complete criminal missions.",
-
-/* GTA 1 POSTER */
 image: "images/images (54).jpg",
 
-/* GTA 1 SCREENSHOTS */
 screenshots: [
 "images/images (53).jpg",
 "images/images (55).jpg"
-]
+],
+
+download:
+"https://drive.google.com/uc?export=download&id=1DwCVMnMwqyShrWXLq5OnRUh9rpqFo9Cj"
 },
 
 "gta-2": {
@@ -465,7 +443,7 @@ image: "images/gta-3.jpg"
 name: "Grand Theft Auto: London",
 genre: "Action",
 platform: "Windows",
-description: "A London-based expansion to the original Grand Theft Auto featuring new missions, vehicles and a new setting.",
+description: "A London-based expansion to the original Grand Theft Auto.",
 image: "images/gta-london.jpg"
 },
 
@@ -473,21 +451,15 @@ image: "images/gta-london.jpg"
 name: "Grand Theft Auto: Vice City",
 genre: "Action",
 platform: "Windows",
-description: "Enter the neon-soaked world of 1980s Vice City in one of Rockstar's most iconic open-world adventures.",
+description: "Enter the neon-soaked world of 1980s Vice City.",
 image: "images/gta-vice-city.jpg"
 },
-
-/*
-====================================================
-HELLO NEIGHBOR
-====================================================
-*/
 
 "hello-neighbor": {
 name: "Hello Neighbor",
 genre: "Horror",
 platform: "Windows",
-description: "Sneak into your mysterious neighbor's house and discover what secrets he is hiding in his basement.",
+description: "Sneak into your mysterious neighbor's house.",
 image: "images/hello-neighbor.jpg"
 },
 
@@ -495,7 +467,7 @@ image: "images/hello-neighbor.jpg"
 name: "Hello Neighbor: Alpha 1",
 genre: "Horror",
 platform: "Windows",
-description: "An early version of Hello Neighbor showcasing the game's experimental stealth and AI mechanics.",
+description: "An early version of Hello Neighbor.",
 image: "images/hello-neighbor-alpha-1.jpg"
 },
 
@@ -503,7 +475,7 @@ image: "images/hello-neighbor-alpha-1.jpg"
 name: "Hello Neighbor: Alpha 2",
 genre: "Horror",
 platform: "Windows",
-description: "An early Hello Neighbor build featuring a larger house and new mechanics to experiment with.",
+description: "An early Hello Neighbor build featuring a larger house.",
 image: "images/hello-neighbor-alpha-2.jpg"
 },
 
@@ -511,7 +483,7 @@ image: "images/hello-neighbor-alpha-2.jpg"
 name: "Hello Neighbor: Alpha 3",
 genre: "Horror",
 platform: "Windows",
-description: "Explore another early version of the Neighbor's house and see how the game evolved before release.",
+description: "Explore another early version of the Neighbor's house.",
 image: "images/hello-neighbor-alpha-3.jpg"
 },
 
@@ -519,7 +491,7 @@ image: "images/hello-neighbor-alpha-3.jpg"
 name: "Hello Neighbor: Alpha 4",
 genre: "Horror",
 platform: "Windows",
-description: "The final major alpha build before the full release of Hello Neighbor.",
+description: "The final major alpha build before release.",
 image: "images/hello-neighbor-alpha-4.jpg"
 },
 
@@ -527,7 +499,7 @@ image: "images/hello-neighbor-alpha-4.jpg"
 name: "Hello Neighbor: Hide and Seek",
 genre: "Horror",
 platform: "Windows",
-description: "Play through a prequel story that explores the events leading up to Hello Neighbor.",
+description: "Play through a prequel story to Hello Neighbor.",
 image: "images/hello-neighbor-hide-and-seek.jpg"
 },
 
@@ -535,21 +507,15 @@ image: "images/hello-neighbor-hide-and-seek.jpg"
 name: "Hello Neighbor: Pre-Alpha",
 genre: "Horror",
 platform: "Windows",
-description: "An early prototype version of Hello Neighbor showing the game's original concept and mechanics.",
+description: "An early prototype version of Hello Neighbor.",
 image: "images/hello-neighbor-pre-alpha.jpg"
 },
-
-/*
-====================================================
-OTHER GAMES
-====================================================
-*/
 
 "hitman-contracts": {
 name: "Hitman: Contracts",
 genre: "Action",
 platform: "Windows",
-description: "Agent 47 returns in a darker collection of assassination missions featuring stealth, disguises and tactical gameplay.",
+description: "Agent 47 returns in a darker collection of assassination missions.",
 image: "images/hitman-contracts.jpg"
 },
 
@@ -557,7 +523,7 @@ image: "images/hitman-contracts.jpg"
 name: "House of Slendrina",
 genre: "Horror",
 platform: "Windows",
-description: "Explore a haunted house while trying to survive Slendrina and uncover the secrets hidden inside.",
+description: "Explore a haunted house while trying to survive Slendrina.",
 image: "images/house-of-slendrina.jpg"
 },
 
@@ -565,7 +531,7 @@ image: "images/house-of-slendrina.jpg"
 name: "Iron Man",
 genre: "Action",
 platform: "Windows",
-description: "Become Iron Man and use his armor, weapons and abilities in this action game based on the 2008 movie.",
+description: "Become Iron Man and use his armor and abilities.",
 image: "images/iron-man-2008.jpg"
 },
 
@@ -573,7 +539,7 @@ image: "images/iron-man-2008.jpg"
 name: "King of the Hill",
 genre: "Family",
 platform: "Windows",
-description: "A game based on the animated series King of the Hill featuring familiar characters and settings.",
+description: "A game based on the animated series King of the Hill.",
 image: "images/king-of-the-hill.jpg"
 },
 
@@ -581,7 +547,7 @@ image: "images/king-of-the-hill.jpg"
 name: "Kindergarten",
 genre: "Adventure",
 platform: "Windows",
-description: "Explore a bizarre kindergarten, complete strange objectives and uncover the secrets hiding behind the school's cheerful appearance.",
+description: "Explore a bizarre kindergarten and uncover its secrets.",
 image: "images/kindergarten.jpg"
 },
 
@@ -589,7 +555,7 @@ image: "images/kindergarten.jpg"
 name: "Kindergarten 2",
 genre: "Adventure",
 platform: "Windows",
-description: "Return to the bizarre school with new characters, mysteries and branching objectives.",
+description: "Return to the bizarre school with new characters and mysteries.",
 image: "images/kindergarten-2.jpg"
 },
 
@@ -597,7 +563,7 @@ image: "images/kindergarten-2.jpg"
 name: "Manhunt 2",
 genre: "Action",
 platform: "Windows",
-description: "A dark stealth-action game following Daniel Lamb as he attempts to uncover his forgotten past.",
+description: "A dark stealth-action game following Daniel Lamb.",
 image: "images/manhunt-2.jpg"
 },
 
@@ -605,7 +571,7 @@ image: "images/manhunt-2.jpg"
 name: "Marvel: Ultimate Alliance",
 genre: "Action",
 platform: "Windows",
-description: "Build a team of Marvel heroes and fight through a large-scale adventure featuring villains from across the Marvel universe.",
+description: "Build a team of Marvel heroes and fight through a huge adventure.",
 image: "images/marvel-ultimate-alliance.jpg"
 },
 
@@ -613,7 +579,7 @@ image: "images/marvel-ultimate-alliance.jpg"
 name: "Midnight Club II",
 genre: "Racing",
 platform: "Windows",
-description: "Race through cities around the world in an arcade-style street racing game featuring fast cars and motorcycles.",
+description: "Race through cities around the world.",
 image: "images/midnight-club-2.jpg"
 },
 
@@ -621,7 +587,7 @@ image: "images/midnight-club-2.jpg"
 name: "Outlast Demo",
 genre: "Horror",
 platform: "Windows",
-description: "Experience the terrifying asylum setting of Outlast in this demo version.",
+description: "Experience the terrifying asylum setting of Outlast.",
 image: "images/outlast-demo.jpg"
 },
 
@@ -629,7 +595,7 @@ image: "images/outlast-demo.jpg"
 name: "Outlast 2 Demo",
 genre: "Horror",
 platform: "Windows",
-description: "Enter the disturbing world of Outlast 2 and attempt to survive its terrifying surroundings.",
+description: "Enter the disturbing world of Outlast 2.",
 image: "images/outlast-2-demo.jpg"
 },
 
@@ -637,7 +603,7 @@ image: "images/outlast-2-demo.jpg"
 name: "Psychopath Hunt: Chapter 2",
 genre: "Horror",
 platform: "Windows",
-description: "A horror adventure involving exploration, puzzles and a dangerous psychopath.",
+description: "A horror adventure involving exploration and puzzles.",
 image: "images/psychopath-hunt-chapter-2.jpg"
 },
 
@@ -645,7 +611,7 @@ image: "images/psychopath-hunt-chapter-2.jpg"
 name: "Resident Evil",
 genre: "Horror",
 platform: "Windows",
-description: "Investigate the mysterious Spencer Mansion in the survival-horror classic that helped define the genre.",
+description: "Investigate the mysterious Spencer Mansion.",
 image: "images/resident-evil-1.jpg"
 },
 
@@ -653,7 +619,7 @@ image: "images/resident-evil-1.jpg"
 name: "Resident Evil 2",
 genre: "Horror",
 platform: "Windows",
-description: "Survive the Raccoon City outbreak while playing as Leon Kennedy or Claire Redfield.",
+description: "Survive the Raccoon City outbreak.",
 image: "images/resident-evil-2.jpg"
 },
 
@@ -661,7 +627,7 @@ image: "images/resident-evil-2.jpg"
 name: "Resident Evil 3: Nemesis",
 genre: "Horror",
 platform: "Windows",
-description: "Jill Valentine attempts to escape Raccoon City while being relentlessly pursued by the terrifying Nemesis.",
+description: "Jill Valentine attempts to escape Raccoon City.",
 image: "images/resident-evil-3-nemesis.jpg"
 },
 
@@ -669,7 +635,7 @@ image: "images/resident-evil-3-nemesis.jpg"
 name: "Shrek 2: Team Action",
 genre: "Family",
 platform: "Windows",
-description: "Join Shrek and his friends in a cooperative adventure inspired by the Shrek 2 movie.",
+description: "Join Shrek and his friends in a cooperative adventure.",
 image: "images/shrek-2-team-action.jpg"
 },
 
@@ -677,7 +643,7 @@ image: "images/shrek-2-team-action.jpg"
 name: "Shrek the Third",
 genre: "Family",
 platform: "Windows",
-description: "Play through an adventure based on the Shrek the Third movie with familiar characters and locations.",
+description: "Play through an adventure based on Shrek the Third.",
 image: "images/shrek-the-third.jpg"
 },
 
@@ -693,7 +659,7 @@ image: "images/shrek-forever-after.jpg"
 name: "Silent Hill 2",
 genre: "Horror",
 platform: "Windows",
-description: "James Sunderland travels to Silent Hill after receiving a mysterious letter from his deceased wife.",
+description: "James Sunderland travels to Silent Hill after receiving a mysterious letter.",
 image: "images/silent-hill-2.jpg"
 },
 
@@ -701,7 +667,7 @@ image: "images/silent-hill-2.jpg"
 name: "Silent Hill 3",
 genre: "Horror",
 platform: "Windows",
-description: "Heather Mason becomes involved in a terrifying mystery connected to the dark history of Silent Hill.",
+description: "Heather Mason becomes involved in a terrifying mystery.",
 image: "images/silent-hill-3.jpg"
 },
 
@@ -709,7 +675,7 @@ image: "images/silent-hill-3.jpg"
 name: "The Simpsons: Hit & Run",
 genre: "Action",
 platform: "Windows",
-description: "Explore Springfield, complete missions and drive around the city as characters from The Simpsons.",
+description: "Explore Springfield, complete missions and drive around the city.",
 image: "images/simpsons-hit-and-run.jpg"
 },
 
@@ -717,7 +683,7 @@ image: "images/simpsons-hit-and-run.jpg"
 name: "The Simpsons: Virtual Springfield",
 genre: "Family",
 platform: "Windows",
-description: "Explore Springfield and interact with locations and characters from the classic animated series.",
+description: "Explore Springfield and interact with characters.",
 image: "images/simpsons-virtual-springfield.jpg"
 },
 
@@ -725,7 +691,7 @@ image: "images/simpsons-virtual-springfield.jpg"
 name: "Slendrina",
 genre: "Horror",
 platform: "Windows",
-description: "Explore a dark environment while trying to avoid the terrifying Slendrina.",
+description: "Explore a dark environment while trying to avoid Slendrina.",
 image: "images/slendrina.jpg"
 },
 
@@ -733,7 +699,7 @@ image: "images/slendrina.jpg"
 name: "Slendrina: The Cellar",
 genre: "Horror",
 platform: "Windows",
-description: "Search through a frightening cellar while trying to avoid Slendrina and escape.",
+description: "Search through a frightening cellar.",
 image: "images/slendrina-the-cellar.jpg"
 },
 
@@ -741,7 +707,7 @@ image: "images/slendrina-the-cellar.jpg"
 name: "Slendrina: The Cellar 2",
 genre: "Horror",
 platform: "Windows",
-description: "Return to the cellar for another horror experience featuring Slendrina.",
+description: "Return to the cellar for another horror experience.",
 image: "images/slendrina-the-cellar-2.jpg"
 },
 
@@ -749,7 +715,7 @@ image: "images/slendrina-the-cellar-2.jpg"
 name: "The Child of Slendrina",
 genre: "Horror",
 platform: "Windows",
-description: "Encounter Slendrina's terrifying child while exploring a dangerous environment.",
+description: "Encounter Slendrina's terrifying child.",
 image: "images/the-child-of-slendrina.jpg"
 },
 
@@ -757,7 +723,7 @@ image: "images/the-child-of-slendrina.jpg"
 name: "Slendrina: The Forest",
 genre: "Horror",
 platform: "Windows",
-description: "Explore a dark forest while attempting to survive Slendrina and find a way out.",
+description: "Explore a dark forest while attempting to survive.",
 image: "images/slendrina-the-forest.jpg"
 },
 
@@ -765,7 +731,7 @@ image: "images/slendrina-the-forest.jpg"
 name: "Slendrina X",
 genre: "Horror",
 platform: "Windows",
-description: "A Slendrina horror adventure featuring exploration, puzzles and supernatural encounters.",
+description: "A Slendrina horror adventure.",
 image: "images/slendrina-x.jpg"
 },
 
@@ -773,7 +739,7 @@ image: "images/slendrina-x.jpg"
 name: "Spider-Man",
 genre: "Action",
 platform: "Windows",
-description: "Swing through New York and fight villains in the classic Spider-Man action game.",
+description: "Swing through New York and fight villains.",
 image: "images/spider-man-2000.jpg"
 },
 
@@ -781,7 +747,7 @@ image: "images/spider-man-2000.jpg"
 name: "Spider-Man 2: Enter Electro",
 genre: "Action",
 platform: "Windows",
-description: "Spider-Man battles Electro and other villains across a new adventure set in New York.",
+description: "Spider-Man battles Electro and other villains.",
 image: "images/spider-man-2-enter-electro.jpg"
 },
 
@@ -789,7 +755,7 @@ image: "images/spider-man-2-enter-electro.jpg"
 name: "Spider-Man 3",
 genre: "Action",
 platform: "Windows",
-description: "Swing through New York as Spider-Man while facing villains from the Spider-Man 3 movie.",
+description: "Swing through New York as Spider-Man.",
 image: "images/spider-man-3.jpg"
 },
 
@@ -797,7 +763,7 @@ image: "images/spider-man-3.jpg"
 name: "Spider-Man: Friend or Foe",
 genre: "Action",
 platform: "Windows",
-description: "Team up with heroes and former villains in a lighthearted Spider-Man action adventure.",
+description: "Team up with heroes and former villains.",
 image: "images/spider-man-friend-or-foe.jpg"
 },
 
@@ -805,7 +771,7 @@ image: "images/spider-man-friend-or-foe.jpg"
 name: "Spider-Man: The Movie Game",
 genre: "Action",
 platform: "Windows",
-description: "Play as Spider-Man in the action game based on the original Spider-Man movie.",
+description: "Play as Spider-Man in the game based on the movie.",
 image: "images/spider-man-the-movie-game.jpg"
 },
 
@@ -813,7 +779,7 @@ image: "images/spider-man-the-movie-game.jpg"
 name: "Spider-Man: Web of Shadows",
 genre: "Action",
 platform: "Windows",
-description: "Swing across New York and battle a massive symbiote invasion while making important story choices.",
+description: "Battle a massive symbiote invasion.",
 image: "images/spider-man-web-of-shadows.jpg"
 },
 
@@ -821,7 +787,7 @@ image: "images/spider-man-web-of-shadows.jpg"
 name: "State of Emergency",
 genre: "Action",
 platform: "Windows",
-description: "Fight through chaotic urban environments in this fast-paced action game.",
+description: "Fight through chaotic urban environments.",
 image: "images/state-of-emergency.jpg"
 },
 
@@ -829,7 +795,7 @@ image: "images/state-of-emergency.jpg"
 name: "Tattletail",
 genre: "Horror",
 platform: "Windows",
-description: "Take care of a mysterious talking toy while trying to survive the strange events that happen during the night.",
+description: "Take care of a mysterious talking toy.",
 image: "images/tattletail.jpg"
 },
 
@@ -837,7 +803,7 @@ image: "images/tattletail.jpg"
 name: "The Hulk",
 genre: "Action",
 platform: "Windows",
-description: "Play as Bruce Banner and the Hulk in an action adventure based on the 2003 movie.",
+description: "Play as Bruce Banner and the Hulk.",
 image: "images/the-hulk-2003.jpg"
 },
 
@@ -845,7 +811,7 @@ image: "images/the-hulk-2003.jpg"
 name: "The Incredible Hulk",
 genre: "Action",
 platform: "Windows",
-description: "Become the Hulk and smash your way through an open-world city while battling enemies.",
+description: "Become the Hulk and smash your way through a city.",
 image: "images/the-incredible-hulk.jpg"
 },
 
@@ -853,7 +819,7 @@ image: "images/the-incredible-hulk.jpg"
 name: "The Italian Job",
 genre: "Racing",
 platform: "Windows",
-description: "Drive through a variety of races and missions inspired by the 2001 movie The Italian Job.",
+description: "Drive through races and missions inspired by the movie.",
 image: "images/the-italian-job-2001.jpg"
 },
 
@@ -861,7 +827,7 @@ image: "images/the-italian-job-2001.jpg"
 name: "The Punisher",
 genre: "Action",
 platform: "Windows",
-description: "Play as Frank Castle in a dark third-person action game based on Marvel's Punisher.",
+description: "Play as Frank Castle in a dark third-person action game.",
 image: "images/the-punisher.jpg"
 },
 
@@ -869,7 +835,7 @@ image: "images/the-punisher.jpg"
 name: "Toy Story 2: Buzz Lightyear to the Rescue",
 genre: "Family",
 platform: "Windows",
-description: "Play as Buzz Lightyear as he travels through colorful environments to rescue Woody and his friends.",
+description: "Play as Buzz Lightyear and rescue Woody.",
 image: "images/toy-story-2.jpg"
 },
 
@@ -877,7 +843,7 @@ image: "images/toy-story-2.jpg"
 name: "Tomb Raider 2",
 genre: "Adventure",
 platform: "Windows",
-description: "Join Lara Croft on a worldwide adventure in search of the legendary Dagger of Xian.",
+description: "Join Lara Croft on a worldwide adventure.",
 image: "images/tomb-raider-2.jpg"
 },
 
@@ -885,7 +851,7 @@ image: "images/tomb-raider-2.jpg"
 name: "Tomb Raider 3",
 genre: "Adventure",
 platform: "Windows",
-description: "Explore locations around the world as Lara Croft searches for ancient artifacts.",
+description: "Explore locations around the world as Lara Croft.",
 image: "images/tomb-raider-3.jpg"
 },
 
@@ -893,7 +859,7 @@ image: "images/tomb-raider-3.jpg"
 name: "Tomb Raider 4",
 genre: "Adventure",
 platform: "Windows",
-description: "Lara Croft travels through Egypt in a dangerous archaeological adventure.",
+description: "Lara Croft travels through Egypt.",
 image: "images/tomb-raider-4.jpg"
 },
 
@@ -901,7 +867,7 @@ image: "images/tomb-raider-4.jpg"
 name: "Tomb Raider 5",
 genre: "Adventure",
 platform: "Windows",
-description: "Experience several adventures from Lara Croft's past in this collection of Tomb Raider stories.",
+description: "Experience several adventures from Lara Croft's past.",
 image: "images/tomb-raider-5.jpg"
 },
 
@@ -909,7 +875,7 @@ image: "images/tomb-raider-5.jpg"
 name: "Ultimate Spider-Man",
 genre: "Action",
 platform: "Windows",
-description: "Play as Spider-Man and Venom across a comic-book-inspired version of New York City.",
+description: "Play as Spider-Man and Venom across New York City.",
 image: "images/ultimate-spider-man.jpg"
 },
 
@@ -917,7 +883,7 @@ image: "images/ultimate-spider-man.jpg"
 name: "Wild Metal Country",
 genre: "Action",
 platform: "Windows",
-description: "Control heavily armed vehicles across alien environments in this futuristic action game.",
+description: "Control heavily armed vehicles across alien environments.",
 image: "images/wild-metal-country.jpg"
 },
 
@@ -925,191 +891,209 @@ image: "images/wild-metal-country.jpg"
 name: "WWF Raw 2002",
 genre: "Sports",
 platform: "Windows",
-description: "Enter the ring with classic WWF wrestlers in this wrestling game featuring matches and different game modes.",
+description: "Enter the ring with classic WWF wrestlers.",
 image: "images/wwf-raw-2002.jpg"
+},
+
+/* NEW GAMES */
+
+"bendy-lone-wolf": {
+name: "Bendy: Lone Wolf",
+genre: "Horror",
+platform: "Windows",
+description: "Enter the dark world of Bendy in this survival-horror adventure.",
+image: "images/bendy-lone-wolf.jpg"
+},
+
+"choo-choo-charles": {
+name: "Choo-Choo Charles",
+genre: "Horror",
+platform: "Windows",
+description: "Explore an island, upgrade your train and survive against the terrifying spider train Charles.",
+image: "images/choo-choo-charles.jpg"
 }
 
 };
 
 
-/*
-====================================================
-LOAD GAME
-====================================================
-*/
+/* LOAD GAME */
 
 const params = new URLSearchParams(window.location.search);
-
 const gameID = params.get("game");
-
 const game = games[gameID];
-
 const container = document.getElementById("gameContainer");
 
 
 if (!game) {
 
-    container.innerHTML = `
+container.innerHTML = `
 
-    <div class="game-page not-found">
+<div class="game-page not-found">
 
-        <h1>Game Not Found</h1>
+<h1>Game Not Found</h1>
 
-        <p>
-        That game doesn't exist in the GameBox archive.
-        </p>
+<p>That game doesn't exist in the GameBox archive.</p>
 
-        <a class="back" href="index.html">
-        ← Return to GameBox
-        </a>
+<a class="back" href="index.html">
+← Return to GameBox
+</a>
 
-    </div>
+</div>
 
-    `;
+`;
 
 } else {
 
-    document.title = game.name + " - GameBox.exe";
+document.title = game.name + " - GameBox.exe";
 
 
-    /*
-    ================================================
-    BUILD SCREENSHOTS
-    ================================================
-    */
+/* SCREENSHOTS */
 
-    let screenshotHTML = "";
+let screenshotHTML = "";
 
-    if (game.screenshots && game.screenshots.length > 0) {
+if (game.screenshots && game.screenshots.length > 0) {
 
-        screenshotHTML = game.screenshots.map(function(image, index) {
+screenshotHTML = game.screenshots.map(function(image, index) {
 
-            return `
-            
-            <div class="screenshot">
+return `
 
-                <img
-                    src="${image}"
-                    alt="${game.name} screenshot ${index + 1}"
-                    onerror="this.parentElement.innerHTML='<span style=&quot;color:#777;&quot;>Screenshot unavailable</span>';"
-                >
+<div class="screenshot">
 
-            </div>
+<img
+src="${image}"
+alt="${game.name} screenshot ${index + 1}"
+onerror="this.parentElement.innerHTML='<span style=&quot;color:#777;padding:20px;&quot;>Screenshot unavailable</span>';"
+>
 
-            `;
+</div>
 
-        }).join("");
+`;
 
-    } else {
+}).join("");
 
-        screenshotHTML = `
-        
-        <p class="no-screenshots">
-            No screenshots available yet.
-        </p>
+} else {
 
-        `;
+screenshotHTML = `
+<p class="no-screenshots">
+No screenshots available yet.
+</p>
+`;
 
-    }
+}
 
 
-    /*
-    ================================================
-    BUILD GAME PAGE
-    ================================================
-    */
+/* DOWNLOAD BUTTON */
 
-    container.innerHTML = `
+let downloadHTML = "";
 
-    <div class="game-page">
+if (game.download) {
 
-        <h1>
-            ${game.name}
-        </h1>
+downloadHTML = `
 
+<a
+class="download"
+href="${game.download}"
+>
+⬇ Download ${game.name}
+</a>
 
-        <div class="game-layout">
+`;
 
+} else {
 
-            <div class="cover">
+downloadHTML = `
 
-                <img
-                    src="${game.image}"
-                    alt="${game.name}"
-                    onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
-                >
+<a
+class="download"
+href="#"
+onclick="alert('Download coming soon.'); return false;"
+>
+⬇ Download ${game.name}
+</a>
 
-                <span style="display:none;">
-                    ${game.name}
-                </span>
+`;
 
-            </div>
-
-
-            <div>
-
-                <p class="description">
-                    ${game.description}
-                </p>
+}
 
 
-                <div class="details">
+/* BUILD PAGE */
 
-                    <p>
-                        <strong>Genre:</strong>
-                        ${game.genre}
-                    </p>
+container.innerHTML = `
 
-                    <p>
-                        <strong>Platform:</strong>
-                        ${game.platform}
-                    </p>
+<div class="game-page">
 
-                    <p>
-                        <strong>Game:</strong>
-                        ${game.name}
-                    </p>
+<h1>${game.name}</h1>
 
-                </div>
+<div class="game-layout">
 
+<div class="cover">
 
-                <a
-                    class="download"
-                    href="#"
-                    onclick="alert('Add your legally distributable game file here.'); return false;"
-                >
-                    ⬇ Download
-                </a>
+<img
+src="${game.image}"
+alt="${game.name}"
+onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+>
+
+<span style="display:none;">
+${game.name}
+</span>
+
+</div>
 
 
-            </div>
+<div>
 
-        </div>
-
-
-        <div class="screenshots">
-
-            <h2>
-                📸 Screenshots
-            </h2>
-
-            <div class="screenshot-grid">
-
-                ${screenshotHTML}
-
-            </div>
-
-        </div>
+<p class="description">
+${game.description}
+</p>
 
 
-        <a class="back" href="index.html">
-            ← Back to GameBox.exe
-        </a>
+<div class="details">
+
+<p>
+<strong>Genre:</strong>
+${game.genre}
+</p>
+
+<p>
+<strong>Platform:</strong>
+${game.platform}
+</p>
+
+<p>
+<strong>Game:</strong>
+${game.name}
+</p>
+
+</div>
+
+${downloadHTML}
+
+</div>
+
+</div>
 
 
-    </div>
+<div class="screenshots">
 
-    `;
+<h2>📸 Screenshots</h2>
+
+<div class="screenshot-grid">
+
+${screenshotHTML}
+
+</div>
+
+</div>
+
+
+<a class="back" href="index.html">
+← Back to GameBox.exe
+</a>
+
+</div>
+
+`;
 
 }
 
