@@ -20,27 +20,22 @@ content="width=device-width, initial-scale=1.0">
 
 <header>
 
-    <div class="header">
+<div class="header">
 
-        <a href="index.html" class="logo-link">
-
-            <img
-                src="Drawing-68.sketchpad.jpeg"
-                class="logo"
-                alt="GameBox.exe"
-            >
-
-        </a>
+<a href="index.html" class="brand">
+🎮 GameBox.exe
+</a>
 
 
-        <input
-            type="text"
-            id="search"
-            class="search"
-            placeholder="🔎 Search games..."
-        >
+<input
+type="text"
+id="search"
+class="search"
+placeholder="🔎 Search games..."
+autocomplete="off"
+>
 
-    </div>
+</div>
 
 </header>
 
@@ -51,336 +46,128 @@ content="width=device-width, initial-scale=1.0">
 
 <section class="hero">
 
-    <h1>GameBox.exe</h1>
+<h1>GameBox.exe</h1>
 
-    <p>
-        Browse the GameBox game archive.
-    </p>
+<p>
+Browse the GameBox game archive.
+</p>
 
 
-    <div class="categories">
+<div class="categories">
 
-        <button onclick="filterGames('all')">
-            All Games
-        </button>
+<button onclick="filterGames('all')">
+All Games
+</button>
 
-        <button onclick="filterGames('gta')">
-            GTA
-        </button>
+<button onclick="filterGames('action')">
+Action
+</button>
 
-        <button onclick="filterGames('spiderman')">
-            Spider-Man
-        </button>
+<button onclick="filterGames('adventure')">
+Adventure
+</button>
 
-        <button onclick="filterGames('fnaf')">
-            FNAF
-        </button>
+<button onclick="filterGames('horror')">
+Horror
+</button>
 
-        <button onclick="filterGames('horror')">
-            Horror
-        </button>
+<button onclick="filterGames('family')">
+Family
+</button>
 
-        <button onclick="filterGames('tombraider')">
-            Tomb Raider
-        </button>
+<button onclick="filterGames('challenge')">
+Challenge
+</button>
 
-        <button onclick="filterGames('marvel')">
-            Marvel
-        </button>
-
-        <button onclick="filterGames('shrek')">
-            Shrek
-        </button>
-
-        <button onclick="filterGames('hello')">
-            Hello Neighbor
-        </button>
-
-    </div>
+</div>
 
 </section>
 
 
 
-<h2>🎮 Games</h2>
+<h2>
+🎮 Games
+<span id="count"></span>
+</h2>
 
 
-<div id="gameGrid" class="game-grid">
+
+<div
+id="gameGrid"
+class="game-grid"
+>
 
 
-<!-- GTA -->
+
+<!-- A -->
+
 
 <div class="game-card"
-data-name="GTA 1"
-data-category="gta"
-onclick="openGame('gta-1')">
+data-name="A Difficult Game About Climbing"
+data-category="challenge"
+onclick="openGame('a-difficult-game-about-climbing')">
 
-    <div class="game-image">
-        GTA 1
-    </div>
+<div class="game-image">
+A Difficult Game About Climbing
+</div>
 
-    <h3>GTA 1</h3>
+<h3>A Difficult Game About Climbing</h3>
 
-    <p>Action • Windows</p>
+<p>Challenge • Windows</p>
 
 </div>
 
 
 
 <div class="game-card"
-data-name="GTA 2"
-data-category="gta"
-onclick="openGame('gta-2')">
+data-name="Amanda the Adventurer"
+data-category="horror"
+onclick="openGame('amanda-the-adventurer')">
 
-    <div class="game-image">
-        GTA 2
-    </div>
+<div class="game-image">
+Amanda the Adventurer
+</div>
 
-    <h3>GTA 2</h3>
+<h3>Amanda the Adventurer</h3>
 
-    <p>Action • Windows</p>
+<p>Horror • Windows</p>
+
+</div>
+
+
+
+<!-- B -->
+
+
+<div class="game-card"
+data-name="Bad Parenting 1 Mr Red Face"
+data-category="horror"
+onclick="openGame('bad-parenting-1-mr-red-face')">
+
+<div class="game-image">
+Bad Parenting 1
+</div>
+
+<h3>Bad Parenting 1: Mr. Red Face</h3>
+
+<p>Horror • Windows</p>
 
 </div>
 
 
 
 <div class="game-card"
-data-name="GTA 3"
-data-category="gta"
-onclick="openGame('gta-3')">
+data-name="Baldis Basics Plus"
+data-category="horror"
+onclick="openGame('baldis-basics-plus')">
 
-    <div class="game-image">
-        GTA 3
-    </div>
-
-    <h3>GTA 3</h3>
-
-    <p>Action • Windows</p>
-
+<div class="game-image">
+Baldi's Basics+
 </div>
 
+<h3>Baldi's Basics+</h3>
 
-
-<div class="game-card"
-data-name="GTA Vice City"
-data-category="gta"
-onclick="openGame('gta-vice-city')">
-
-    <div class="game-image">
-        GTA Vice City
-    </div>
-
-    <h3>GTA Vice City</h3>
-
-    <p>Action • Windows</p>
-
-</div>
-
-
-
-<div class="game-card"
-data-name="GTA London"
-data-category="gta"
-onclick="openGame('gta-london')">
-
-    <div class="game-image">
-        GTA London
-    </div>
-
-    <h3>GTA London</h3>
-
-    <p>Action • Windows</p>
-
-</div>
-
-
-
-<!-- SPIDER-MAN -->
-
-<div class="game-card"
-data-name="Spider-Man 2000"
-data-category="spiderman"
-onclick="openGame('spider-man-2000')">
-
-    <div class="game-image">
-        Spider-Man 2000
-    </div>
-
-    <h3>Spider-Man 2000</h3>
-
-    <p>Action • Windows</p>
-
-</div>
-
-
-
-<div class="game-card"
-data-name="Spider-Man The Movie Game"
-data-category="spiderman"
-onclick="openGame('spider-man-movie')">
-
-    <div class="game-image">
-        Spider-Man: The Movie Game
-    </div>
-
-    <h3>Spider-Man: The Movie Game</h3>
-
-    <p>Action • Windows</p>
-
-</div>
-
-
-
-<div class="game-card"
-data-name="Spider-Man 2 Enter Electro"
-data-category="spiderman"
-onclick="openGame('spider-man-enter-electro')">
-
-    <div class="game-image">
-        Spider-Man 2
-    </div>
-
-    <h3>Spider-Man 2: Enter Electro</h3>
-
-    <p>Action • Windows</p>
-
-</div>
-
-
-
-<div class="game-card"
-data-name="Spider-Man 3"
-data-category="spiderman"
-onclick="openGame('spider-man-3')">
-
-    <div class="game-image">
-        Spider-Man 3
-    </div>
-
-    <h3>Spider-Man 3</h3>
-
-    <p>Action • Windows</p>
-
-</div>
-
-
-
-<div class="game-card"
-data-name="Ultimate Spider-Man"
-data-category="spiderman"
-onclick="openGame('ultimate-spider-man')">
-
-    <div class="game-image">
-        Ultimate Spider-Man
-    </div>
-
-    <h3>Ultimate Spider-Man</h3>
-
-    <p>Action • Windows</p>
-
-</div>
-
-
-
-<div class="game-card"
-data-name="Spider-Man Friend or Foe"
-data-category="spiderman"
-onclick="openGame('spider-man-friend-or-foe')">
-
-    <div class="game-image">
-        Spider-Man Friend or Foe
-    </div>
-
-    <h3>Spider-Man: Friend or Foe</h3>
-
-    <p>Action • Windows</p>
-
-</div>
-
-
-
-<div class="game-card"
-data-name="Spider-Man Web of Shadows"
-data-category="spiderman"
-onclick="openGame('spider-man-web-of-shadows')">
-
-    <div class="game-image">
-        Spider-Man Web of Shadows
-    </div>
-
-    <h3>Spider-Man: Web of Shadows</h3>
-
-    <p>Action • Windows</p>
-
-</div>
-
-
-
-<!-- FNAF -->
-
-<div class="game-card"
-data-name="FNAF UCN"
-data-category="fnaf"
-onclick="openGame('fnaf-ucn')">
-
-    <div class="game-image">
-        FNAF UCN
-    </div>
-
-    <h3>FNAF: Ultimate Custom Night</h3>
-
-    <p>Horror • Windows</p>
-
-</div>
-
-
-
-<div class="game-card"
-data-name="FNAF Pizza Sim"
-data-category="fnaf"
-onclick="openGame('fnaf-pizza-sim')">
-
-    <div class="game-image">
-        FNAF Pizza Sim
-    </div>
-
-    <h3>FNAF: Pizza Simulator</h3>
-
-    <p>Horror • Windows</p>
-
-</div>
-
-
-
-<div class="game-card"
-data-name="FNAF World"
-data-category="fnaf"
-onclick="openGame('fnaf-world')">
-
-    <div class="game-image">
-        FNAF World
-    </div>
-
-    <h3>FNAF World</h3>
-
-    <p>Adventure • Windows</p>
-
-</div>
-
-
-
-<div class="game-card"
-data-name="Freddy in Space 2"
-data-category="fnaf"
-onclick="openGame('freddy-in-space-2')">
-
-    <div class="game-image">
-        Freddy in Space 2
-    </div>
-
-    <h3>Freddy in Space 2</h3>
-
-    <p>Action • Windows</p>
+<p>Horror • Windows</p>
 
 </div>
 
@@ -391,102 +178,743 @@ data-name="Boris and the Dark Survival"
 data-category="horror"
 onclick="openGame('boris-and-the-dark-survival')">
 
-    <div class="game-image">
-        Boris
-    </div>
+<div class="game-image">
+Boris and the Dark Survival
+</div>
 
-    <h3>Boris and the Dark Survival</h3>
+<h3>Boris and the Dark Survival</h3>
 
-    <p>Horror • Windows</p>
+<p>Horror • Windows</p>
 
 </div>
 
 
 
-<!-- TOMB RAIDER -->
+<!-- F -->
+
 
 <div class="game-card"
-data-name="Tomb Raider 2"
-data-category="tombraider"
-onclick="openGame('tomb-raider-2')">
+data-name="Family Guy Back to the Multiverse"
+data-category="family"
+onclick="openGame('family-guy-back-to-the-multiverse')">
 
-    <div class="game-image">
-        Tomb Raider 2
-    </div>
-
-    <h3>Tomb Raider 2</h3>
-
-    <p>Adventure • Windows</p>
-
+<div class="game-image">
+Family Guy
 </div>
 
+<h3>Family Guy: Back to the Multiverse</h3>
 
-
-<div class="game-card"
-data-name="Tomb Raider 3"
-data-category="tombraider"
-onclick="openGame('tomb-raider-3')">
-
-    <div class="game-image">
-        Tomb Raider 3
-    </div>
-
-    <h3>Tomb Raider 3</h3>
-
-    <p>Adventure • Windows</p>
+<p>Action • Windows</p>
 
 </div>
 
 
 
 <div class="game-card"
-data-name="Tomb Raider 4"
-data-category="tombraider"
-onclick="openGame('tomb-raider-4')">
+data-name="FNAF Core Collection"
+data-category="horror"
+onclick="openGame('fnaf-core-collection')">
 
-    <div class="game-image">
-        Tomb Raider 4
-    </div>
+<div class="game-image">
+FNAF Core Collection
+</div>
 
-    <h3>Tomb Raider 4</h3>
+<h3>FNAF Core Collection</h3>
 
-    <p>Adventure • Windows</p>
+<p>Horror • Windows</p>
 
 </div>
 
 
 
 <div class="game-card"
-data-name="Tomb Raider 5"
-data-category="tombraider"
-onclick="openGame('tomb-raider-5')">
+data-name="FNAF Pizza Sim"
+data-category="horror"
+onclick="openGame('fnaf-pizza-sim')">
 
-    <div class="game-image">
-        Tomb Raider 5
-    </div>
+<div class="game-image">
+FNAF Pizza Sim
+</div>
 
-    <h3>Tomb Raider 5</h3>
+<h3>FNAF Pizza Sim</h3>
 
-    <p>Adventure • Windows</p>
+<p>Horror • Windows</p>
 
 </div>
 
 
 
-<!-- HORROR -->
+<div class="game-card"
+data-name="FNAF The Movie The Game"
+data-category="horror"
+onclick="openGame('fnaf-the-movie-the-game')">
+
+<div class="game-image">
+FNAF The Movie The Game
+</div>
+
+<h3>FNAF The Movie: The Game</h3>
+
+<p>Horror • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="FNAF UCN"
+data-category="horror"
+onclick="openGame('fnaf-ucn')">
+
+<div class="game-image">
+FNAF UCN
+</div>
+
+<h3>FNAF UCN</h3>
+
+<p>Horror • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="FNAF World"
+data-category="adventure"
+onclick="openGame('fnaf-world')">
+
+<div class="game-image">
+FNAF World
+</div>
+
+<h3>FNAF World</h3>
+
+<p>Adventure • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Five Nights at Freddys Into the Pit"
+data-category="horror"
+onclick="openGame('five-nights-at-freddys-into-the-pit')">
+
+<div class="game-image">
+Into the Pit
+</div>
+
+<h3>Five Nights at Freddy's: Into the Pit</h3>
+
+<p>Horror • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Freddy in Space 2"
+data-category="action"
+onclick="openGame('freddy-in-space-2')">
+
+<div class="game-image">
+Freddy in Space 2
+</div>
+
+<h3>Freddy in Space 2</h3>
+
+<p>Action • Windows</p>
+
+</div>
+
+
+
+<!-- G -->
+
+
+<div class="game-card"
+data-name="Garten of Banban"
+data-category="horror"
+onclick="openGame('garten-of-banban')">
+
+<div class="game-image">
+Garten of Banban
+</div>
+
+<h3>Garten of Banban</h3>
+
+<p>Horror • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Garten of Banban 0"
+data-category="horror"
+onclick="openGame('garten-of-banban-0')">
+
+<div class="game-image">
+Garten of Banban 0
+</div>
+
+<h3>Garten of Banban 0</h3>
+
+<p>Horror • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Garten of Banban 2"
+data-category="horror"
+onclick="openGame('garten-of-banban-2')">
+
+<div class="game-image">
+Garten of Banban 2
+</div>
+
+<h3>Garten of Banban 2</h3>
+
+<p>Horror • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Garten of Banban 3"
+data-category="horror"
+onclick="openGame('garten-of-banban-3')">
+
+<div class="game-image">
+Garten of Banban 3
+</div>
+
+<h3>Garten of Banban 3</h3>
+
+<p>Horror • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Garten of Banban 4"
+data-category="horror"
+onclick="openGame('garten-of-banban-4')">
+
+<div class="game-image">
+Garten of Banban 4
+</div>
+
+<h3>Garten of Banban 4</h3>
+
+<p>Horror • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Garten of Banban 6"
+data-category="horror"
+onclick="openGame('garten-of-banban-6')">
+
+<div class="game-image">
+Garten of Banban 6
+</div>
+
+<h3>Garten of Banban 6</h3>
+
+<p>Horror • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Garten of Banban 7"
+data-category="horror"
+onclick="openGame('garten-of-banban-7')">
+
+<div class="game-image">
+Garten of Banban 7
+</div>
+
+<h3>Garten of Banban 7</h3>
+
+<p>Horror • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Getting Over It with Bennett Foddy"
+data-category="challenge"
+onclick="openGame('getting-over-it-with-bennett-foddy')">
+
+<div class="game-image">
+Getting Over It
+</div>
+
+<h3>Getting Over It with Bennett Foddy</h3>
+
+<p>Challenge • Windows</p>
+
+</div>
+
+
+
+<!-- G GTA -->
+
+
+<div class="game-card"
+data-name="GTA 1"
+data-category="action"
+onclick="openGame('gta-1')">
+
+<div class="game-image">
+GTA 1
+</div>
+
+<h3>GTA 1</h3>
+
+<p>Action • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="GTA 2"
+data-category="action"
+onclick="openGame('gta-2')">
+
+<div class="game-image">
+GTA 2
+</div>
+
+<h3>GTA 2</h3>
+
+<p>Action • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="GTA 3"
+data-category="action"
+onclick="openGame('gta-3')">
+
+<div class="game-image">
+GTA 3
+</div>
+
+<h3>GTA 3</h3>
+
+<p>Action • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="GTA London"
+data-category="action"
+onclick="openGame('gta-london')">
+
+<div class="game-image">
+GTA London
+</div>
+
+<h3>GTA London</h3>
+
+<p>Action • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="GTA Vice City"
+data-category="action"
+onclick="openGame('gta-vice-city')">
+
+<div class="game-image">
+GTA Vice City
+</div>
+
+<h3>GTA Vice City</h3>
+
+<p>Action • Windows</p>
+
+</div>
+
+
+
+<!-- H -->
+
+
+<div class="game-card"
+data-name="Hello Neighbor"
+data-category="horror"
+onclick="openGame('hello-neighbor')">
+
+<div class="game-image">
+Hello Neighbor
+</div>
+
+<h3>Hello Neighbor</h3>
+
+<p>Horror • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Hello Neighbor Alpha 1"
+data-category="horror"
+onclick="openGame('hello-neighbor-alpha-1')">
+
+<div class="game-image">
+Hello Neighbor Alpha 1
+</div>
+
+<h3>Hello Neighbor: Alpha 1</h3>
+
+<p>Horror • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Hello Neighbor Alpha 2"
+data-category="horror"
+onclick="openGame('hello-neighbor-alpha-2')">
+
+<div class="game-image">
+Hello Neighbor Alpha 2
+</div>
+
+<h3>Hello Neighbor: Alpha 2</h3>
+
+<p>Horror • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Hello Neighbor Alpha 3"
+data-category="horror"
+onclick="openGame('hello-neighbor-alpha-3')">
+
+<div class="game-image">
+Hello Neighbor Alpha 3
+</div>
+
+<h3>Hello Neighbor: Alpha 3</h3>
+
+<p>Horror • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Hello Neighbor Alpha 4"
+data-category="horror"
+onclick="openGame('hello-neighbor-alpha-4')">
+
+<div class="game-image">
+Hello Neighbor Alpha 4
+</div>
+
+<h3>Hello Neighbor: Alpha 4</h3>
+
+<p>Horror • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Hello Neighbor Hide and Seek"
+data-category="horror"
+onclick="openGame('hello-neighbor-hide-and-seek')">
+
+<div class="game-image">
+Hello Neighbor Hide and Seek
+</div>
+
+<h3>Hello Neighbor: Hide and Seek</h3>
+
+<p>Horror • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Hello Neighbor Pre Alpha"
+data-category="horror"
+onclick="openGame('hello-neighbor-pre-alpha')">
+
+<div class="game-image">
+Hello Neighbor Pre-Alpha
+</div>
+
+<h3>Hello Neighbor: Pre-Alpha</h3>
+
+<p>Horror • Windows</p>
+
+</div>
+
+
+
+<!-- H continued -->
+
+
+<div class="game-card"
+data-name="Hitman Contracts"
+data-category="action"
+onclick="openGame('hitman-contracts')">
+
+<div class="game-image">
+Hitman Contracts
+</div>
+
+<h3>Hitman: Contracts</h3>
+
+<p>Action • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="House of Slendrina"
+data-category="horror"
+onclick="openGame('house-of-slendrina')">
+
+<div class="game-image">
+House of Slendrina
+</div>
+
+<h3>House of Slendrina</h3>
+
+<p>Horror • Windows</p>
+
+</div>
+
+
+
+<!-- I -->
+
+
+<div class="game-card"
+data-name="Iron Man 2008"
+data-category="action"
+onclick="openGame('iron-man-2008')">
+
+<div class="game-image">
+Iron Man
+</div>
+
+<h3>Iron Man (2008)</h3>
+
+<p>Action • Windows</p>
+
+</div>
+
+
+
+<!-- K -->
+
+
+<div class="game-card"
+data-name="King of the Hill"
+data-category="family"
+onclick="openGame('king-of-the-hill')">
+
+<div class="game-image">
+King of the Hill
+</div>
+
+<h3>King of the Hill</h3>
+
+<p>Family • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Kindergarten"
+data-category="action"
+onclick="openGame('kindergarten')">
+
+<div class="game-image">
+Kindergarten
+</div>
+
+<h3>Kindergarten</h3>
+
+<p>Adventure • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Kindergarten 2"
+data-category="action"
+onclick="openGame('kindergarten-2')">
+
+<div class="game-image">
+Kindergarten 2
+</div>
+
+<h3>Kindergarten 2</h3>
+
+<p>Adventure • Windows</p>
+
+</div>
+
+
+
+<!-- M -->
+
+
+<div class="game-card"
+data-name="Manhunt 2"
+data-category="action"
+onclick="openGame('manhunt-2')">
+
+<div class="game-image">
+Manhunt 2
+</div>
+
+<h3>Manhunt 2</h3>
+
+<p>Action • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Marvel Ultimate Alliance"
+data-category="action"
+onclick="openGame('marvel-ultimate-alliance')">
+
+<div class="game-image">
+Marvel Ultimate Alliance
+</div>
+
+<h3>Marvel: Ultimate Alliance</h3>
+
+<p>Action • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Midnight Club II"
+data-category="action"
+onclick="openGame('midnight-club-2')">
+
+<div class="game-image">
+Midnight Club II
+</div>
+
+<h3>Midnight Club II</h3>
+
+<p>Racing • Windows</p>
+
+</div>
+
+
+
+<!-- O -->
+
+
+<div class="game-card"
+data-name="Outlast Demo"
+data-category="horror"
+onclick="openGame('outlast-demo')">
+
+<div class="game-image">
+Outlast Demo
+</div>
+
+<h3>Outlast Demo</h3>
+
+<p>Horror • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Outlast 2 Demo"
+data-category="horror"
+onclick="openGame('outlast-2-demo')">
+
+<div class="game-image">
+Outlast 2 Demo
+</div>
+
+<h3>Outlast 2 Demo</h3>
+
+<p>Horror • Windows</p>
+
+</div>
+
+
+
+<!-- P -->
+
+
+<div class="game-card"
+data-name="Psychopath Hunt Chapter 2"
+data-category="horror"
+onclick="openGame('psychopath-hunt-chapter-2')">
+
+<div class="game-image">
+Psychopath Hunt
+</div>
+
+<h3>Psychopath Hunt: Chapter 2</h3>
+
+<p>Horror • Windows</p>
+
+</div>
+
+
+
+<!-- R -->
+
 
 <div class="game-card"
 data-name="Resident Evil 1"
 data-category="horror"
 onclick="openGame('resident-evil-1')">
 
-    <div class="game-image">
-        Resident Evil
-    </div>
+<div class="game-image">
+Resident Evil
+</div>
 
-    <h3>Resident Evil 1</h3>
+<h3>Resident Evil 1</h3>
 
-    <p>Horror • Windows</p>
+<p>Horror • Windows</p>
 
 </div>
 
@@ -497,13 +925,13 @@ data-name="Resident Evil 2"
 data-category="horror"
 onclick="openGame('resident-evil-2')">
 
-    <div class="game-image">
-        Resident Evil 2
-    </div>
+<div class="game-image">
+Resident Evil 2
+</div>
 
-    <h3>Resident Evil 2</h3>
+<h3>Resident Evil 2</h3>
 
-    <p>Horror • Windows</p>
+<p>Horror • Windows</p>
 
 </div>
 
@@ -512,15 +940,69 @@ onclick="openGame('resident-evil-2')">
 <div class="game-card"
 data-name="Resident Evil 3 Nemesis"
 data-category="horror"
-onclick="openGame('resident-evil-3')">
+onclick="openGame('resident-evil-3-nemesis')">
 
-    <div class="game-image">
-        Resident Evil 3
-    </div>
+<div class="game-image">
+Resident Evil 3
+</div>
 
-    <h3>Resident Evil 3: Nemesis</h3>
+<h3>Resident Evil 3: Nemesis</h3>
 
-    <p>Horror • Windows</p>
+<p>Horror • Windows</p>
+
+</div>
+
+
+
+<!-- S -->
+
+
+<div class="game-card"
+data-name="Shrek 2 Team Action"
+data-category="family"
+onclick="openGame('shrek-2-team-action')">
+
+<div class="game-image">
+Shrek 2
+</div>
+
+<h3>Shrek 2: Team Action</h3>
+
+<p>Family • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Shrek the Third"
+data-category="family"
+onclick="openGame('shrek-the-third')">
+
+<div class="game-image">
+Shrek the Third
+</div>
+
+<h3>Shrek the Third</h3>
+
+<p>Family • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Shrek Forever After"
+data-category="family"
+onclick="openGame('shrek-forever-after')">
+
+<div class="game-image">
+Shrek Forever After
+</div>
+
+<h3>Shrek Forever After</h3>
+
+<p>Family • Windows</p>
 
 </div>
 
@@ -531,13 +1013,13 @@ data-name="Silent Hill 2"
 data-category="horror"
 onclick="openGame('silent-hill-2')">
 
-    <div class="game-image">
-        Silent Hill 2
-    </div>
+<div class="game-image">
+Silent Hill 2
+</div>
 
-    <h3>Silent Hill 2</h3>
+<h3>Silent Hill 2</h3>
 
-    <p>Horror • Windows</p>
+<p>Horror • Windows</p>
 
 </div>
 
@@ -548,24 +1030,513 @@ data-name="Silent Hill 3"
 data-category="horror"
 onclick="openGame('silent-hill-3')">
 
-    <div class="game-image">
-        Silent Hill 3
-    </div>
+<div class="game-image">
+Silent Hill 3
+</div>
 
-    <h3>Silent Hill 3</h3>
+<h3>Silent Hill 3</h3>
 
-    <p>Horror • Windows</p>
+<p>Horror • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Simpsons Hit and Run"
+data-category="action"
+onclick="openGame('simpsons-hit-and-run')">
+
+<div class="game-image">
+The Simpsons Hit & Run
+</div>
+
+<h3>The Simpsons: Hit & Run</h3>
+
+<p>Action • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Simpsons Virtual Springfield"
+data-category="family"
+onclick="openGame('simpsons-virtual-springfield')">
+
+<div class="game-image">
+Virtual Springfield
+</div>
+
+<h3>Simpsons Virtual Springfield</h3>
+
+<p>Family • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Slendrina"
+data-category="horror"
+onclick="openGame('slendrina')">
+
+<div class="game-image">
+Slendrina
+</div>
+
+<h3>Slendrina</h3>
+
+<p>Horror • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Slendrina The Cellar"
+data-category="horror"
+onclick="openGame('slendrina-the-cellar')">
+
+<div class="game-image">
+Slendrina The Cellar
+</div>
+
+<h3>Slendrina: The Cellar</h3>
+
+<p>Horror • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Slendrina The Cellar 2"
+data-category="horror"
+onclick="openGame('slendrina-the-cellar-2')">
+
+<div class="game-image">
+Slendrina The Cellar 2
+</div>
+
+<h3>Slendrina: The Cellar 2</h3>
+
+<p>Horror • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Slendrina The Forest"
+data-category="horror"
+onclick="openGame('slendrina-the-forest')">
+
+<div class="game-image">
+Slendrina The Forest
+</div>
+
+<h3>Slendrina: The Forest</h3>
+
+<p>Horror • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Slendrina X"
+data-category="horror"
+onclick="openGame('slendrina-x')">
+
+<div class="game-image">
+Slendrina X
+</div>
+
+<h3>Slendrina X</h3>
+
+<p>Horror • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Spider Man 2000"
+data-category="action"
+onclick="openGame('spider-man-2000')">
+
+<div class="game-image">
+Spider-Man 2000
+</div>
+
+<h3>Spider-Man 2000</h3>
+
+<p>Action • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Spider Man 2 Enter Electro"
+data-category="action"
+onclick="openGame('spider-man-2-enter-electro')">
+
+<div class="game-image">
+Spider-Man 2
+</div>
+
+<h3>Spider-Man 2: Enter Electro</h3>
+
+<p>Action • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Spider Man 3"
+data-category="action"
+onclick="openGame('spider-man-3')">
+
+<div class="game-image">
+Spider-Man 3
+</div>
+
+<h3>Spider-Man 3</h3>
+
+<p>Action • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Spider Man Friend or Foe"
+data-category="action"
+onclick="openGame('spider-man-friend-or-foe')">
+
+<div class="game-image">
+Friend or Foe
+</div>
+
+<h3>Spider-Man: Friend or Foe</h3>
+
+<p>Action • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Spider Man The Movie Game"
+data-category="action"
+onclick="openGame('spider-man-the-movie-game')">
+
+<div class="game-image">
+Spider-Man
+</div>
+
+<h3>Spider-Man: The Movie Game</h3>
+
+<p>Action • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Spider Man Web of Shadows"
+data-category="action"
+onclick="openGame('spider-man-web-of-shadows')">
+
+<div class="game-image">
+Web of Shadows
+</div>
+
+<h3>Spider-Man: Web of Shadows</h3>
+
+<p>Action • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="State of Emergency"
+data-category="action"
+onclick="openGame('state-of-emergency')">
+
+<div class="game-image">
+State of Emergency
+</div>
+
+<h3>State of Emergency</h3>
+
+<p>Action • Windows</p>
+
+</div>
+
+
+
+<!-- T -->
+
+
+<div class="game-card"
+data-name="Tattletail"
+data-category="horror"
+onclick="openGame('tattletail')">
+
+<div class="game-image">
+Tattletail
+</div>
+
+<h3>Tattletail</h3>
+
+<p>Horror • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="The Child of Slendrina"
+data-category="horror"
+onclick="openGame('the-child-of-slendrina')">
+
+<div class="game-image">
+The Child of Slendrina
+</div>
+
+<h3>The Child of Slendrina</h3>
+
+<p>Horror • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="The Hulk 2003"
+data-category="action"
+onclick="openGame('the-hulk-2003')">
+
+<div class="game-image">
+The Hulk
+</div>
+
+<h3>The Hulk (2003)</h3>
+
+<p>Action • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="The Incredible Hulk"
+data-category="action"
+onclick="openGame('the-incredible-hulk')">
+
+<div class="game-image">
+The Incredible Hulk
+</div>
+
+<h3>The Incredible Hulk</h3>
+
+<p>Action • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="The Italian Job 2001"
+data-category="action"
+onclick="openGame('the-italian-job-2001')">
+
+<div class="game-image">
+The Italian Job
+</div>
+
+<h3>The Italian Job (2001)</h3>
+
+<p>Racing • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="The Punisher"
+data-category="action"
+onclick="openGame('the-punisher')">
+
+<div class="game-image">
+The Punisher
+</div>
+
+<h3>The Punisher</h3>
+
+<p>Action • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Toy Story 2 Buzz Lightyear to the Rescue"
+data-category="family"
+onclick="openGame('toy-story-2')">
+
+<div class="game-image">
+Toy Story 2
+</div>
+
+<h3>Toy Story 2: Buzz Lightyear to the Rescue</h3>
+
+<p>Family • Windows</p>
+
+</div>
+
+
+
+<!-- TOMB RAIDER -->
+
+
+<div class="game-card"
+data-name="Tomb Raider 2"
+data-category="adventure"
+onclick="openGame('tomb-raider-2')">
+
+<div class="game-image">
+Tomb Raider 2
+</div>
+
+<h3>Tomb Raider 2</h3>
+
+<p>Adventure • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Tomb Raider 3"
+data-category="adventure"
+onclick="openGame('tomb-raider-3')">
+
+<div class="game-image">
+Tomb Raider 3
+</div>
+
+<h3>Tomb Raider 3</h3>
+
+<p>Adventure • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Tomb Raider 4"
+data-category="adventure"
+onclick="openGame('tomb-raider-4')">
+
+<div class="game-image">
+Tomb Raider 4
+</div>
+
+<h3>Tomb Raider 4</h3>
+
+<p>Adventure • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="Tomb Raider 5"
+data-category="adventure"
+onclick="openGame('tomb-raider-5')">
+
+<div class="game-image">
+Tomb Raider 5
+</div>
+
+<h3>Tomb Raider 5</h3>
+
+<p>Adventure • Windows</p>
+
+</div>
+
+
+
+<!-- U -->
+
+
+<div class="game-card"
+data-name="Ultimate Spider Man"
+data-category="action"
+onclick="openGame('ultimate-spider-man')">
+
+<div class="game-image">
+Ultimate Spider-Man
+</div>
+
+<h3>Ultimate Spider-Man</h3>
+
+<p>Action • Windows</p>
+
+</div>
+
+
+
+<!-- W -->
+
+
+<div class="game-card"
+data-name="Wild Metal Country"
+data-category="action"
+onclick="openGame('wild-metal-country')">
+
+<div class="game-image">
+Wild Metal Country
+</div>
+
+<h3>Wild Metal Country</h3>
+
+<p>Action • Windows</p>
+
+</div>
+
+
+
+<div class="game-card"
+data-name="WWF Raw 2002"
+data-category="action"
+onclick="openGame('wwf-raw-2002')">
+
+<div class="game-image">
+WWF Raw 2002
+</div>
+
+<h3>WWF Raw 2002</h3>
+
+<p>Action • Windows</p>
 
 </div>
 
 
 
 </div>
+
 
 
 <div id="noResults">
 
-    No games found.
+No games found.
 
 </div>
 
@@ -588,77 +1559,99 @@ GameBox.exe © 2026
 const search =
 document.getElementById("search");
 
-
 const cards =
-document.querySelectorAll(".game-card");
+Array.from(document.querySelectorAll(".game-card"));
+
+const count =
+document.getElementById("count");
+
+const noResults =
+document.getElementById("noResults");
 
 
-search.addEventListener("input", function() {
+function updateCount(number) {
 
-    const text =
-    search.value.toLowerCase();
+count.textContent =
+" (" + number + " games)";
 
-
-    let found = false;
-
-
-    cards.forEach(function(card) {
-
-        const name =
-        card.dataset.name.toLowerCase();
+}
 
 
-        if(name.includes(text)) {
+function searchGames() {
 
-            card.style.display = "block";
+const query =
+search.value.toLowerCase().trim();
 
-            found = true;
-
-        } else {
-
-            card.style.display = "none";
-
-        }
-
-    });
+let visible = 0;
 
 
-    document.getElementById("noResults").style.display =
-    found ? "none" : "block";
+cards.forEach(function(card) {
+
+const name =
+card.dataset.name.toLowerCase();
+
+
+if(name.includes(query)) {
+
+card.style.display = "block";
+
+visible++;
+
+} else {
+
+card.style.display = "none";
+
+}
 
 });
+
+
+updateCount(visible);
+
+noResults.style.display =
+visible === 0 ? "block" : "none";
+
+}
+
+
+search.addEventListener(
+"input",
+searchGames
+);
 
 
 
 function filterGames(category) {
 
-    search.value = "";
+search.value = "";
 
-    let found = false;
-
-
-    cards.forEach(function(card) {
-
-        if(
-            category === "all" ||
-            card.dataset.category === category
-        ) {
-
-            card.style.display = "block";
-
-            found = true;
-
-        } else {
-
-            card.style.display = "none";
-
-        }
-
-    });
+let visible = 0;
 
 
-    document.getElementById("noResults").style.display =
-    found ? "none" : "block";
+cards.forEach(function(card) {
+
+if(
+category === "all" ||
+card.dataset.category === category
+) {
+
+card.style.display = "block";
+
+visible++;
+
+} else {
+
+card.style.display = "none";
+
+}
+
+});
+
+
+updateCount(visible);
+
+noResults.style.display =
+visible === 0 ? "block" : "none";
 
 }
 
@@ -666,10 +1659,15 @@ function filterGames(category) {
 
 function openGame(game) {
 
-    window.location.href =
-    "games.html?game=" + game;
+window.location.href =
+"games.html?game=" +
+encodeURIComponent(game);
 
 }
+
+
+
+updateCount(cards.length);
 
 
 </script>
